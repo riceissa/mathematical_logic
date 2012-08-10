@@ -1,7 +1,9 @@
 # Introduction
 
-This is a project to convert Detlovs and Podnieks's notes on mathematical logic to LaTeX.
-The notes are available here: http://www.ltn.lv/~podnieks/mlog/ml.htm
+This is a project to convert Detlovs and Podnieks's notes on mathematical logic to LaTeX (with some modifications).
+The original notes are available here: http://www.ltn.lv/~podnieks/mlog/ml.htm
+
+## Licensing
 
 The original notes are protected under a Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic (CC BY-NC-SA 1.0) license, so that is the license we will use.
 
