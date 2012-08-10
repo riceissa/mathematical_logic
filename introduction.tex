@@ -44,74 +44,113 @@ You may think so, if you do not wish to distinguish between the first order noti
 Or, if you do not wish to investigate in parallel the classical and the constructivist (intuitionist) versions of some theories.
 
 \subsection{Total Formalization is Possible!}
-Gottlob Frege (1848-1925)
-Charles S. Peirce (1839-1914)
-Bertrand Russell (1872-1970)
-David Hilbert (1862-1943)
+\begin{itemize}
+    \item Gottlob Frege\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/Mathematicians/Frege.html}} (1848--1925)
+    \item Charles S.\ Peirce\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/Mathematicians/Peirce\_Charles.html}} (1839--1914)
+    \item Bertrand Russell\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/Mathematicians/Russell.html}} (1872--1970)
+    \item David Hilbert\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/Mathematicians/Hilbert.html}} (1862--1943)
+\end{itemize}
 
 How far can we proceed with the mathematical rigor---with the axiomatization of some theory?
 Complete elimination of intuition, i.e., full reduction of all proofs to a list of axioms and rules of inference, is this really possible?
-The work by Gottlob Frege, Charles S. Peirce, Bertrand Russell, David Hilbert and their colleagues showed how this can be achieved even with the most complicated mathematical theories.
+The work by Gottlob Frege, Charles S.\ Peirce, Bertrand Russell, David Hilbert, and their colleagues showed how this can be achieved even with the most complicated mathematical theories.
 All mathematical theories were indeed reduced to systems of axioms and rules of inference without any admixture of sophisticated human skills, intuitions etc.
-Today, the logical techniques developed by these brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent system of principles (i.e. of any mathematical theory).
+Today, the logical techniques developed by these brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent system of principles (i.e., of any mathematical theory).
 
 What do they look like---such ``100\% rigorous'' theories?
-They are called formal theories (formal systems, or deductive systems) emphasizing that no step of reasoning can be done without a reference to an exactly formulated list of axioms and rules of inference.
-Even the most ``self-evident'' logical principles (like, "if A implies B, and B implies C, then A implies C") must be either formulated in the list
-of axioms and rules explicitly, or derived from it.
+They are called \term{formal theories} (formal systems, or deductive systems) emphasizing that no step of reasoning can be done without a reference to an exactly formulated list of axioms and rules of inference.
+Even the most ``self-evident'' logical principles (like, ``if \(A\) implies \(B\), and \(B\) implies \(C\), then \(A\) implies \(C\)'') must be either formulated in the list of axioms and rules explicitly, or derived from it.
 
-What is, in fact, a (mathematical) theory? It is an "engine" generating theorems.
-Then, a formal theory must be an ``engine'' generating theorems without involving of human skills, intuitions etc., i.e. by means of a computer program.
+What is, in fact, a (mathematical) theory?
+It is an \term{``engine'' generating theorems}.
+Then, a formal theory must be an ``engine'' generating theorems without involving of human skills, intuitions etc., i.e., by means of a computer program.
 
-The first distinctive feature of a formal theory is a precisely defined (``formal'') language used to express its propositions.
+The first distinctive feature of a formal theory is a \term{precisely defined (``formal'') language} used to express its \term{propositions}.
 ``Precisely defined'' means here that there is an algorithm allowing to determine, is a given character string a correct proposition, or not.
 
-The second distinctive feature of a formal theory is a precisely defined (``formal'') notion of proof.
-Each proof proves some proposition, that is called (after being proved) a theorem. Thus, theorems are a subset of propositions.
+The second distinctive feature of a formal theory is a precisely defined (``formal'') notion of \term{proof}.
+Each proof proves some proposition, that is called (after being proved) a \term{theorem}.
+Thus, theorems are a subset of propositions.
 
-It may seem surprising to a mathematician, but the most general exact definition of the ``formal proof'' involves neither axioms, nor inference rules. Neither ``self-evident'' axioms, nor ``plausible'' rules of inference are distinctive features of the ``formality''.
-Speaking strictly, ``self-evident'' is synonymous to "accepted without argumentation".
-Hence, axioms and/or rules of inference may be "good, or bad", "true, or false", and so may be the theorems obtained by means of them.
-The only definitely verifiable thing is here the fact that some theorem has been, indeed, proved from a fixed set of axioms by means of a fixed set of inference rules.
+It may seem surprising to a mathematician, but the most general exact definition of the ``formal proof'' involves neither axioms, nor inference rules.
+Neither ``self-evident'' axioms, nor ``plausible'' rules of inference are distinctive features of the ``formality''.
+Speaking strictly, ``self-evident'' is synonymous to ``accepted without argumentation''.
+Hence, axioms and/or rules of inference may be ``good, or bad'', ``true, or false'', and so may be the theorems obtained by means of them.
+The only definitely verifiable thing is here the fact that some theorem has been, indeed, \term{proved} from a fixed set of axioms by means of a fixed set of inference rules.
 
-Thus, the second distinctive feature of "formality" is the possibility to verify the correctness of proofs mechanically, i.e. without involving of human skills, intuitions etc. This can be best formulated by using the (since 1936---precisely defined) notion of algorithm (a "mechanically applicable computation procedure", a computer program).
+Thus, the second distinctive feature of ``formality'' is the possibility to \emph{verify the correctness of proofs} mechanically, i.e., without involving of human skills, intuitions etc.
+This can be best formulated by using the (since 1936---precisely defined) notion of algorithm (a ``mechanically applicable computation procedure'', a computer program).
 
-A theory T is called a formal theory, if and only if there is an algorithm allowing to verify, is a given text a correct proof via principles of T, or not. If somebody is going to publish a "mathematical text" calling it "proof of a theorem in theory T", then we must be able to verify it mechanically whether the text in question is really a correct proof according to the standards of proving accepted in theory T. Thus, in a formal theory, the standards of reasoning should be defined precisely enough to enable verification of proofs by means of a computer program. (Note that we are discussing here verification of ready proofs, and not the much more difficult problem---is some proposition provable in T or not, see Exercise 1.1.5 below and the text after it).
+\emph{A theory \(T\) is called a formal theory, if and only if there is an algorithm allowing to verify, is a given text a correct proof via principles of \(T\), or not.}
+If somebody is going to publish a ``mathematical text'' calling it ``proof of a theorem in theory \(T\)'', then we must be able to verify it mechanically whether the text in question is really a correct proof according to the standards of proving accepted in theory \(T\).
+Thus, in a formal theory, the standards of reasoning should be defined precisely enough to enable verification of proofs by means of a computer program.
+(Note that we are discussing here \term{verification of ready proofs}, and not the much more difficult problem---is some proposition provable in \(T\) or not, see Exercise 1.1.5 below and the text after it.)
 
 Axioms and inference rules represent only one (the most popular!) of the possible techniques of formalization.
 
-As an unpractical example of a formal theory let us consider the game of chess, let us call this "theory" CHESS. Let 's define as propositions of CHESS all the possible positions---i.e. allocations of some of the pieces (kings included) on a chessboard---plus the flag: "white to move" or "black to move". Thus, the set of all possible positions is the language of CHESS. The only axiom of CHESS is the initial position, and the rules of inference---the rules of the game. The rules allow passing from some propositions of CHESS to some other ones. Starting with the axiom and iterating moves allowed by the rules we obtain theorems of CHESS. Thus, theorems of CHESS are defined as all the possible positions (i.e. propositions of CHESS) that can be obtained from the initial position (the axiom of CHESS) by moving pieces according to the rules of the game (i.e. by "proving" via the inference rules of CHESS).
+As an unpractical example of a formal theory let us consider the \emph{game of chess}, let us call this ``theory'' \CHESS.
+Let's define as propositions of \CHESS\ all the possible positions---i.e., allocations of some of the pieces (kings included) on a chessboard---plus the flag: "white to move" or "black to move".
+Thus, the set of all possible positions is the language of \CHESS.
+The only axiom of \CHESS\ is the initial position, and the rules of inference---the rules of the game.
+The rules allow passing from some propositions of \CHESS\ to some other ones.
+Starting with the axiom and iterating moves allowed by the rules we obtain theorems of \CHESS.
+Thus, theorems of \CHESS\ are defined as all the possible positions (i.e., propositions of \CHESS) that can be obtained from the initial position (the axiom of \CHESS) by moving pieces according to the rules of the game (i.e., by "proving" via the inference rules of \CHESS).
 
-Exercise 1.1.1. Could you provide an unprovable proposition of CHESS?
+\begin{exercise}
+Could you provide an unprovable proposition of \CHESS?
+\end{exercise}
 
-Why is CHESS called a formal theory? When somebody offers a "mathematical text" P as a proof of a theorem A in CHESS, this means that P is a record of some chess-game stopped in the position A.  Checking the correctness of such "proofs" is a boring, but an easy task. The rules of the game are formulated precisely enough---we could write a computer program that will execute this task.
+Why is \CHESS\ called a formal theory? When somebody offers a ``mathematical text'' P as a proof of a theorem A in \CHESS, this means that P is a record of some chess-game stopped in the position A.
+Checking the correctness of such ``proofs'' is a boring, but an easy task.
+The rules of the game are formulated precisely enough---we could write a computer program that will execute this task.
 
-Exercise 1.1.2. Try estimating the size of this program in some programming language.
+\begin{exercise}
+Try estimating the size of this program in some programming language.
+\end{exercise}
 
-Our second example of a formal theory is only a bit more serious. It was proposed by Paul Lorenzen, let us call this theory L. Propositions of L are all the possible "words" made of letters a, b, for example: a, b, aa, aba, abaab. Thus, the set of all these "words" is the language of L. The only axiom of L is the word a, and L has two rules of inference: \(X \vdash Xb\), and \(X \vdash aXa\). This means that (in L) from a proposition X we can infer immediately the propositions Xb and aXa. For example, the proposition aababb is a theorem of L:
+Our second example of a formal theory is only a bit more serious.
+It was proposed by Paul Lorenzen\footnote{\url{http://en.wikipedia.org/wiki/Paul\_Lorenzen}}, let us call this theory \(L\).
+Propositions of \(L\) are all the possible ``words'' made of letters \(a, b\), for example: \(a, b, aa, aba, abaab\).
+Thus, the set of all these ``words'' is the language of \(L\).
+The only axiom of \(L\) is the word \(a\), and \(L\) has two rules of inference: \derive{X}{Xb}, and \derive{X}{aXa}.
+This means that (in \(L\)) from a proposition \(X\) we can infer immediately the propositions \(Xb\) and \(aXa\).
+For example, the proposition \(aababb\) is a theorem of \(L\):
 \[
-a \vdash ab \vdash aaba \vdash aabab \vdash aababb
-rule1- rule2---rule1----rule1--------
+a \underset{\text{rule1}}{\vdash} ab \underset{\text{rule2}}{\vdash} aaba \underset{\text{rule1}}{\vdash} aabab \underset{rule1}{\vdash} aababb
 \]
-This fact is expressed usually as \(L \vdash aababb\) ( "L proves aababb", \(\vdash\) being a "fallen T").
+This fact is expressed usually as \derive{L}{aababb} ( ``\(L\) proves \(aababb\)'', \(\vdash\) being a ``fallen T'').
 
-Exercise 1.1.3. a) Verify that L is a formal theory. (Hint: describe an algorithm allowing to determine, is a sequence of propositions of L a correct proof, or not.) b) (P. Lorenzen) Verify the following property of theorems in L: for any X, if \(L \vdash X\), then \(L \vdash aaX\).
+\begin{exercise}
+(a) Verify that \(L\) is a formal theory.
+(Hint: describe an algorithm allowing to determine, is a sequence of propositions of \(L\) a correct proof, or not.)
+(b) (P.~Lorenzen) Verify the following property of theorems in \(L\): for any \(X\), if \derive{L}{X}, then \derive{L}{aaX}.
+\end{exercise}
+
 One of the most important properties of formal theories is given in the following
 
-Exercise 1.1.4. Show that the set of all theorems of a formal theory is effectively enumerable, i.e.  show that, for any formal theory T, a computer program PT can be written that prints out on an (endless) paper tape all theorems of this theory (and nothing else). (Hint: we will call T a formal theory, if and only if we can present an algorithm for checking texts as correct proofs via principles of reasoning of T. Thus, assume, you have 4 functions: GenerateFirstText()---returns Text, GenerateNextText()---returns Text, IsCorrectProof(Text)---returns true or false, ExtractTheorem(Text)---returns Text, you must implement the functions GenerateFirstTheorem()---returns Text, GenerateNextTheorem()---returns Text).
+\begin{exercise}
+Show that the set of all theorems of a formal theory is effectively enumerable, i.e., show that, for any formal theory \(T\), a computer program \(P_T\) can be written that prints out on an (endless) paper tape all theorems of this theory (and nothing else).
+(Hint: we will call \(T\) a formal theory, if and only if we can present an algorithm for checking texts as correct proofs via principles of reasoning of \(T\).
+Thus, assume, you have 4 functions: GenerateFirstText()---returns Text, GenerateNextText()---returns Text, IsCorrectProof(Text)---returns true or false, ExtractTheorem(Text)---returns Text, you must implement the functions GenerateFirstTheorem()---returns Text, GenerateNextTheorem()---returns Text).
 
-Unfortunately, such programs cannot solve the problem that the mathematicians are mainly interested in: is a given proposition A provable in T or not? When, running the program PT on a computer, we see our proposition A printed out, this means that A is provable in T. Still, in general, until that moment we cannot know in advance whether A will be printed out some time later or it will not be printed at all.
+Unfortunately, such programs cannot solve the problem that the mathematicians are mainly interested in: is a given proposition \(A\) provable in T or not? When, running the program \(P_T\) on a computer, we see our proposition \(A\) printed out, this means that \(A\) is provable in \(T\).
+Still, in general, until that moment we cannot know in advance whether \(A\) will be printed out some time later or it will not be printed at all.
+\end{exercise}
 
-Note. According to the official terminology, effectively enumerable sets are called "recursively
-enumerable sets", in some texts---also "listable sets".
-Exercise 1.1.5. a) Describe an algorithm determining whether a proposition of L is a theorem or not.
-b) Could you imagine such an algorithm for the theory CHESS? Of course, you can, yet... Thus you see
-that even, having a relatively simple algorithm for checking correctness of proofs, the problem of
-provability can appear to be a very complicated one.
-T is called a solvable theory (more precisely---effectively solvable), if and only if there is an algorithm
-allowing to check whether some proposition is provable by using the principles of T or not. In the
+\begin{note}
+According to the official terminology, effectively enumerable sets are called ``recursively enumerable sets'', in some texts---also ``listable sets''.
+\end{note}
+
+\begin{exercise}
+(a) Describe an algorithm determining whether a proposition of \(L\) is a theorem or not.
+(b) Could you imagine such an algorithm for the theory \CHESS?
+Of course, you can, yet \ldots
+Thus you see that even, having a relatively simple algorithm for \emph{checking correctness} of proofs, the problem of \emph{provability} can appear to be a very complicated one.
+\end{exercise}
+
+\(T\) is called a \term{solvable theory} (more precisely---\term{effectively solvable}), if and only if there is an algorithm allowing to check whether some proposition is provable by using the principles of T or not. In the
 Exercise 1.1.5a you proved that L is a solvable theory. Still, in the Exercise 1.1.5b you established that it
-is hard to state whether CHESS is a "feasibly solvable" theory or not. Determining the provability of
+is hard to state whether \CHESS\ is a "feasibly solvable" theory or not. Determining the provability of
 propositions is a much more complicated task than checking the correctness of ready proofs. It can
 be proved that most mathematical theories are unsolvable, the elementary (first order) arithmetic of
 natural numbers and set theory included (see, for example, Mendelson [1997], or click here). I.e. there is
@@ -145,7 +184,9 @@ ListOfPropositions) --- returns Proposition or false, and you must implement the
 IsCorrectProof(ListOfPropositions) --- returns true or false, ExtractTheorem(Proof) --- returns Proposition).
 b) (for smart students) What, if, instead of {R1, ..., Rn}, we would have an infinite list of inference rules,
 i.e. functions GenerateFirstRule(), GenerateNextRule() returning RuleName?
-1.2. Predicate Languages
+
+\subsection{Predicate Languages}
+
 History
 For a short overview of the history, see QuantificationWikipedia.
 See also:
@@ -369,7 +410,7 @@ arithmetic.
 (\(\exists\) u(x=(u+u))) "x is an even number"
 (\(\exists\) u(((x+u)+1)=y)) "x is less than y", or x<y
 (0<y \AND  \(\exists\) u(x=(y*u))) "x is divisible by y", speaking strictly, x<y must be replaced by \(\exists\) u(((x+u)+1)=y)).
-((1<x)\AND (\neg (\(\exists\) y(\(\exists\) z(((y<x)\AND (z<x))\AND (x=(y*z)))))) "x is a prime number", speaking strictly, \(x<y\) must be replaced by \(\exists u(((x+u)+1)=y))\).
+\(((1<x)\AND (\neg (\exists y(\exists z(((y<x)\AND (z<x))\AND (x=(y*z))))))\) ``x is a prime number'', speaking strictly, \(x<y\) must be replaced by \(\exists u(((x+u)+1)=y))\).
 (\(\forall w(\exists x((w<x)\AND (x is a prime number)))\)) "There are infinitely many prime numbers" (one of the first mathematical theorems, VI century BC), , speaking strictly, \(w<x\) must be replaced by \(\exists u(((w+u)+1)=x))\), and "x is a prime number" must be replaced by the above formula.
 \(\forall x\forall y(0<y \IMPLIES  \exists z\exists u(u<y \AND  x=y*z+u))\) What does it mean?
 3) Some simple examples of compound formulas in the language of set theory:
@@ -494,8 +535,8 @@ Exercise 1.2.6. "Translate" the following assertions into our "language for peop
 construct formulas expressing as much well-known relationships between people as you can.
 But how about the predicate Ancestor(x, y) --- "x is an ancestor of y"? Could it be expressed as a formula
 of our "language for people"? The first idea --- let us "define" this predicate recursively:
-\forall x\forall y(Father(x, y) v Mother(x, y)\IMPLIES \forall ncestor(x, y));
-\forall x\forall y\forall z(Ancestor(x, y) \AND  Ancestor(y, z)\IMPLIES Ancestor(x, z)).
+\(\forall x\forall y(Father(x, y) v Mother(x, y)\IMPLIES \forall ncestor(x, y))\);
+\(\forall x\forall y\forall z(Ancestor(x, y) \AND  Ancestor(y, z)\IMPLIES Ancestor(x, z)).\)
 The second rule declares the transitivity property of the predicate. The above two formulas are axioms,
 allowing to derive the essential properties of the predicate Ancestor(x, y). But how about a single formula
 F(x, y) in the "language for people", expressing that "x is an ancestor of y"? Such a formula should be a
@@ -570,7 +611,9 @@ Exercise 1.2.9. Is x/y an admissible substitution in the following formulas? Why
 Exercise 1.2.10. a) Mathematicians: think over the analogy between bound variables in logic and bound
 variables in sum expressions and integrals.
 b) Programmers: think over the analogy between bound variables in logic and loop counters in programs.
-1.3. Axioms of Logic: Minimal System, Constructive System and Classical System
+
+\subsection{Axioms of Logic: Minimal System, Constructive System and Classical System}
+
 The Problem of Reasoning
 Now we go on to the second phase of formalization: after having defined a formal language (predicate
 language) allowing to put down propositions about our domain of interest, we must formulate some of the
@@ -680,7 +723,7 @@ To complete the formalization of our informal vision of our domain of interest, 
 some specific axioms describing the specific features of the domain. Logical axioms and rules of
 inference are valid for any domains, i.e. they are ``content-free'' in the sense that, by using them only, one
 cannot derive specific information about the domain.
-For example, one cannot derive from any logic, that \forall x (Male(x) v Female(x)). To communicate this fact
+For example, one cannot derive from any logic, that \(\forall x (Male(x) v Female(x))\). To communicate this fact
 to the computer, we must formulate it as a specific axiom.
 And, as we will prove in Section 4, we will never need introducing of specific rules of inference. All we
 need are the two logical rules of inference---Modus Ponens and Generalization.
@@ -713,8 +756,8 @@ that, in first order arithmetic, atomic formulas of are arbitrary Diophantine eq
 Instances of logical axioms for the language of first order arithmetic:
 L1: x=0 \IMPLIES  (y=1 \IMPLIES  x=0);
 L6: x=y \IMPLIES  x=y v z=1;
-L11: 0=1 v \neg (0=1);
-L12: \forall x(x=1) \IMPLIES  x=1;
+L11: \(0=1 v \neg (0=1)\);
+L12: \(\forall x(x=1) \IMPLIES  x=1\);
 etc.
 The specific (non-logical) axioms of first order arithmetic:
 x=x,
@@ -906,7 +949,7 @@ perfect".
 
 Exercise 1.3.2. Re-formulate the above axiom system for a many-sorted predicate language (or, see Chapter 10. Many-Sorted First Order Logic, by Jean Gallier.)
 
-1.4. The Flavor of Proving Directly
+\subsection{The Flavor of Proving Directly}
 
 Theorem 1.4.1. \([L1, L2, MP]: \vdash A\IMPLIES A\) for any formula A. What does it mean? It's the so-called
 reflexivity property of implication.
@@ -924,7 +967,7 @@ applying the MP rule, we obtain A\IMPLIES A. Q.E.D. By performing all our replac
 proof of the formula A\IMPLIES A. [BTW, the above two smart "operations" --- obtaining A\IMPLIES A within L2, and making L1 of A\IMPLIES C,
 are applications of the so-called unification, a very general and very important method used in intellectual computer programs,
 for details, see Section 5.7.]
-Theorem 1.4.2. [L1, L2, MP]: A\IMPLIES B, B\IMPLIES C \vdash A\IMPLIES C, for any formulas A, B, C. What does it mean? It's
+Theorem 1.4.2. [L1, L2, MP]: \(A\IMPLIES B, B\IMPLIES C \vdash A\IMPLIES C\), for any formulas A, B, C. What does it mean? It's
 the so-called Law of Syllogism (by Aristotle), or the transitivity property of implication.
 The following sequence of formulas represents a proof of the formula A\IMPLIES C from the hypotheses A\IMPLIES B
 and B\IMPLIES C.
@@ -951,7 +994,7 @@ idea). What does it mean? It's the so-called Premise Permutation Law.
 d) [L1, L2, MP]: A\IMPLIES (A\IMPLIES B) \(\vdash\) A\IMPLIES B (a sequence of 9 formulas). What does it mean?
 Theorem 1.4.3. [L14, MP, Gen] If F is any formula, and G is any formula that does not contain x as a free
 variable, then
-G\IMPLIES F(x) \(\vdash\) G\IMPLIES \forall xF(x).
+\(G\IMPLIES F(x) \vdash G\IMPLIES \forall xF(x).\)
 The following sequence of formulas represents a proof of the formula G\IMPLIES \(\forall\) xF(x) from the hypothesis
 G\IMPLIES F(x).
 (1) G\IMPLIES F(x) Hypothesis.
@@ -971,7 +1014,9 @@ g) [L8, L11, MP]: \(A\IMPLIES B, \neg A\IMPLIES B \vdash B\) (a sequence of 7 fo
 Exercise 1.4.3 (for smart students). Could one build shorter sequences proving Exercise 1.4.1 c), d) and
 Exercise 1.4.2 b), d)? Evgeny Vihrov verified in 2011 that any proof of Exercise 1.4.1 d) will be longer
 than 5 formulas.
-1.5. Deduction Theorems
+
+\subsection{Deduction Theorems}
+
 If, by assuming B as a hypothesis, we have proved C, then we have proved that B implies C. This trivial
 way of reasoning is formalized in the so-called deduction theorems (introduced by Jacques Herbrand
 and Alfred Tarski):
@@ -1049,12 +1094,12 @@ free variable):
 Exercise 1.5.4. (For smart students) Investigate the size (the number of formulas) of the proof [L1, L2,
 MP]: A1, A2, ..., An, \(\vdash B\IMPLIES C as a function f(m) of the size m of the proof [L1, L2, MP]: A1, A2, ..., An, B \vdash\)
 C. You may wish to report your result. We will publish your report on the web as an appendix to this
-book. The current record holder is Sergey Kozlovich, 2004: f(m) ≤ 3m+2. Improve this result, or prove
+book. The current record holder is Sergey Kozlovich, 2004: \(f(m) \leq 3m+2\). Improve this result, or prove
 that it is the best one possible.
 Exercise 1.5.5. (For smart students) Investigate the size (the number of instances of atomic formulas) of
 the proof [L1, L2, MP]: A1, A2, ..., An, \(\vdash\) B\IMPLIES C as a function g(m) of the size m of the proof [L1, L2, MP]:
 A1, A2, ..., An, B \(\vdash\) C. You may wish to report your result. We will publish your report on the web as an
-appendix to this book. The current record holder is Kirils Solovjovs, 2008: g(m, n) ≤ 7m+24n---2, where n
+appendix to this book. The current record holder is Kirils Solovjovs, 2008: \(g(m, n) \leq 7m+24n\)---2, where n
 is the number of instances of atomic formulas in the formula B. Improve this result, or prove that it is the
 best one possible.
 Warning! Generalization involved...
@@ -1170,14 +1215,18 @@ by the following 3 formulas:
 \(\forall x(B\IMPLIES Fi)\) (by Generalization, x is not free in B),
 \(\forall x(B\IMPLIES Fi)\IMPLIES (B\IMPLIES \forall xFi)\) (an instance of L14, since x is not free in B),
 \(B\IMPLIES \forall xFi\) (by Modus Ponens).
+
 Thus, what we have now, is a correct proof in [L1, L2, L14, T, MP, Gen] that is using the hypotheses A1,
 A2, ..., An, but not B! The last formula of this proof is B\IMPLIES C (because C is the last formula our initial
 proof [T, MP, Gen]: A1, A2, ..., An, B \(\vdash\) C). Thus, we have a proof [L1, L2, L14, T, MP, Gen]: A1, A2, ...,
 An \(\vdash\) B\IMPLIES C. Q.E.D.
-Exercise 1.5.6. In some other textbooks, a somewhat different system of logical axioms is used: instead
-of the axioms L14, L15 and the Generalization rule the following two rules of inference are used:
-G\IMPLIES F(x) \(\vdash\) G\IMPLIES \(\forall\) xF(x) (\(\forall\) -Introduction),
-F(x)\IMPLIES G \(\vdash\) \(\exists\) xF(x)\IMPLIES G (\(\exists\) -Elimination).
-Of course, here, G is a formula that does not contain x as a free variable. Verify that both systems are
-equivalent in all of their versions (minimal, constructive, and classical).
 
+\begin{exercise}
+In some other textbooks, a somewhat different system of logical axioms is used: instead of the axioms \(L_{14}\), \(L_{15}\) and the Generalization rule the following two rules of inference are used:
+\begin{itemize}
+    \item \(G\IMPLIES F(x) \vdash G\IMPLIES \forall xF(x)\) (\(\forall\)-Introduction),
+    \item \(F(x)\IMPLIES G \vdash \exists xF(x)\IMPLIES G\) (\(\exists\)-Elimination).
+\end{itemize}
+Of course, here, \(G\) is a formula that does not contain \(x\) as a free variable. Verify that both systems are
+equivalent in all of their versions (minimal, constructive, and classical).
+\end{exercise}
