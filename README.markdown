@@ -5,7 +5,9 @@ The original notes are available here: http://www.ltn.lv/~podnieks/mlog/ml.htm
 
 # Licensing
 
-The original notes are protected under a Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic (CC BY-NC-SA 1.0) license, so that is the license we will use.
+The original notes are protected under a Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic (CC BY-NC-SA 1.0) license, so that is the license we will use:
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/1.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/1.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/1.0/">Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic License</a>.
 
 # Download
 
