@@ -35,83 +35,61 @@ Group theory\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/HistTopics/De
 And, if you decide to rebuild all mathematical theories on your favorite set theory, then you can view set theory as your logic.
 
 Can there be a common logic for the entire mathematics?
-To avoid the absolutist approach let us appreciate all the existing concepts of mathematics-– classical (traditional), constructivist (intuitionist), New Foundations etc. Of course, enthusiasts of
-each of these concepts must propose some specific common framework for building mathematical theories, i.e. some specific
-kind of logic. And they do.
-Can set theory (for example, the most popular version of it---Zermelo-Fraenkel's set theory) be viewed as a common logic for
-the classical (traditional) mathematics? You may think so, if you do not wish to distinguish between the first order notion of
-natural numbers (i.e. discrete mathematics) and the second order notion (i.e. "continuous" mathematics based on set theory or a
-subset of it). Or, if you do not wish to investigate in parallel the classical and the constructivist (intuitionist) versions of some
-theories.
-1.1. Total Formalization is Possible!
+To avoid the absolutist approach let us appreciate all the existing concepts of mathematics---classical (traditional), constructivist (intuitionist), New Foundations etc.
+Of course, enthusiasts of
+each of these concepts must propose some specific common framework for building mathematical theories, i.e., some specific kind of logic.
+And they do.
+Can set theory (for example, the most popular version of it---Zermelo--Fraenkel's set theory) be viewed as a common logic for the classical (traditional) mathematics?
+You may think so, if you do not wish to distinguish between the first order notion of natural numbers (i.e. discrete mathematics) and the second order notion (i.e. ``continuous'' mathematics based on set theory or a subset of it).
+Or, if you do not wish to investigate in parallel the classical and the constructivist (intuitionist) versions of some theories.
+
+\subsection{Total Formalization is Possible!}
 Gottlob Frege (1848-1925)
 Charles S. Peirce (1839-1914)
 Bertrand Russell (1872-1970)
 David Hilbert (1862-1943)
-How far can we proceed with the mathematical rigor---with the axiomatization of some theory? Complete
-elimination of intuition, i.e. full reduction of all proofs to a list of axioms and rules of inference, is this
-really possible? The work by Gottlob Frege, Charles S. Peirce, Bertrand Russell, David Hilbert and their
-colleagues showed how this can be achieved even with the most complicated mathematical theories. All
-mathematical theories were indeed reduced to systems of axioms and rules of inference without any
-admixture of sophisticated human skills, intuitions etc. Today, the logical techniques developed by these
-brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent
-system of principles (i.e. of any mathematical theory).
-What do they look like---such "100% rigorous" theories? They are called formal theories (formal
-systems, or deductive systems) emphasizing that no step of reasoning can be done without a reference to
-an exactly formulated list of axioms and rules of inference. Even the most "self-evident" logical
-principles (like, "if A implies B, and B implies C, then A implies C") must be either formulated in the list
+
+How far can we proceed with the mathematical rigor---with the axiomatization of some theory?
+Complete elimination of intuition, i.e., full reduction of all proofs to a list of axioms and rules of inference, is this really possible?
+The work by Gottlob Frege, Charles S. Peirce, Bertrand Russell, David Hilbert and their colleagues showed how this can be achieved even with the most complicated mathematical theories.
+All mathematical theories were indeed reduced to systems of axioms and rules of inference without any admixture of sophisticated human skills, intuitions etc.
+Today, the logical techniques developed by these brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent system of principles (i.e. of any mathematical theory).
+
+What do they look like---such ``100\% rigorous'' theories?
+They are called formal theories (formal systems, or deductive systems) emphasizing that no step of reasoning can be done without a reference to an exactly formulated list of axioms and rules of inference.
+Even the most ``self-evident'' logical principles (like, "if A implies B, and B implies C, then A implies C") must be either formulated in the list
 of axioms and rules explicitly, or derived from it.
-What is, in fact, a (mathematical) theory? It is an "engine" generating theorems. Then, a formal theory
-must be an "engine" generating theorems without involving of human skills, intuitions etc., i.e. by means
-of a computer program.
-The first distinctive feature of a formal theory is a precisely defined ("formal") language used to express
-its propositions. "Precisely defined" means here that there is an algorithm allowing to determine, is a
-given character string a correct proposition, or not.
-The second distinctive feature of a formal theory is a precisely defined ("formal") notion of proof. Each
-proof proves some proposition, that is called (after being proved) a theorem. Thus, theorems are a subset
-of propositions.
-It may seem surprising to a mathematician, but the most general exact definition of the "formal proof"
-involves neither axioms, nor inference rules. Neither "self-evident" axioms, nor "plausible" rules of
-inference are distinctive features of the "formality". Speaking strictly, "self-evident" is synonymous to
-"accepted without argumentation". Hence, axioms and/or rules of inference may be "good, or bad", "true,
-or false", and so may be the theorems obtained by means of them. The only definitely verifiable thing is
-here the fact that some theorem has been, indeed, proved from a fixed set of axioms by means of a fixed
-set of inference rules.
-Thus, the second distinctive feature of "formality" is the possibility to verify the correctness of proofs
-mechanically, i.e. without involving of human skills, intuitions etc. This can be best formulated by using
-the (since 1936---precisely defined) notion of algorithm (a "mechanically applicable computation
-procedure", a computer program).
-A theory T is called a formal theory, if and only if there is an algorithm allowing to verify, is a given
-text a correct proof via principles of T, or not. If somebody is going to publish a "mathematical text"
-calling it "proof of a theorem in theory T", then we must be able to verify it mechanically whether the text
-in question is really a correct proof according to the standards of proving accepted in theory T. Thus, in a
-formal theory, the standards of reasoning should be defined precisely enough to enable verification of
-proofs by means of a computer program. (Note that we are discussing here verification of ready proofs,
-and not the much more difficult problem---is some proposition provable in T or not, see Exercise 1.1.5
-below and the text after it).
-Axioms and inference rules represent only one (the most popular!) of the possible techniques of
-formalization.
-As an unpractical example of a formal theory let us consider the game of chess, let us call this "theory"
-CHESS. Let 's define as propositions of CHESS all the possible positions---i.e. allocations of some of the
-pieces (kings included) on a chessboard---plus the flag: "white to move" or "black to move". Thus, the set
-of all possible positions is the language of CHESS. The only axiom of CHESS is the initial position, and
-the rules of inference---the rules of the game. The rules allow passing from some propositions of CHESS
-to some other ones. Starting with the axiom and iterating moves allowed by the rules we obtain theorems
-of CHESS. Thus, theorems of CHESS are defined as all the possible positions (i.e. propositions of
-CHESS) that can be obtained from the initial position (the axiom of CHESS) by moving pieces according
-to the rules of the game (i.e. by "proving" via the inference rules of CHESS).
+
+What is, in fact, a (mathematical) theory? It is an "engine" generating theorems.
+Then, a formal theory must be an ``engine'' generating theorems without involving of human skills, intuitions etc., i.e. by means of a computer program.
+
+The first distinctive feature of a formal theory is a precisely defined (``formal'') language used to express its propositions.
+``Precisely defined'' means here that there is an algorithm allowing to determine, is a given character string a correct proposition, or not.
+
+The second distinctive feature of a formal theory is a precisely defined (``formal'') notion of proof.
+Each proof proves some proposition, that is called (after being proved) a theorem. Thus, theorems are a subset of propositions.
+
+It may seem surprising to a mathematician, but the most general exact definition of the ``formal proof'' involves neither axioms, nor inference rules. Neither ``self-evident'' axioms, nor ``plausible'' rules of inference are distinctive features of the ``formality''.
+Speaking strictly, ``self-evident'' is synonymous to "accepted without argumentation".
+Hence, axioms and/or rules of inference may be "good, or bad", "true, or false", and so may be the theorems obtained by means of them.
+The only definitely verifiable thing is here the fact that some theorem has been, indeed, proved from a fixed set of axioms by means of a fixed set of inference rules.
+
+Thus, the second distinctive feature of "formality" is the possibility to verify the correctness of proofs mechanically, i.e. without involving of human skills, intuitions etc. This can be best formulated by using the (since 1936---precisely defined) notion of algorithm (a "mechanically applicable computation procedure", a computer program).
+
+A theory T is called a formal theory, if and only if there is an algorithm allowing to verify, is a given text a correct proof via principles of T, or not. If somebody is going to publish a "mathematical text" calling it "proof of a theorem in theory T", then we must be able to verify it mechanically whether the text in question is really a correct proof according to the standards of proving accepted in theory T. Thus, in a formal theory, the standards of reasoning should be defined precisely enough to enable verification of proofs by means of a computer program. (Note that we are discussing here verification of ready proofs, and not the much more difficult problem---is some proposition provable in T or not, see Exercise 1.1.5 below and the text after it).
+
+Axioms and inference rules represent only one (the most popular!) of the possible techniques of formalization.
+
+As an unpractical example of a formal theory let us consider the game of chess, let us call this "theory" CHESS. Let 's define as propositions of CHESS all the possible positions---i.e. allocations of some of the pieces (kings included) on a chessboard---plus the flag: "white to move" or "black to move". Thus, the set of all possible positions is the language of CHESS. The only axiom of CHESS is the initial position, and the rules of inference---the rules of the game. The rules allow passing from some propositions of CHESS to some other ones. Starting with the axiom and iterating moves allowed by the rules we obtain theorems of CHESS. Thus, theorems of CHESS are defined as all the possible positions (i.e. propositions of CHESS) that can be obtained from the initial position (the axiom of CHESS) by moving pieces according to the rules of the game (i.e. by "proving" via the inference rules of CHESS).
+
 Exercise 1.1.1. Could you provide an unprovable proposition of CHESS?
-Why is CHESS called a formal theory? When somebody offers a "mathematical text" P as a proof of a
-theorem A in CHESS, this means that P is a record of some chess-game stopped in the position A.
-Checking the correctness of such "proofs" is a boring, but an easy task. The rules of the game are
-formulated precisely enough---we could write a computer program that will execute this task.
+
+Why is CHESS called a formal theory? When somebody offers a "mathematical text" P as a proof of a theorem A in CHESS, this means that P is a record of some chess-game stopped in the position A.  Checking the correctness of such "proofs" is a boring, but an easy task. The rules of the game are formulated precisely enough---we could write a computer program that will execute this task.
+
 Exercise 1.1.2. Try estimating the size of this program in some programming language.
-Our second example of a formal theory is only a bit more serious. It was proposed by Paul Lorenzen, let
-us call this theory L. Propositions of L are all the possible "words" made of letters a, b, for example: a, b,
-aa, aba, abaab. Thus, the set of all these "words" is the language of L. The only axiom of L is the word
-a, and L has two rules of inference: X |- Xb, and X |- aXa. This means that (in L) from a proposition X we
-can infer immediately the propositions Xb and aXa. For example, the proposition aababb is a theorem of
-L:
+
+Our second example of a formal theory is only a bit more serious. It was proposed by Paul Lorenzen, let us call this theory L. Propositions of L are all the possible "words" made of letters a, b, for example: a, b, aa, aba, abaab. Thus, the set of all these "words" is the language of L. The only axiom of L is the word a, and L has two rules of inference: \(X \vdash Xb\), and \(X \vdash aXa\). This means that (in L) from a proposition X we can infer immediately the propositions Xb and aXa. For example, the proposition aababb is a theorem of L:
+
 a |- ab |- aaba |- aabab |- aababb
 rule1- rule2---rule1----rule1--------
 This fact is expressed usually as L |- aababb ( "L proves aababb", |- being a "fallen T").
@@ -396,11 +374,11 @@ Examples. 1) In our "language for people", the following are examples of compoun
 2) Some simple examples of compound formulas in the language of first order arithmetic:
 Warning! Speaking strictly, predicate symbols "<", ">", "≤", "≥", "≠" etc. do not belong to the language of first order
 arithmetic.
-(\exists u(x=(u+u))) "x is an even number"
-(\exists u(((x+u)+1)=y)) "x is less than y", or x<y
-(0<y \AND  \exists u(x=(y*u))) "x is divisible by y", speaking strictly, x<y must
-                     be replaced by \exists u(((x+u)+1)=y)).
-((1<x)\AND (\neg (\exists y(\exists z(((y<x)\AND (z<x))\AND (x=(y*z)))))) "x is a prime number", speaking strictly, x<y
+(\(\exists\) u(x=(u+u))) "x is an even number"
+(\(\exists\) u(((x+u)+1)=y)) "x is less than y", or x<y
+(0<y \AND  \(\exists\) u(x=(y*u))) "x is divisible by y", speaking strictly, x<y must
+                     be replaced by \(\exists\) u(((x+u)+1)=y)).
+((1<x)\AND (\neg (\(\exists\) y(\(\exists\) z(((y<x)\AND (z<x))\AND (x=(y*z)))))) "x is a prime number", speaking strictly, x<y
                                                 must be replaced by \exists u(((x+u)+1)=y)).
 (\forall w(\exists x((w<x)\AND (x is a prime number)))) "There are infinitely many prime numbers" (one
                                          of the first mathematical theorems, VI century
