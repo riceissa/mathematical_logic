@@ -1,35 +1,44 @@
-In this book,
-predicate language is used as a synonym of first order language,
-constructive logic is used as a synonym of intuitionistic logic.
-1. Introduction. What Is Logic, Really?
+\begin{remark}[]
+%\label{remark:}
+In this book, \term{predicate language} is used as a synonym of \term{first-order language}, and \term{constructive logic} is used as a synonym of \term{intuitionistic logic}.
+\end{remark}
+
+\section{Introduction. What Is Logic, Really?}
+
 What is logic?
-See also Factasia Logic by Roger Bishop Jones.
-In a sense, logic represents the most general means of reasoning used by people and computers.
-Why are means of reasoning important? Because any body of data may contain not only facts visible
-directly. For example, assume the following data: the date of birth of some person X is January 1, 2000,
-and yesterday, September 14, 2010 some person Y killed some person Z. Then, most likely, X did not kill
-Z. This conclusion is not represented in our data directly, but can be derived from it by using some means
-of reasoning – axioms (“background knowledge”) and rules of inference. For example, one may use the
-following statement as an axiom: “Most likely, a person of age 10 can ́t kill anybody”.
-There may be means of reasoning of different levels of generality, i.e. of different ranges of applicability.
-The above “killer axiom” represents the lowest level – it is a very specific statement. But one can use
-laws of physics to derive conclusions from his/her data. Theories of physics, chemistry, biology etc.
-represent a more general level of means of reasoning. But can there be means of reasoning applicable in
-almost every situation? This – the most general – level of means of reasoning is usually regarded as logic.
-But is logic absolute (i.e. unique, predestined) or relative (i.e. there is more than one kind of logic)? In
-modern times, an absolutist position is somewhat inconvenient – you must defend your “absolute”
-concept of logic against heretics and dissidents, but very little can be done to exterminate these people.
-They may freely publish their concepts on the Internet...
-So let us better adopt the relativist position, and define logic(s) as any common framework for building
-theories. For example, the so-called absolute geometry can be viewed as a common logic for both the
-Euclidean and non-Euclidean geometry. Group theory serves as a common logic for theories investigating
-mathematical structures that are subtypes of groups. And, if you decide to rebuild all mathematical
-theories on your favorite set theory, then you can view set theory as your logic.
-Can there be a common logic for the entire mathematics? To avoid the absolutist approach let us appreciate all the existing
-concepts of mathematics – classical (traditional), constructivist (intuitionist), New Foundations etc. Of course, enthusiasts of
+See also Factasia Logic\footnote{\url{http://www.rbjones.com/rbjpub/logic/}} by Roger Bishop Jones\footnote{\url{http://www.rbjones.com/}}.
+
+In a sense, logic represents the most general \emph{means of reasoning} used by people and computers.
+
+Why are means of reasoning important?
+Because any body of data may contain not only facts visible directly.
+For example, assume the following data: the date of birth of some person \(X\) is January 1, 2000,
+and yesterday, September 14, 2010 some person \(Y\) killed some person \(Z\).
+Then, most likely, \(X\) did not kill Z.
+This conclusion is not represented in our data directly, but can be derived from it by using some means of reasoning---\term{axioms} (``background knowledge'') and \term{rules of inference}.
+For example, one may use the following statement as an axiom: ``Most likely, a person of age 10 can't kill anybody''.
+
+There may be means of reasoning of different levels of generality, i.e., of different ranges of applicability.
+The above ``killer axiom'' represents the lowest level---it is a very specific statement.
+But one can use laws of physics to derive conclusions from his/her data.
+Theories of physics, chemistry, biology, etc., represent a more general level of means of reasoning.
+But can there be means of reasoning applicable in almost every situation?
+This---the most general---level of means of reasoning is usually regarded as \term{logic}.
+
+But is logic absolute (i.e., unique, predestined) or relative (i.e., there is more than one kind of logic)?
+In modern times, an absolutist position is somewhat inconvenient---you must defend your ``absolute'' concept of logic against heretics and dissidents, but very little can be done to exterminate these people.
+They may freely publish their concepts on the Internet \ldots~.
+
+So let us better adopt the relativist position, and define logic(s) as \emph{any common framework for building theories}.
+For example, the so-called absolute geometry can be viewed as a common logic for both the Euclidean and non-Euclidean geometry.
+Group theory\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/HistTopics/Development\_group\_theory.html}} serves as a common logic for theories investigating mathematical structures that are subtypes of groups.
+And, if you decide to rebuild all mathematical theories on your favorite set theory, then you can view set theory as your logic.
+
+Can there be a common logic for the entire mathematics?
+To avoid the absolutist approach let us appreciate all the existing concepts of mathematics-– classical (traditional), constructivist (intuitionist), New Foundations etc. Of course, enthusiasts of
 each of these concepts must propose some specific common framework for building mathematical theories, i.e. some specific
 kind of logic. And they do.
-Can set theory (for example, the most popular version of it – Zermelo-Fraenkel's set theory) be viewed as a common logic for
+Can set theory (for example, the most popular version of it---Zermelo-Fraenkel's set theory) be viewed as a common logic for
 the classical (traditional) mathematics? You may think so, if you do not wish to distinguish between the first order notion of
 natural numbers (i.e. discrete mathematics) and the second order notion (i.e. "continuous" mathematics based on set theory or a
 subset of it). Or, if you do not wish to investigate in parallel the classical and the constructivist (intuitionist) versions of some
@@ -39,7 +48,7 @@ Gottlob Frege (1848-1925)
 Charles S. Peirce (1839-1914)
 Bertrand Russell (1872-1970)
 David Hilbert (1862-1943)
-How far can we proceed with the mathematical rigor – with the axiomatization of some theory? Complete
+How far can we proceed with the mathematical rigor---with the axiomatization of some theory? Complete
 elimination of intuition, i.e. full reduction of all proofs to a list of axioms and rules of inference, is this
 really possible? The work by Gottlob Frege, Charles S. Peirce, Bertrand Russell, David Hilbert and their
 colleagues showed how this can be achieved even with the most complicated mathematical theories. All
@@ -47,7 +56,7 @@ mathematical theories were indeed reduced to systems of axioms and rules of infe
 admixture of sophisticated human skills, intuitions etc. Today, the logical techniques developed by these
 brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent
 system of principles (i.e. of any mathematical theory).
-What do they look like – such "100% rigorous" theories? They are called formal theories (formal
+What do they look like---such "100% rigorous" theories? They are called formal theories (formal
 systems, or deductive systems) emphasizing that no step of reasoning can be done without a reference to
 an exactly formulated list of axioms and rules of inference. Even the most "self-evident" logical
 principles (like, "if A implies B, and B implies C, then A implies C") must be either formulated in the list
@@ -70,7 +79,7 @@ here the fact that some theorem has been, indeed, proved from a fixed set of axi
 set of inference rules.
 Thus, the second distinctive feature of "formality" is the possibility to verify the correctness of proofs
 mechanically, i.e. without involving of human skills, intuitions etc. This can be best formulated by using
-the (since 1936 – precisely defined) notion of algorithm (a "mechanically applicable computation
+the (since 1936---precisely defined) notion of algorithm (a "mechanically applicable computation
 procedure", a computer program).
 A theory T is called a formal theory, if and only if there is an algorithm allowing to verify, is a given
 text a correct proof via principles of T, or not. If somebody is going to publish a "mathematical text"
@@ -78,15 +87,15 @@ calling it "proof of a theorem in theory T", then we must be able to verify it m
 in question is really a correct proof according to the standards of proving accepted in theory T. Thus, in a
 formal theory, the standards of reasoning should be defined precisely enough to enable verification of
 proofs by means of a computer program. (Note that we are discussing here verification of ready proofs,
-and not the much more difficult problem – is some proposition provable in T or not, see Exercise 1.1.5
+and not the much more difficult problem---is some proposition provable in T or not, see Exercise 1.1.5
 below and the text after it).
 Axioms and inference rules represent only one (the most popular!) of the possible techniques of
 formalization.
 As an unpractical example of a formal theory let us consider the game of chess, let us call this "theory"
-CHESS. Let 's define as propositions of CHESS all the possible positions – i.e. allocations of some of the
-pieces (kings included) on a chessboard – plus the flag: "white to move" or "black to move". Thus, the set
+CHESS. Let 's define as propositions of CHESS all the possible positions---i.e. allocations of some of the
+pieces (kings included) on a chessboard---plus the flag: "white to move" or "black to move". Thus, the set
 of all possible positions is the language of CHESS. The only axiom of CHESS is the initial position, and
-the rules of inference – the rules of the game. The rules allow passing from some propositions of CHESS
+the rules of inference---the rules of the game. The rules allow passing from some propositions of CHESS
 to some other ones. Starting with the axiom and iterating moves allowed by the rules we obtain theorems
 of CHESS. Thus, theorems of CHESS are defined as all the possible positions (i.e. propositions of
 CHESS) that can be obtained from the initial position (the axiom of CHESS) by moving pieces according
@@ -95,7 +104,7 @@ Exercise 1.1.1. Could you provide an unprovable proposition of CHESS?
 Why is CHESS called a formal theory? When somebody offers a "mathematical text" P as a proof of a
 theorem A in CHESS, this means that P is a record of some chess-game stopped in the position A.
 Checking the correctness of such "proofs" is a boring, but an easy task. The rules of the game are
-formulated precisely enough – we could write a computer program that will execute this task.
+formulated precisely enough---we could write a computer program that will execute this task.
 Exercise 1.1.2. Try estimating the size of this program in some programming language.
 Our second example of a formal theory is only a bit more serious. It was proposed by Paul Lorenzen, let
 us call this theory L. Propositions of L are all the possible "words" made of letters a, b, for example: a, b,
@@ -114,21 +123,21 @@ Exercise 1.1.4. Show that the set of all theorems of a formal theory is effectiv
 show that, for any formal theory T, a computer program PT can be written that prints out on an (endless)
 paper tape all theorems of this theory (and nothing else). (Hint: we will call T a formal theory, if and only
 if we can present an algorithm for checking texts as correct proofs via principles of reasoning of T. Thus,
-assume, you have 4 functions: GenerateFirstText() – returns Text, GenerateNextText() – returns Text,
-IsCorrectProof(Text) – returns true or false, ExtractTheorem(Text) – returns Text, you must implement the
-functions GenerateFirstTheorem() – returns Text, GenerateNextTheorem() – returns Text).
+assume, you have 4 functions: GenerateFirstText()---returns Text, GenerateNextText()---returns Text,
+IsCorrectProof(Text)---returns true or false, ExtractTheorem(Text)---returns Text, you must implement the
+functions GenerateFirstTheorem()---returns Text, GenerateNextTheorem()---returns Text).
 Unfortunately, such programs cannot solve the problem that the mathematicians are mainly
 interested in: is a given proposition A provable in T or not? When, running the program PT on a
 computer, we see our proposition A printed out, this means that A is provable in T. Still, in general, until
 that moment we cannot know in advance whether A will be printed out some time later or it will not be
 printed at all.
 Note. According to the official terminology, effectively enumerable sets are called "recursively
-enumerable sets", in some texts – also "listable sets".
+enumerable sets", in some texts---also "listable sets".
 Exercise 1.1.5. a) Describe an algorithm determining whether a proposition of L is a theorem or not.
 b) Could you imagine such an algorithm for the theory CHESS? Of course, you can, yet... Thus you see
 that even, having a relatively simple algorithm for checking correctness of proofs, the problem of
 provability can appear to be a very complicated one.
-T is called a solvable theory (more precisely – effectively solvable), if and only if there is an algorithm
+T is called a solvable theory (more precisely---effectively solvable), if and only if there is an algorithm
 allowing to check whether some proposition is provable by using the principles of T or not. In the
 Exercise 1.1.5a you proved that L is a solvable theory. Still, in the Exercise 1.1.5b you established that it
 is hard to state whether CHESS is a "feasibly solvable" theory or not. Determining the provability of
@@ -154,24 +163,24 @@ called an incomplete theory. The famous incompleteness theorem proved by Kurt Go
 that most mathematical theories are either inconsistent or incomplete (see Mendelson [1997] or click
 here).
 Exercise 1.1.6. Show that any (simultaneously) consistent and complete formal theory is solvable. (Hint:
-use the program of the Exercise 1.1.4, i.e. assume that you have the functions GenerateFirstTheorem() −
-returns Text, GenerateNextTheorem() − returns Text, and implement the function IsProvable(Text) -
+use the program of the Exercise 1.1.4, i.e. assume that you have the functions GenerateFirstTheorem() ---
+returns Text, GenerateNextTheorem() --- returns Text, and implement the function IsProvable(Text) -
 returns true or false). Where the consistency and completeness come in?
 Exercise 1.1.7. a) Verify that "fully axiomatic theories" are formal theories in the sense of the above
-general definition. (Hint: assume, that you have the following functions: GenerateFirstText() − returns
-Text, GenerateNextText() − returns Text, IsPropositon(Text) − returns true or false, IsAxiom(Proposition) −
+general definition. (Hint: assume, that you have the following functions: GenerateFirstText() --- returns
+Text, GenerateNextText() --- returns Text, IsPropositon(Text) --- returns true or false, IsAxiom(Proposition) ---
 returns true or false, there is a finite list of inference rule names: {R1, ..., Rn}, function Apply(RuleName,
-ListOfPropositions) − returns Proposition or false, and you must implement the functions
-IsCorrectProof(ListOfPropositions) − returns true or false, ExtractTheorem(Proof) − returns Proposition).
+ListOfPropositions) --- returns Proposition or false, and you must implement the functions
+IsCorrectProof(ListOfPropositions) --- returns true or false, ExtractTheorem(Proof) --- returns Proposition).
 b) (for smart students) What, if, instead of {R1, ..., Rn}, we would have an infinite list of inference rules,
 i.e. functions GenerateFirstRule(), GenerateNextRule() returning RuleName?
 1.2. Predicate Languages
 History
 For a short overview of the history, see QuantificationWikipedia.
 See also:
-Aristotle (384-322 BC) – in a sense, the "first logician", "... was not primarily a mathematician but made important
+Aristotle (384-322 BC)---in a sense, the "first logician", "... was not primarily a mathematician but made important
 contributions by systematizing deductive logic." (according to MacTutor History of Mathematics archive).
-Gottlob Frege (1848-1925) – "In 1879 Frege published his first major work Begriffsschrift, eine der arithmetischen
+Gottlob Frege (1848-1925)---"In 1879 Frege published his first major work Begriffsschrift, eine der arithmetischen
 nachgebildete Formelsprache des reinen Denkens (Conceptual notation, a formal language modelled on that of arithmetic, for
 pure thought). A.George and R Heck write: ... In effect, it constitutes perhaps the greatest single contribution to logic ever
 made and it was, in any event, the most important advance since Aristotle. ... In this work Frege presented for the first time
@@ -187,14 +196,14 @@ Richard Beatty. Peirce's development of quantifiers and of predicate logic. Notr
 pp. 64-76.
 Geraldine Brady. From Peirce to Skolem. A Neglected Chapter in the History of Logic. Elsevier Science: North-Holland, 2000,
 2000, 625 pp. (online overview at
-http://www.elsevier.com/wps/find/bookdescription.cws_home/621535/description#description).
-When trying to formalize some piece of our (until now – informal) knowlegde, how should we proceed?
-We have an informal vision of some domain consisting of “objects”. When speaking about it, we are
-uttering various propositions, and some of these propositions are regarded as “true” statements about the
+\url{http://www.elsevier.com/wps/find/bookdescription.cws\_home/621535/description#description)}.
+When trying to formalize some piece of our (until now---informal) knowledge, how should we proceed?
+We have an informal vision of some domain consisting of ``objects''. When speaking about it, we are
+uttering various propositions, and some of these propositions are regarded as ``true'' statements about the
 domain.
 Thus, our first formalization task should be defining of some formal language, allowing to put all our
 propositions about the domain in a uniform and precise way.
-After this, we can start considering propositions that we are regarding as “true” statements about the
+After this, we can start considering propositions that we are regarding as ``true'' statements about the
 domain. There may be an infinity of such statements, hence, we can't put down all of them, and we must
 organize them somehow. Some minimum of the statements we could declare simply as axioms, the other
 ones we could try to derive from the axioms by using some rules of inference.
@@ -202,10 +211,10 @@ As the result, we could obtain a formal theory (in the sense of the previous Sec
 In mathematics and computer science, the most common approach to formalization is using of the so-
 called predicate languages, first introduced by G. Frege and C. S. Peirce.
 (In many textbooks, they are called first order languages, see below the warning about second order languages.)
-Usually, linguists analyze the sentence "John loves Britney" as follows: John – subject, loves – predicate,
-Britney – object . The main idea of predicate languages is as follows: instead, let us write loves(John,
+Usually, linguists analyze the sentence "John loves Britney" as follows: John---subject, loves---predicate,
+Britney---object . The main idea of predicate languages is as follows: instead, let us write loves(John,
 Britney), where loves(x, y) is a two-argument predicate, and John, and Britney both are objects. Following
-this way, we can write =(x, y) instead of x=y. This approach – reducing of the human language sentences
+this way, we can write =(x, y) instead of x=y. This approach---reducing of the human language sentences
 to variables, constants, functions, predicates and quantifiers (see below), appears to be flexible enough,
 and it is much more uniform when compared to the variety of constructs used in the natural human
 languages. A unified approach is much easier to use for communication with computers.
@@ -215,7 +224,7 @@ Language Primitives
 Thus, the informal vision behind the notion of predicate languages is centered on the so-called "domain"
 – a (non-empty?) collection of "objects", their "properties" and the "relations" between them, that we wish
 to "describe" (or "define"?) by using the language. This vision serves as a guide in defining the language
-precisely, and further – when selecting axioms and rules of inference.
+precisely, and further---when selecting axioms and rules of inference.
 Object Variables
 Thus, the first kind of language elements we will need are object variables (sometimes called also
 individual variables, or simply, variables). We need an unlimited number of them):
@@ -223,7 +232,7 @@ x, y, z, x1, y1, z1, ...
 The above-mentioned "domain" is the intended "range" of all these variables.
 Examples. 1) Building a language that should describe the "domain of people", we must start by introducing the "variables for
 people": x denotes an arbitrary person.
-“Domain of people” represented as a UML class diagram
+``Domain of people'' represented as a UML class diagram
 2) Building the language of the so-called first order arithmetic, we are thinking about "all natural numbers" as the range of
 variables: 0, 1, 2, 3, 4, ... (x denotes an arbitrary natural number).
 3) Building the language of set theory, we think about "all sets" as the range of variables: x denotes an arbitrary set.
@@ -232,10 +241,10 @@ should generate variable names by using a finite set of characters, for example,
 x, xx, xxx, xxxx, xxxxx, ...
 Object Constants
 The next possibility we may wish to have in our language are the so-called object constants (sometimes
-called individual constants, constant letters, or simply, constants) – names or symbols denoting some
+called individual constants, constant letters, or simply, constants)---names or symbols denoting some
 specific "objects" of our "domain".
 Examples. 1) In our "language for people" we may introduce constants denoting particular people: John, Britney etc.
-2) In the language of first order arithmetic, we may wish to introduce two constants – 0 and 1 to denote "zero" and "one" – two
+2) In the language of first order arithmetic, we may wish to introduce two constants---0 and 1 to denote "zero" and "one"---two
 natural numbers having specific properties.
 3) In the language of set theory, we could introduce a constant denoting the empty set, but there is a way to do without it as
 well (for details, click here).
@@ -246,49 +255,49 @@ operations on these objects.
 Examples. 1) In our "language for people" we will not use function constants.
 2) In the language of first order arithmetic, we will introduce only two function constants "+" and "*" denoting the usual
 addition and multiplication of natural numbers, i.e. the two-argument functions x+y and x*y.
-3) In the language of set theory, we could introduce function constants denoting set intersections x^y, unions xUy, set
+3) In the language of set theory, we could introduce function constants denoting set intersections \(x\cap y\), unions \(x\cup y\), set
 differences x–y, power sets P(x) etc., but there is a way to do without these symbols as well (for details, click here).
 In mathematics, normally, we are writing f(x, y) to denote the value of the function f for the argument
 values x, y. This (the so-called "prefix" notation) is a uniform way suitable for functions having any
 number of arguments: f(x), g(x, y), h(x, y, z) etc. In our everyday mathematical practice some of the two-
 argument functions (in fact, operations) are represented by using the more compact "infix" notation (x+y,
 x*y instead of the uniform +(x, y), *(x, y), etc.).
-Note. In a sense, object constants can be viewed as a special case of function constants – an object
+Note. In a sense, object constants can be viewed as a special case of function constants---an object
 constant is a zero-argument function.
 Predicate Constants
 The last (but the most important!) kind of primitives we need in our language are the so-called predicate
-constants (sometimes called predicate letters) – names or symbols denoting specific properties (of) or
+constants (sometimes called predicate letters)---names or symbols denoting specific properties (of) or
 relations between "objects" of our "domain".
 Note. Using "predicate" as the unifying term for "property" and "relation" may seem somewhat unusual.
 But some kind of such a term is necessary. Properties are, in fact, unary (i.e. one-argument) "predicates",
 for example, "x is red". Relations are, in fact, two- or more-argument "predicates", for example, "x is
 better than y", or "x sends y to z".
 Examples. 1) In our "language for people" we will use the following predicate constants (see the class diagram above):
-Male(x) − means "x is a male";
-Female(x) − means "x is a female";
-Mother(x, y) − means "x is mother of y";
-Father(x, y) − means "x is father of y";
-Married(x, y) − means "x and y are married, y being wife";
-x=y − means "x an y are the same person".
+Male(x) --- means "x is a male";
+Female(x) --- means "x is a female";
+Mother(x, y) --- means "x is mother of y";
+Father(x, y) --- means "x is father of y";
+Married(x, y) --- means "x and y are married, y being wife";
+x=y --- means "x an y are the same person".
 The first two constants represent, in fact, "properties" (or, "classes") of our objects. The other 4 constans represents "relations"
 between our objects. The term "predicate" is used to include both versions. We do not introduce Person(x) as a predicate
 because our domains consists of persons only.
 2) It may seem strange to non-mathematicians, yet the most popular relation of objects used in most mathematical theories, is
 equality (or identity). Still, this is not strange for mathematicians. We can select an object x in our "domain" by using a very
-specific combination of properties and relations of it, and then – select another object y – by using a different combination.
+specific combination of properties and relations of it, and then---select another object y---by using a different combination.
 And after this (sometimes it may take many years to do) we prove that x=y, i.e. that these two different combinations of
 properties and relations are possessed by a single object. Many of discoveries in mathematics could be reduced to this form.
 In the language of first order arithmetic, equality "=" is the only necessary predicate constant. Other"basic" relations must be
 reduced to equality. For example, the relation x<y for natural numbers x, y can be reduced to equality by using the addition
-function and the formula ∃z(x+z+1=y).
+function and the formula \(\exists z(x+z+1=y)\).
 3) In the language of set theory a specific predicate constant "in" denotes the set membership relation: "x in y" means "x is a
-member of y". The equality predicate x=y also will be used – it means "the sets x an y possess the same members".
+member of y". The equality predicate x=y also will be used---it means "the sets x an y possess the same members".
 The uniform way of representing suitable for predicates having any number of arguments is again the
 "prefix" notation: p(x), q(x, y), r(x, y, z) etc. In the real mathematical practice, some of the two-argument
 predicates are represented by using the more compact "infix" notation (x=y instead of the uniform =(x, y),
 etc.).
 Zero-argument predicate constants? In an interpretation, each such predicate must become either "true", or "false". Hence,
-paradoxically, zero-argument predicate constants behave like "propositional variables" – they represent assertions that do not
+paradoxically, zero-argument predicate constants behave like "propositional variables"---they represent assertions that do not
 possess a meaning, but possess a "truth value".
 Summary of Language Primitives
 Thus, the specification of a predicate language includes the following primitives:
@@ -319,13 +328,13 @@ Examples. 1) In our "language for people" only variables x, y, z, ..., and objec
 complicated terms: (x+y), ((1+1)*(1+1)), (((1+1)*x)+1).
 3) In the language of set theory, variables x, y, z, ... are the only kind of terms.
 If a term does not contain variable names, then it denotes an "object" of our "domain" (for example,
-((1+1)+1) denotes a specific natural number – the number 3). If a term contains variables, then it denotes
+((1+1)+1) denotes a specific natural number---the number 3). If a term contains variables, then it denotes
 a function. For example, (((x*x)+(y*y))+1) denotes the function x2+y2+1. (Warning! Note that the
 language of first order arithmetic does not contain a function constant denoting the exponentiation xy,
 thus, we must write x*x instead of x2.)
 Of course, the key element of our efforts in describing "objects", their properties and relations, will be
 assertions, for example, the commutative law in arithmetic: ((x+y)=(y+x)). In predicate languages,
-assertions are called formulas (or, sometimes, well formed formulas – wff-s, or sentences).
+assertions are called formulas (or, sometimes, well formed formulas---wff-s, or sentences).
 Atomic formulas (in some other textbooks: elementary formulas, prime formulas) are defined as follows:
 a) If p is a k-argument predicate constant, and t1, ..., tk are terms, then the string p(t1, ..., tk) is an atomic
 formula.
@@ -351,25 +360,25 @@ set of language primitives.
 To write more complicated assertions, we will need compound formulas, built of atomic formulas by
 using a fixed set of propositional connectives and quantifiers (an invention due to G. Frege and C. S.
 Peirce). In this book, we will use the following set:
-→ (implication symbol, B→C means "if B, then C", or "B implies C", or "C follows from B").
-& (conjunction symbol, B&C means "B and C").
+\IMPLIES  (implication symbol, B\IMPLIES C means "if B, then C", or "B implies C", or "C follows from B").
+\AND  (conjunction symbol, B\AND C means "B and C").
 v (disjunction symbol, BvC means "B, or C, or both", i.e. the so-called non-exclusive "or").
-¬ (negation symbol, ¬B means "not B").
-∀ (universal quantifier, ∀xB means "for all x: B").
-∃ (existential quantifier, ∃xB means "there is x such that B").
-The widely used equivalence connective ↔ can be derived in the following way: B↔C stands for
-((B→C)&(C→B)). If you like using the so-called exclusive "or" (“B, or C, but not both”), you could
-define B xor C as ¬(B↔C).
+\neg  (negation symbol, \neg B means "not B").
+\forall  (universal quantifier, \forall xB means "for all x: B").
+\exists  (existential quantifier, \exists xB means "there is x such that B").
+The widely used equivalence connective \IFF  can be derived in the following way: B\IFF C stands for
+((B\IMPLIES C)\AND (C\IMPLIES B)). If you like using the so-called exclusive "or" (``B, or C, but not both''), you could
+define B xor C as \neg (B\IFF C).
 Warning! For programmers, conjunction, disjunction and negation are familiar "logical operations" –
 unlike the implication that is not used in "normal" programming languages. In programming, the so-
 called IF-statements, when compared to logic, mean a different thing: in the statement IF x=y THEN
-z:=17, the condition, x=y is, indeed, a formula, but the "consequence" z:=17 is not a formula – it is an
-executable statement. In logic, in B→C ("if B, then C"), B and C both are formulas.
+z:=17, the condition, x=y is, indeed, a formula, but the "consequence" z:=17 is not a formula---it is an
+executable statement. In logic, in B\IMPLIES C ("if B, then C"), B and C both are formulas.
 We define the notion of formula of our predicate language as follows:
 a) Atomic formulas are formulas.
-b) If B and C are formulas, then (B→C), (B&C), (BvC), and (¬B) also are formulas (B and C are called
+b) If B and C are formulas, then (B\IMPLIES C), (B\AND C), (BvC), and (\neg B) also are formulas (B and C are called
 sub-formulas).
-c) If B is a formula, and x is an object variable, then (∀xB) and (∃xB) also are formulas (B is called a
+c) If B is a formula, and x is an object variable, then (\forall xB) and (\exists xB) also are formulas (B is called a
 sub-formula).
 d) (If you like so,) there are no other formulas.
 See also:
@@ -377,38 +386,38 @@ Notes on Logic Notation on the Web by Peter Suber.
 Knowledge Representation by Means of Predicate Languages
 Examples. 1) In our "language for people", the following are examples of compound formulas:
 ((Father(x, y)) v (Mother(x, y))) "x is a parent of y"
-(∀x(∀y((Father(x, y)) → (Male(x)))) "fathers are males" – could serve as an axiom!
-(∀x(∀y((Mother(x, y)) → (¬Male(x)))) "mothers are not males" – could be derived from
+(\forall x(\forall y((Father(x, y)) \IMPLIES  (Male(x)))) "fathers are males"---could serve as an axiom!
+(\forall x(\forall y((Mother(x, y)) \IMPLIES  (\neg Male(x)))) "mothers are not males"---could be derived from
                                              the axioms!
-(∀x(∃y(Mother(y, x)))) "each x has some y as a mother" – could serve as
+(\forall x(\exists y(Mother(y, x)))) "each x has some y as a mother"---could serve as
                             an axiom!
-(∀x(Male(x) v Female(x))) What does it mean? It could serve as an axiom!
-∀x(∀y(∀z((Father(x, z)&Father(y,z))→(x=y)))) What does it mean? It could serve as an axiom!
+(\forall x(Male(x) v Female(x))) What does it mean? It could serve as an axiom!
+\forall x(\forall y(\forall z((Father(x, z)\AND Father(y,z))\IMPLIES (x=y)))) What does it mean? It could serve as an axiom!
 2) Some simple examples of compound formulas in the language of first order arithmetic:
 Warning! Speaking strictly, predicate symbols "<", ">", "≤", "≥", "≠" etc. do not belong to the language of first order
 arithmetic.
-(∃u(x=(u+u))) "x is an even number"
-(∃u(((x+u)+1)=y)) "x is less than y", or x<y
-(0<y & ∃u(x=(y*u))) "x is divisible by y", speaking strictly, x<y must
-                     be replaced by ∃u(((x+u)+1)=y)).
-((1<x)&(¬(∃y(∃z(((y<x)&(z<x))&(x=(y*z)))))) "x is a prime number", speaking strictly, x<y
-                                                must be replaced by ∃u(((x+u)+1)=y)).
-(∀w(∃x((w<x)&(x is a prime number)))) "There are infinitely many prime numbers" (one
+(\exists u(x=(u+u))) "x is an even number"
+(\exists u(((x+u)+1)=y)) "x is less than y", or x<y
+(0<y \AND  \exists u(x=(y*u))) "x is divisible by y", speaking strictly, x<y must
+                     be replaced by \exists u(((x+u)+1)=y)).
+((1<x)\AND (\neg (\exists y(\exists z(((y<x)\AND (z<x))\AND (x=(y*z)))))) "x is a prime number", speaking strictly, x<y
+                                                must be replaced by \exists u(((x+u)+1)=y)).
+(\forall w(\exists x((w<x)\AND (x is a prime number)))) "There are infinitely many prime numbers" (one
                                          of the first mathematical theorems, VI century
                                         BC), , speaking strictly, w<x must be replaced by
-                                       ∃u(((w+u)+1)=x)), and "x is a prime number"
+                                       \exists u(((w+u)+1)=x)), and "x is a prime number"
                                         must be replaced by the above formula.
-∀x∀y(0<y → ∃z∃u(u<y & x=y*z+u)) What does it mean?
+\forall x\forall y(0<y \IMPLIES  \exists z\exists u(u<y \AND  x=y*z+u)) What does it mean?
 3) Some simple examples of compound formulas in the language of set theory:
-(∃y(y in x)) "x is a non-empty set"
-(∀z((z in x)→(z in y))) "x is a subset of y", or x≤y
-((∀z((z in x)↔( z in y)))→( x=y)) What does it mean? Will serve as an axiom!
-(∀y(∀z((y in x) & (z in x))→y=z))) "x contains zero or one member"
-(∀u((u in x)↔( (u in y) v (u in z)))) "x is union of y and z", or x=yUz
+(\exists y(y in x)) "x is a non-empty set"
+(\forall z((z in x)\IMPLIES (z in y))) "x is a subset of y", or x≤y
+((\forall z((z in x)\IFF ( z in y)))\IMPLIES ( x=y)) What does it mean? Will serve as an axiom!
+(\forall y(\forall z((y in x) \AND  (z in x))\IMPLIES y=z))) "x contains zero or one member"
+(\forall u((u in x)\IFF ( (u in y) v (u in z)))) "x is union of y and z", or x=yUz
 Of course, having a predicate language is not enough for expressing all of our knowledge formally, i.e.
 for communicating it to computers. Computers do not know in advance, for example, how to handle
 sexes. We must tell them how to handle these notions by introducing axioms. Thus, the above-mentioned
-formulas like as (∀x(Male(x) v Female(x))), or (∀x(∀y((Father(x, y))→(Male(x)))) will be absolutely
+formulas like as (\forall x(Male(x) v Female(x))), or (\forall x(\forall y((Father(x, y))\IMPLIES (Male(x)))) will be absolutely
 necessary as axioms. As we will see later, language + axioms = theory, i.e. in fact, to formulate all of our
 knowledge formally, we must create theories.
 Exercise 1.2.2. "Translate" the following assertions into our "language for people":
@@ -418,36 +427,36 @@ Exercise 1.2.2. "Translate" the following assertions into our "language for peop
 Exercise 1.2.3. "Translate" the following assertions into the language of first order arithmetic:
 "x and y do not have common divisors" (note: 1 is not a divisor!),
 "sqrt(2) is not a rational number"
-(Warning! ¬∃p∃q(sqrt(2)=p/q, and ∃x(x*x=2) are not correct solutions. Why?)
+(Warning! \neg \exists p\exists q(sqrt(2)=p/q, and \exists x(x*x=2) are not correct solutions. Why?)
 Warning! Some typical errors!
-1) Trying to say “for all x>2, F(x)”, do not write ∀x(x>2&F(x)) - this would imply that ∀x(x>2)! But,
-how about x=1? The correct version: ∀x(x>2→F(x))
-2) Some computer programmers do not like using the implication connective →, trying to write formulas
+1) Trying to say ``for all x>2, F(x)'', do not write \forall x(x>2\AND F(x)) - this would imply that \forall x(x>2)! But,
+how about x=1? The correct version: \forall x(x>2\IMPLIES F(x))
+2) Some computer programmers do not like using the implication connective \IMPLIES , trying to write formulas
 as conditions of IF- or WHILE-statements, i.e. by using conjunction, disjunction and negation only. This
-"approach" makes most logical tasks much harder than they really are! More than that − some people try
+"approach" makes most logical tasks much harder than they really are! More than that --- some people try
 saying, for example, "Persons are not Departments", as follows:
-∀x(Person(x)&¬Department(x)) − instead of the correct version: ∀x(Person(x)→¬Department(x)).
-3) Do not use abbreviations at this early stage of your studies. For example, do not write (∀x>2)∃yF(x,y)
+\forall x(Person(x)\AND \neg Department(x)) --- instead of the correct version: \forall x(Person(x)\IMPLIES \neg Department(x)).
+3) Do not use abbreviations at this early stage of your studies. For example, do not write (\forall x>2)\exists yF(x,y)
 to say that "for all x that are >2, there is y such that F(x,y)". Instead, you should write
-∀x(x>2→∃yF(x,y)). Similarly, instead of (∃a>2)∃bG(a,b), you should write ∃a(a>2&∃bG(a,b)), where
-& is a conjunction (here, correctly!).
-To say "there is one and only one x such that F(x)", you shouldn't write ∃!x F(x) (at this stage of your
-studies), you should write, instead, ((∃xF(x))&(∀x1(∀x2((F(x1)&F(x2))→(x1=x2)))).
+\forall x(x>2\IMPLIES \exists yF(x,y)). Similarly, instead of (\exists a>2)\exists bG(a,b), you should write \exists a(a>2\AND \exists bG(a,b)), where
+\AND  is a conjunction (here, correctly!).
+To say "there is one and only one x such that F(x)", you shouldn't write \exists !x F(x) (at this stage of your
+studies), you should write, instead, ((\exists xF(x))\AND (\forall x1(\forall x2((F(x1)\AND F(x2))\IMPLIES (x1=x2)))).
 4) Predicates cannot be substituted for object variables. For example, having 3 predicate constants
 working(x, y), Person(x), Department(y), do not try writing working(Person(x), Department(y)) to say
-that "only persons are working, and only in departments". The correct verssion: ∀x∀y(working(x, y)→
-Person(x)&Department(y)).
-5) Trying to say “each person is working in some department”, do not write
-∀x∃y(Person(x)&Department(y)→working(x,y)). The correct verssion:
-∀x(Person(x)→∃y(Department(y)&working(x,y)). What is the difference?
+that "only persons are working, and only in departments". The correct verssion: \forall x\forall y(working(x, y)\IMPLIES 
+Person(x)\AND Department(y)).
+5) Trying to say ``each person is working in some department'', do not write
+\forall x\exists y(Person(x)\AND Department(y)\IMPLIES working(x,y)). The correct verssion:
+\forall x(Person(x)\IMPLIES \exists y(Department(y)\AND working(x,y)). What is the difference?
 Exercise 1.2.4. Try inventing your own predicate language. Prepare and do your own Exercise 1.2.2 for
 it.
 Exercise 1.2.5. In computer science, currently, one the most popular means of knowledge representation
-are the so-called UML class diagrams and OCL (UML − Unified Modeling Language, OCL − Object
-Constraint Language). The above diagram representing our “domain of people” is an example. In our
-“language of people”, put down as many axioms of the domain you can notice in the diagram. For
-example, “every person is either male, or female”, “all fathers are males”, “every person has exactly one
-mother”, “a person can marry no more than one person” etc.
+are the so-called UML class diagrams and OCL (UML --- Unified Modeling Language, OCL --- Object
+Constraint Language). The above diagram representing our ``domain of people'' is an example. In our
+``language of people'', put down as many axioms of the domain you can notice in the diagram. For
+example, ``every person is either male, or female'', ``all fathers are males'', ``every person has exactly one
+mother'', ``a person can marry no more than one person'' etc.
 Many-sorted Languages
 Maybe, you have to describe two or more kinds of "objects" that you do not wish to reduce to "sub-kinds" of one kind of
 "objects" (for example, integer numbers and character strings). Then you may need introducing for each of your "domains" a
@@ -457,7 +466,7 @@ assigned to some some sort, and function values must be assigned to a (single) s
 argument must be assigned to some sort. In many-sorted predicate languages, the term and atomic formula definitons are
 somewhat more complicated: building of the term f(t1, ..., tk) or the formula p(t1, ..., tk) is allowed only, if the sort of the term ti
 values coincides with the sort of the i-th argument of f or p respectively. And the "meaning" of quantifiers depends on the sort
-of the variable used with them. For example, ∀x means "for all values of x from the domain of the sort of x".
+of the variable used with them. For example, \forall x means "for all values of x from the domain of the sort of x".
 Theoretically, many-sorted languages can be reduced to one-sorted languages by introduding the corresponding predicates
 Sorti(x) ("the value of x belongs to the sort i"). Still, in applications of logic (for example, in computer science) the many-
 sorted approach is usually more natural and more convenient. (See Chapter 10. Many-Sorted First Order Logic, by Jean
@@ -466,13 +475,13 @@ Warning about second order languages!
 In our definition of predicate languages only the following kinds of primitives were used: object variables, object constants,
 function constants and predicate constants. You may ask: how about function variables and predicate variables? For, you
 may wish to denote by r "an arbitrary property" of your "objects". Then, r(x) would mean "x possess the property r", and you
-would be able to say something about "all properties", for example, ∀r∀x ∀y(x=y→(r(x)↔r(y)). In this way you would have
+would be able to say something about "all properties", for example, \forall r\forall x \forall y(x=y\IMPLIES (r(x)\IFF r(y)). In this way you would have
 arrived at a second order language! In such languages, function and predicate variables are allowed. But properties lead to
 sets of objects, for example, {x | r(x)} would mean the set of all objects that possess the property r. But, why should we stop at
 the properties of objects? How about "properties of sets of objects" etc.? As it was detected long ago, all kinds of sets can be
 fully treated only in set theory! Thus, instead of building your own second order language, you should better try applying your
 favorite ("first order") set theory. An unpleasant consequence: the existence of the (much less significant) notion of second
-order languages forces many people to call predicate languages "first order languages" − to emphasize that, in these
+order languages forces many people to call predicate languages "first order languages" --- to emphasize that, in these
 languages, the only kind of variables allowed are object variables.
 On the other hand, when trying to implement realistic formal reasoning software, then using of some second order constructs
 is, as a rule, more efficient than implementing of a pure first order reasoning. See, for example, Notices of the AMS, Special
@@ -483,43 +492,43 @@ Frege) click here.
 Omitting Parentheses
 Our formal definitions of terms and formulas lead to expressions containing many parentheses. Let us
 recall, for example, our formula expressing that "x is a prime number":
-((1<x)&(¬(∃y(∃z(((y<x)&(z<x))&(x=(y*z))))))
+((1<x)\AND (\neg (\exists y(\exists z(((y<x)\AND (z<x))\AND (x=(y*z))))))
 Such formulas are an easy reading for computers, yet inconvenient for human reading (and even more
-inconvenient – for putting them correctly). In the usual mathematical practice (and in programming
-languages) we are allowed to improve the look of our formulas by omitting some of the parentheses −
+inconvenient---for putting them correctly). In the usual mathematical practice (and in programming
+languages) we are allowed to improve the look of our formulas by omitting some of the parentheses ---
 according to (some of) the following rules:
-a) Omit the outermost parentheses, for example, we may write A→(B→C) instead of the formally correct
-(A→(B→C)). In this way we may improve the final look of our formulas. Still, if we wish to use such
+a) Omit the outermost parentheses, for example, we may write A\IMPLIES (B\IMPLIES C) instead of the formally correct
+(A\IMPLIES (B\IMPLIES C)). In this way we may improve the final look of our formulas. Still, if we wish to use such
 formulas as parts of more complicated formulas, we must restore the outermost parentheses, for example:
-(A→(B→C))→D.
+(A\IMPLIES (B\IMPLIES C))\IMPLIES D.
 b) We may write, for example, simply:
-x+y+z+u, x*y*z*u, A&B&C&D, AvBvCvD, ∃x∀y∃z∀u(F)
+x+y+z+u, x*y*z*u, A\AND B\AND C\AND D, AvBvCvD, \exists x\forall y\exists z\forall u(F)
 instead of the more formal
-((x+y)+z)+u, ((x*y)*z)*u, ((A&B)&C)&D, ((AvB)vC)vD, ∃x(∀y(∃z(∀u(F)))).
+((x+y)+z)+u, ((x*y)*z)*u, ((A\AND B)\AND C)\AND D, ((AvB)vC)vD, \exists x(\forall y(\exists z(\forall u(F)))).
 In this way we can simplify the above expression "x is a prime number" as follows:
-(1<x)&(¬(∃y∃z((y<x)&(z<x)&(x=(y*z)))).
+(1<x)\AND (\neg (\exists y\exists z((y<x)\AND (z<x)\AND (x=(y*z)))).
 c) We can apply the so-called priority rules. For example, the priority rank of multiplications is supposed
 to be higher than the priority rank of additions. This rule allows writing x+y*z instead of the more formal
-x+(y*z) − because of its higher priority rank, multiplication must be "performed first". The most popular
+x+(y*z) --- because of its higher priority rank, multiplication must be "performed first". The most popular
 priority rules are the following:
 c1) The priority rank of function constants is higher than the priority rank of predicate constants. This
-allows, for example, writing x*y = y*x instead of (x*y)=(y*x), or "x in yUz" − instead of "x in (yUz)".
+allows, for example, writing x*y = y*x instead of (x*y)=(y*x), or "x in yUz" --- instead of "x in (yUz)".
 c2) The priority rank of predicate constants is higher than the priority rank of propositional connectives
-and quantifiers. This allows, for example, writing y<x & z<x instead of (y<x)&(z<x).
+and quantifiers. This allows, for example, writing y<x \AND  z<x instead of (y<x)\AND (z<x).
 c3) The priority rank of quantifiers is higher than the priority rank of propositional connectives. This
-allows, for example, writing ∃x(F)&∀y(G) instead of (∃x(F))&(∀y(G)), or writing ¬∃x(F) instead of
-¬(∃x(F)).
+allows, for example, writing \exists x(F)\AND \forall y(G) instead of (\exists x(F))\AND (\forall y(G)), or writing \neg \exists x(F) instead of
+\neg (\exists x(F)).
 c4) The priority rank of negations is higher than the priority rank of conjunctions and disjunctions. This
-allows, for example, writing ¬A&¬B instead of (¬A)&(¬B).
+allows, for example, writing \neg A\AND \neg B instead of (\neg A)\AND (\neg B).
 c5) The priority rank of conjunctions and disjunctions is higher than the priority rank of implications.
-This allows, for example, writing A→AvB instead of A→(AvB).
+This allows, for example, writing A\IMPLIES AvB instead of A\IMPLIES (AvB).
 In the usual mathematical practice some additional priority rules are used, but some of them are not
 allowed in the common programming languages. To avoid confusions do not use too many priority rules
 simultaneously!
 According to the above priority rules, we can simplify the above expression "x is a prime number"
 obtaining a form that is much easier for human reading (but is somewhat complicated for computers to
 process it):
-1<x & ¬∃y∃z(y<x & z<x & x=y*z).
+1<x \AND  \neg \exists y\exists z(y<x \AND  z<x \AND  x=y*z).
 As you see, all the above rules are mere abbreviations. In principle, you could use any other set of
 abbreviation rules accepted by your audience. If computers would do logic themselves, they would not
 need such rules at all (except, maybe, for displaying some of their results to humans, but why?).
@@ -528,10 +537,10 @@ Exercise 1.2.6. "Translate" the following assertions into our "language for peop
 "x is brother of y", "x is sister of y",
 "x and y are brothers",
 construct formulas expressing as much well-known relationships between people as you can.
-But how about the predicate Ancestor(x, y) − "x is an ancestor of y"? Could it be expressed as a formula
-of our "language for people"? The first idea − let us "define" this predicate recursively:
-∀x∀y(Father(x, y) v Mother(x, y)→∀ncestor(x, y));
-∀x∀y∀z(Ancestor(x, y) & Ancestor(y, z)→Ancestor(x, z)).
+But how about the predicate Ancestor(x, y) --- "x is an ancestor of y"? Could it be expressed as a formula
+of our "language for people"? The first idea --- let us "define" this predicate recursively:
+\forall x\forall y(Father(x, y) v Mother(x, y)\IMPLIES \forall ncestor(x, y));
+\forall x\forall y\forall z(Ancestor(x, y) \AND  Ancestor(y, z)\IMPLIES Ancestor(x, z)).
 The second rule declares the transitivity property of the predicate. The above two formulas are axioms,
 allowing to derive the essential properties of the predicate Ancestor(x, y). But how about a single formula
 F(x, y) in the "language for people", expressing that "x is an ancestor of y"? Such a formula should be a
@@ -540,36 +549,36 @@ Carlos Areces. Ph.D. Thesis, 2000, (a non-trivial!) Theorem 1.2.
 Exercise 1.2.7. "Translate" the following assertions into the language of first order arithmetic:
 "x and y are twin primes" (examples of twin pairs: 3,5; 5,7; 11,13; 17,19;...),
 "There are infinitely many pairs of twin primes" (the famous Twin Prime Conjecture),
-"x is a power of 2" (Warning! ∃n(x=2n) is not a correct solution. Why? Because exponentiation does not
+"x is a power of 2" (Warning! \exists n(x=2n) is not a correct solution. Why? Because exponentiation does not
 belong to the language of first order arithmetic.),
 "Each positive even integer ≥4 can be expressed as a sum of two primes"
 (the famous Goldbach Conjecture).
 Free Variables and Bound Variables
 The above expression "x is a prime number":
-1<x & ¬∃y∃z(y<x & z<x & x=y*z)
-contains 3 variables: x − occurs 4 times in terms, y − 2 times in terms and 1 time in quantifiers, z − occurs
+1<x \AND  \neg \exists y\exists z(y<x \AND  z<x \AND  x=y*z)
+contains 3 variables: x --- occurs 4 times in terms, y --- 2 times in terms and 1 time in quantifiers, z --- occurs
 2 times in terms and 1 time in quantifiers. Of course, x is here a "free" variable - in the sense that the
 "truth value" of the formula depends on particular "values" taken by x. On the contrary, the "truth value"
-of the formula does not depend on the particular "values" taken by the two "bound" variables y and z −
-the quantifiers ∃y, ∃z force these variables to "run across their entire range".
+of the formula does not depend on the particular "values" taken by the two "bound" variables y and z ---
+the quantifiers \exists y, \exists z force these variables to "run across their entire range".
 More precisely, first, we will count only the occurrences of variables in terms, not in quantifiers. And
 second, we will define a particular occurrence ox of a variable x in (a term of) a formula F as a free
 occurrence or a bound occurrence according to the following rules:
-a) If F does not contain quantifiers ∃x, ∀x, then ox is free in F.
-b) If F is ∃xG or ∀xG, and ox is free in G, then ox is bound in F.
-c1) If F is G&H, GvH, or G→H, and ox is free in G (or in H), then ox is free in F.
-c2) If F is ¬G, ∃yG, or ∀yG, where y is not x, and ox is free in G, then ox is free in F.
-d1) If F is G&H, GvH, or G→H, and ox is bound in G (or in H), then ox is bound in F.
-d2) If F is ¬G, ∃yG, or ∀yG (where y is any variable, x included), and ox is bound in G, then ox is bound
+a) If F does not contain quantifiers \exists x, \forall x, then ox is free in F.
+b) If F is \exists xG or \forall xG, and ox is free in G, then ox is bound in F.
+c1) If F is G\AND H, GvH, or G\IMPLIES H, and ox is free in G (or in H), then ox is free in F.
+c2) If F is \neg G, \exists yG, or \forall yG, where y is not x, and ox is free in G, then ox is free in F.
+d1) If F is G\AND H, GvH, or G\IMPLIES H, and ox is bound in G (or in H), then ox is bound in F.
+d2) If F is \neg G, \exists yG, or \forall yG (where y is any variable, x included), and ox is bound in G, then ox is bound
 in F.
-Thus, the above formula 1<x & ¬∃y∃z(y<x & z<x & x=y*z) contains 4 free occurrences of x, 2 bound
+Thus, the above formula 1<x \AND  \neg \exists y\exists z(y<x \AND  z<x \AND  x=y*z) contains 4 free occurrences of x, 2 bound
 occurrences of y, and 2 bound occurrences of z.
 Exercise 1.2.8. Verify that an occurrence of x in F cannot be free and bound simultaneously. (Hint:
 assume that it is not the case, and consider the sequence of all sub-formulas of F containing this particular
 occurrence of x.)
 Formally, we can use formulas containing free and bound occurrences of a single variable simultaneously,
-for example, x>1→∃x(x>1). Or, many bound occurrences of a single variable, for example, (∀xF(x) &
-∃xG(x)) v ∀xH(x) means the same as (∀xF(x) & ∃yG(y)) v ∀zH(z) .Still, we do not recommend using a
+for example, x>1\IMPLIES \exists x(x>1). Or, many bound occurrences of a single variable, for example, (\forall xF(x) \AND 
+\exists xG(x)) v \forall xH(x) means the same as (\forall xF(x) \AND  \exists yG(y)) v \forall zH(z) .Still, we do not recommend using a
 single variable in many different roles in a single formula. Such formulas do not cause problems for
 computers, but they may become inconvenient for human reading.
 Let us say, that x is a free variable of the formula F, if and only if F contains at least one free occurrence
@@ -578,22 +587,22 @@ If a formula contains free variables, i.e. variables that are not bound by quant
 x=1), then the "truth value" of such formulas may depend on particular values assigned to free variables.
 For example, the latter formula is "true" for x=1, yet it is "false" for x=2. Formulas that do not contain
 free occurrences of variables, are called closed formulas, for example:
-∀w∃x( w<x & x is a prime number).
+\forall w\exists x( w<x \AND  x is a prime number).
 Closed formulas represent "definite assertions about objects of theory", they are expected to be (but not
 always really are) either "true", or "false".
 Term Substitution
 To say that x is a free variable of the formula F, we may wish to write F(x) instead of simply F. Replacing
 all free occurrences of x by a term t yields an "instance" of the formula F. It would be natural to denote
 this "instance" by F(t).
-For example, if F(x) is ∃y(y+y=x) and t is z*z+z, then F(t), or F(z*z+z) will denote ∃y(y+y=z*z+z).
-However, if t would be y*y+y, then F(t), or F(y*y+y) would be ∃y(y+y=y*y+y). Is this really F(y*y+y)?
+For example, if F(x) is \exists y(y+y=x) and t is z*z+z, then F(t), or F(z*z+z) will denote \exists y(y+y=z*z+z).
+However, if t would be y*y+y, then F(t), or F(y*y+y) would be \exists y(y+y=y*y+y). Is this really F(y*y+y)?
 Thus, sometimes, this operation can lead to crazy results. Another example: in our expression "x is a
 prime number", let us replace x by y. Will the resulting formula mean "y is a prime number"? Let's see:
-1<y & ¬∃y∃z(y<y & z<y & y=y*z).
-Since y<y is always false, the second part ¬∃y∃z(...) is true, hence, the latter formula means simply that
+1<y \AND  \neg \exists y\exists z(y<y \AND  z<y \AND  y=y*z).
+Since y<y is always false, the second part \neg \exists y\exists z(...) is true, hence, the latter formula means simply that
 "1 is less than y", and not that "y is a prime number".
 Of course, we failed because we replaced a free variable x by a variable y in such a way that some free
-occurrence of x became bound by a quantifiers for y (∃y). In this way we deformed the initial meaning
+occurrence of x became bound by a quantifiers for y (\exists y). In this way we deformed the initial meaning
 of our formula.
 The following simple rule allows to avoid such situations. Suppose, x is a free variable of the formula F.
 We will say that the substitution F(x/t) (i.e. the substitution of the term t for x in the formula F) is
@@ -602,8 +611,8 @@ contained in t. If the substitution F(x/t) is admissible, then, by replacing all
 of course, we do not change the initial meaning of the formula F(x), and hence, we may safely denote the
 result of this substitution by F(t).
 Exercise 1.2.9. Is x/y an admissible substitution in the following formulas? Why?
-x=0 v ∃y(y>z)
-x=0 v ∃y(y>x)
+x=0 v \exists y(y>z)
+x=0 v \exists y(y>x)
 Exercise 1.2.10. a) Mathematicians: think over the analogy between bound variables in logic and bound
 variables in sum expressions and integrals.
 b) Programmers: think over the analogy between bound variables in logic and loop counters in programs.
@@ -612,38 +621,38 @@ The Problem of Reasoning
 Now we go on to the second phase of formalization: after having defined a formal language (predicate
 language) allowing to put down propositions about our domain of interest, we must formulate some of the
 propositions as axioms, and must introduce some rules of inference allowing to derive other statements
-that are “true” of our domain.
+that are ``true'' of our domain.
 Indeed, having formulated some fragment of our knowledge as a set of axioms A1, ..., An in some
 predicate language L, we do not think that A1, ..., An represent all statements that are true of the objects
 we are trying to investigate. Many other statements will follow from A1, ..., An as consequences.
 Example. Assume, we have formulated the following axioms in our "language for people":
-∀x¬(Male(x)&Female(x)); ∀x(Male(x)vFemale(x)), and the following facts: Male(John);
-Female(Britney). Then we do not need to formulate ¬Female(John) ; ¬Male(Britney) as separate facts.
+\forall x\neg (Male(x)\AND Female(x)); \forall x(Male(x)vFemale(x)), and the following facts: Male(John);
+Female(Britney). Then we do not need to formulate \neg Female(John) ; \neg Male(Britney) as separate facts.
 These facts can be derived from already registered facts.
 The problem of reasoning: what does it mean: "formula F follows from A1, ..., An"? The answer must be
 absolutely precise, if we wish to teach reasoning to computers.
 Solution of the Problem
 First of all, let us notice that there are axioms and rules of inference that are applicable to any predicate
 languages, independently of the specific features of their domains. Such axioms and rules could be called
-“generally valid”.
+``generally valid''.
 For example, assume, some formula F has the following form:
-(B→D)→((C→D)→(BvC→D)),
-where B, C, D are some formulas. Then F is “true” independently of the specific facts represented in the
+(B\IMPLIES D)\IMPLIES ((C\IMPLIES D)\IMPLIES (BvC\IMPLIES D)),
+where B, C, D are some formulas. Then F is ``true'' independently of the specific facts represented in the
 formulas B, C, D.
 Similarly, the following rule of inference MP is applicable independently of the facts represented in the
 formulas B, C:
-Having derived the formulas B, B→C, derive the formula C.
-If we have B→D and B→D already derived, then – by applying the rule MP to the above formula F – we
-derive that BvC→D.
+Having derived the formulas B, B\IMPLIES C, derive the formula C.
+If we have B\IMPLIES D and B\IMPLIES D already derived, then---by applying the rule MP to the above formula F---we
+derive that BvC\IMPLIES D.
 Now, we will try formulating a complete set of "generally valid" principles (axioms and rules of
 inference) of "logically correct reasoning". "Generally valid" means that these principles will be
 applicable to any predicate language. I.e. for any fixed predicate language L, we wish to formulate a
 uniform list of logical axioms and inference rules that would allow formalization of principles of
-reasoning that are "valid” for all languages. Such principles are called sometimes "pure logical"
+reasoning that are "valid'' for all languages. Such principles are called sometimes "pure logical"
 principles. The existence of such general principles (and even, in a sense, a complete system of them) is
-the result of a 2500 year long history of great discoveries (or inventions? − see below).
+the result of a 2500 year long history of great discoveries (or inventions? --- see below).
 Aristotle (384-322 BC), Gottlob Frege (1848-1925), Charles Sanders Peirce (1839-1914).
-Bertrand Russell (1872-1970) − "The Principia Mathematica is a three-volume work on the foundations of mathematics,
+Bertrand Russell (1872-1970) --- "The Principia Mathematica is a three-volume work on the foundations of mathematics,
 written by Bertrand Russell and Alfred North Whitehead and published in 1910-1913. It is an attempt to derive all
 mathematical truths from a well-defined set of axioms and inference rules in symbolic logic. The main inspiration and
 motivation for the Principia was Frege's earlier work on logic, which had led to some contradictions discovered by Russell."
@@ -658,87 +667,87 @@ above-mentioned book, in a sense, the final version of logical axioms. Modificat
 now used in all textbooks of mathematical logic.
 In our version, the axioms will be represented by means of the so-called axiom schemas (computer
 scientists may call them templates). Each schema (template) represents an infinite, yet easily recognizable
-collection of single axioms. For example, schema L3: B&C→B may represent the following axioms
+collection of single axioms. For example, schema L3: B\AND C\IMPLIES B may represent the following axioms
 ("instances of the schema") in the language of first order arithmetic:
-x=y & x=x→x=y,
-1*1=1 & 1+1=1+1→1*1=1,
-and many other axioms: take any formulas B, C, and you will obtain an axiom B&C B&C→B.
+x=y \AND  x=x\IMPLIES x=y,
+1*1=1 \AND  1+1=1+1\IMPLIES 1*1=1,
+and many other axioms: take any formulas B, C, and you will obtain an axiom B\AND C B\AND C\IMPLIES B.
 We will not specify properties of the equivalence connective in axioms. We will regard this connective as
-a derived one: B↔C will be used as an abbreviation of (B→C)&(C→B).
+a derived one: B\IFF C will be used as an abbreviation of (B\IMPLIES C)\AND (C\IMPLIES B).
 Axioms of Logic
 Suppose, we have some predicate language L. We adopt the following 15 axiom schemas as the logical
 axioms for the language L.
 In the axiom schemas L1-L11 below, B, C and D are any formulas in the language L.
 The first two axiom schemas L1, L2 represent the "definition" of the implication connective:
-L1: B→(C→B) (what does it mean?),
-L2: (B→(C→D))→((B→C)→(B→D)) (what does it mean?).
+L1: B\IMPLIES (C\IMPLIES B) (what does it mean?),
+L2: (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)) (what does it mean?).
 The following axiom schemas L3-L5 represent the "definition" of the AND-connective (conjunction):
-L3: B&C→B (what does it mean?),
-L4: B&C→C (what does it mean?),
-L5: B→(C→B&C) (what does it mean?).
+L3: B\AND C\IMPLIES B (what does it mean?),
+L4: B\AND C\IMPLIES C (what does it mean?),
+L5: B\IMPLIES (C\IMPLIES B\AND C) (what does it mean?).
 The following axiom schemas L6-L8 represent the "definition" of the (non-exclusive) OR-connective
 (disjunction):
-L6: B→BvC (what does it mean?),
-L7: C→BvC (what does it mean?),
-L8: (B→D)→((C→D)→(BvC→D)) (what does it mean?).
+L6: B\IMPLIES BvC (what does it mean?),
+L7: C\IMPLIES BvC (what does it mean?),
+L8: (B\IMPLIES D)\IMPLIES ((C\IMPLIES D)\IMPLIES (BvC\IMPLIES D)) (what does it mean?).
 The next xiom schema L9 represents the "definition" of the NO-connective. In fact, it is a formal version
-of a proof method well-known in mathematics − refutation by deriving a contradiction (Reductio ad
+of a proof method well-known in mathematics --- refutation by deriving a contradiction (Reductio ad
 absurdum):
-L9: (B→C)→((B→¬C)→¬B) (what does it mean?).
+L9: (B\IMPLIES C)\IMPLIES ((B\IMPLIES \neg C)\IMPLIES \neg B) (what does it mean?).
 The next axiom schema L10 represents the famous principle "Contradiction Implies Anything" (Ex
 contradictione sequitur quodlibet, or Ex falso sequitur quodlibet):
-L10: ¬B→(B→C) (what does it mean?).
+L10: \neg B\IMPLIES (B\IMPLIES C) (what does it mean?).
 The following axiom schema L11 represents the famous Law of the Excluded Middle (Tertium non
 datur):
-L11: Bv¬B (what does it mean?).
+L11: Bv\neg B (what does it mean?).
 The above 11 schemas (plus the Modus Ponens rule of inference, see below) represent the classical
 propositional logic in the language L.
 Now, the "definitions" of the universal and existential quantifiers follow.
 In the following axiom schemas L12, L13, F is any formula, and t is a term such that the substitution F(x/t)
 is admissible (in particular, t may be x itself):
-L12: ∀xF(x)→F(t) (in particular, ∀xF(x)→F(x), what does it mean?),
-L13: F(t)→∃xF(x) (in particular, F(x)→∃xF(x), what does it mean?).
+L12: \forall xF(x)\IMPLIES F(t) (in particular, \forall xF(x)\IMPLIES F(x), what does it mean?),
+L13: F(t)\IMPLIES \exists xF(x) (in particular, F(x)\IMPLIES \exists xF(x), what does it mean?).
 In the following schemas L14, L15, F is any formula, and G is a formula that does not contain x as a free
 variable:
-L14: ∀x(G→F(x))→(G→∀xF(x)) (what does it mean?),
-L15: ∀x(F(x)→G)→(∃xF(x)→G) (what does it mean?).
+L14: \forall x(G\IMPLIES F(x))\IMPLIES (G\IMPLIES \forall xF(x)) (what does it mean?),
+L15: \forall x(F(x)\IMPLIES G)\IMPLIES (\exists xF(x)\IMPLIES G) (what does it mean?).
 Rules of Inference
 In the following rules of inference, B, C and F are any formulas.
-Modus Ponens: B→C, B |- C (what does it mean?).
-Generalization: F(x) |- ∀xF(x) (what does it mean?).
+Modus Ponens: B\IMPLIES C, B |- C (what does it mean?).
+Generalization: F(x) |- \forall xF(x) (what does it mean?).
 This list of logical axioms and rules of inference represents the so-called classical predicate logic in the
-predicate language L (or, simply − the classical logic in the language L).
+predicate language L (or, simply --- the classical logic in the language L).
 First Order Theories
 Having defined our predicate language L, and having formulated for L all the logical axioms and rules of
 inference, do we need more?
 To complete the formalization of our informal vision of our domain of interest, we must formulate at least
 some specific axioms describing the specific features of the domain. Logical axioms and rules of
-inference are valid for any domains, i.e. they are “content-free” in the sense that, by using them only, one
+inference are valid for any domains, i.e. they are ``content-free'' in the sense that, by using them only, one
 cannot derive specific information about the domain.
-For example, one cannot derive from any logic, that ∀x (Male(x) v Female(x)). To communicate this fact
+For example, one cannot derive from any logic, that \forall x (Male(x) v Female(x)). To communicate this fact
 to the computer, we must formulate it as a specific axiom.
 And, as we will prove in Section 4, we will never need introducing of specific rules of inference. All we
-need are the two logical rules of inference – Modus Ponens and Generalization.
+need are the two logical rules of inference---Modus Ponens and Generalization.
 Thus, as the result of the formalization process, we will obtain the so-called first order theories.
 Each first order theory T includes:
 a) a specific predicate language L(T),
 b) logical axioms and rules of inference for this language (classical or constructive version may be
 adopted),
 c) a set of specific (non-logical) axioms of T.
-As the first example, let's use our "language for people" to build a “theory for people”.
-Instances of logical axioms for the “language for people”:
-L1: ∀x(Male(x)→(Female(x)→Male(x)));
-L6: ∀x∀y(Mother(x, y)→Mother(x, y) v Father(x, y));
-L11: Male(John) v ¬Male(John);
-L12: ∀x(Female(x))→Female(Britney));
+As the first example, let's use our "language for people" to build a ``theory for people''.
+Instances of logical axioms for the ``language for people'':
+L1: \forall x(Male(x)\IMPLIES (Female(x)\IMPLIES Male(x)));
+L6: \forall x\forall y(Mother(x, y)\IMPLIES Mother(x, y) v Father(x, y));
+L11: Male(John) v \neg Male(John);
+L12: \forall x(Female(x))\IMPLIES Female(Britney));
 etc.
 And let's introduce the following non-logical axioms:
-∀x (Male(x) v Female(x));
-∀x ¬(Male(x) & Female(x);
-∀x∀y (Father (x, y)→Male(x));
-∀x(∀y(∀z((Father(x, z)&Father(y,z))→(x=y)))) ...
-Exercise 1.3.1. Extend this list of axioms as far as you can. Is your list complete? What do you mean by “complete”?
-Another example of a first order theory − the so-called first order arithmetic PA (also called Peano arithmetic):
+\forall x (Male(x) v Female(x));
+\forall x \neg (Male(x) \AND  Female(x);
+\forall x\forall y (Father (x, y)\IMPLIES Male(x));
+\forall x(\forall y(\forall z((Father(x, z)\AND Father(y,z))\IMPLIES (x=y)))) ...
+Exercise 1.3.1. Extend this list of axioms as far as you can. Is your list complete? What do you mean by ``complete''?
+Another example of a first order theory --- the so-called first order arithmetic PA (also called Peano arithmetic):
 The language of PA:
 a) The constants 0 and 1, and all variables are terms.
 b) If t1 and t2 are terms, then (t1+t2) and (t1*t2) also are terms.
@@ -746,36 +755,36 @@ c) Atomic formulas are built as (t1=t2), where t1 and t2 are terms.
 Since we can use, for example, the expression 2x2-3y2-1=0 as a shortcut for (1+1)*x*x=(1+1+1)*y*y+1, we can say simply
 that, in first order arithmetic, atomic formulas of are arbitrary Diophantine equations.
 Instances of logical axioms for the language of first order arithmetic:
-L1: x=0 → (y=1 → x=0);
-L6: x=y → x=y v z=1;
-L11: 0=1 v ¬(0=1);
-L12: ∀x(x=1) → x=1;
+L1: x=0 \IMPLIES  (y=1 \IMPLIES  x=0);
+L6: x=y \IMPLIES  x=y v z=1;
+L11: 0=1 v \neg (0=1);
+L12: \forall x(x=1) \IMPLIES  x=1;
 etc.
 The specific (non-logical) axioms of first order arithmetic:
 x=x,
-x=y→y=x,
-x=y→(y=z→x=z),
-x=y→x+1=y+1,
-¬(0=x+1),
-x+1=y+1→x=y,
+x=y\IMPLIES y=x,
+x=y\IMPLIES (y=z\IMPLIES x=z),
+x=y\IMPLIES x+1=y+1,
+\neg (0=x+1),
+x+1=y+1\IMPLIES x=y,
 x+0=x,
 x+(y+1)=(x+y)+1,
 x*0=0,
 x*(y+1)=(x*y)+x,
-B(0) & ∀x(B(x)→B(x+1))→∀xB(x), where B is any formula.
+B(0) \AND  \forall x(B(x)\IMPLIES B(x+1))\IMPLIES \forall xB(x), where B is any formula.
 The axioms 7-10 represent recursive definitions of addition and multiplication. As the last the so-called induction schema is
-listed. (To read more − click here.)
-To read about a very simple system of axioms of set theory − click here. Unfortunately, from such a simple system
+listed. (To read more --- click here.)
+To read about a very simple system of axioms of set theory --- click here. Unfortunately, from such a simple system
 contradictions can be derived (the so-called Russell's Paradox). Corrected versions of axioms of set theory are much more
-complicated (see, for example, the most popular system − Zermelo-Fraenkel axioms).
+complicated (see, for example, the most popular system --- Zermelo-Fraenkel axioms).
 Proofs and Theorems
 In general, any sequence of formulas F1, F2, ..., Fm could be regarded as a (correct or incorrect) formal
 proof (or simply, a proof) of its last formula Fm. In a correct proof, formulas can play only the following
 roles:
 a) Axioms. Some formulas may be instances of logical or non-logical axioms.
 b) Consequences of earlier formulas, obtained by using rules of inference. For example, if F25 is A, and
-F34 is A→B, and F51 is B, then we can say that F51 has been obtained from F25 and F34 by using the
-Modus Ponens rule. Or, if F62 is C(x), and F63 is ∀xC(x), then we can say that F63 has been obtained
+F34 is A\IMPLIES B, and F51 is B, then we can say that F51 has been obtained from F25 and F34 by using the
+Modus Ponens rule. Or, if F62 is C(x), and F63 is \forall xC(x), then we can say that F63 has been obtained
 from F62 by using the Generalization rule.
 c) Hypotheses. Some formulas may appear in the proof as "proved elsewhere", or even without any
 justification, simply by assuming that they are "true".
@@ -808,21 +817,21 @@ An, then there is a proof of [T]: |- B.
 Proof. Immediately, by Theorem 1.3.1.
 Some of the logical axioms are "wrong, but useful"!
 The axioms L1, L2 represent the (currently) most popular version of "defining" the implication
-connective. About other (equivalent) versions − containing 3 or 4 axioms − see Hilbert, Bernays [1934]
+connective. About other (equivalent) versions --- containing 3 or 4 axioms --- see Hilbert, Bernays [1934]
 (Chapter III) and Exercise 1.5.2.
 The axiom L9 represents the (currently) most popular version of "defining" the negation connective.
-About other (equivalent) versions − see Hilbert, Bernays [1934] (Chapter III), Exercise 2.4.2, and Section
+About other (equivalent) versions --- see Hilbert, Bernays [1934] (Chapter III), Exercise 2.4.2, and Section
 7.1.
 Three of the above axiom schemas seem to be (at least partly) problematic.
-For example, how do you find the funny axiom L10: ¬B→(B→C)? If ¬B and B were true simultaneously,
+For example, how do you find the funny axiom L10: \neg B\IMPLIES (B\IMPLIES C)? If \neg B and B were true simultaneously,
 then anything were true? Ex contradictione sequitur quodlibet? Is this a really "true" axiom? Of course, it
-is not. Still, this does not matter: we do not need to know, were C "true" or not, if ¬B and B were "true"
-simultaneously. By assuming that "if ¬B and B were true simultaneously, then anything were true" we
+is not. Still, this does not matter: we do not need to know, were C "true" or not, if \neg B and B were "true"
+simultaneously. By assuming that "if \neg B and B were true simultaneously, then anything were true" we
 greatly simplify our logical apparatus. For example, we will prove in Section 2.6 that, in the classical
-logic, ¬¬B→B. This simple formula can't be proved without the "crazy" axiom L10 (see Section 2.8).
-In fact, the first axiom L1: B→(C→B) also is funny. If B is (unconditionally) true, then B follows from C,
+logic, \neg \neg B\IMPLIES B. This simple formula can't be proved without the "crazy" axiom L10 (see Section 2.8).
+In fact, the first axiom L1: B\IMPLIES (C\IMPLIES B) also is funny. If B is (unconditionally) true, then B follows from C,
 even if C has nothing in common with B? Moreover, in Exercise 1.4.2(d) we will see that the axioms L1,
-L9 allow proving that ¬B, B |- ¬C, i.e. if ¬B and B were true simultaneously, then anything were false
+L9 allow proving that \neg B, B |- \neg C, i.e. if \neg B and B were true simultaneously, then anything were false
 (thus, in a sense, L1 contains already 50% of L10!). After this, could we think of L1 as a really "true"
 axiom? Of course, we can't. Still, this does not matter: if B is (unconditionally) true, then we do not need
 to know, follows B from C or not. By assuming that "if B is true, then B follows from anything" we
@@ -830,24 +839,24 @@ greatly simplify our logical apparatus.
 The above two phenomena are called paradoxes of the material implication, see Paradoxes of Material
 Implication by Peter Suber, and Falsity Implies Anything by Alexander Bogomolny.
 May our decision to "greatly simplify" the logical apparatus have also some undesirable consequences?
-Let us consider the following formula F(x): ∀y(child(x, y)→Female(y)). It seems, F(x) is intended to
+Let us consider the following formula F(x): \forall y(child(x, y)\IMPLIES Female(y)). It seems, F(x) is intended to
 mean: "All the children of x are female". However, in our system of logic, F(x) is regarded as true also, if
 x does not have children at all! If you do not have children at all, then all your children are female! Or
 male? Or smart? Etc. Seems funny, but is, in fact, harmless...
 Constructive Logic
-Still, the most serious problem is caused by the axiom L11: Bv¬B − the Law of the Excluded Middle.
+Still, the most serious problem is caused by the axiom L11: Bv\neg B --- the Law of the Excluded Middle.
 How can we think of L11 as a "true" axiom, if (according to Goedel's Incompleteness Theorem) each
 sufficiently strong consistent theory contains undecidable propositions? I.e. we postulate that either B, or
-¬B "must be true", yet for some B we cannot prove neither B, nor ¬B! Knowing that Bv¬B is "true" may
+\neg B "must be true", yet for some B we cannot prove neither B, nor \neg B! Knowing that Bv\neg B is "true" may
 inspire us to work on the problem, but it may appear useless, if we do not succeed... Should we retain L11
 as an axiom after this?
 Some other strange consequences of L11 also should be mentioned (see Exercise 2.6.4):
-Bv(B→C),
-(B→C)v(C→B),
-((B→C)→B)→B (the so-called Peirce's Law).
+Bv(B\IMPLIES C),
+(B\IMPLIES C)v(C\IMPLIES B),
+((B\IMPLIES C)\IMPLIES B)\IMPLIES B (the so-called Peirce's Law).
 For these (and some other) reasons some people reject L11 as a "valid" logical axiom.
 The above list of 15 axiom schemas as it stands is called the classical logic.
-By excluding L11 from the list the so-called constructive (historically, and in most textbooks −
+By excluding L11 from the list the so-called constructive (historically, and in most textbooks ---
 intuitionistic) logic is obtained. As a concept, it was introduced by Luitzen Egbertus Jan Brouwer in
 1908:
 L. E. J. Brouwer. De onbetrouwbaarheid der logische principes (in Dutch - " The unreliability of the logical principles" ),
@@ -857,27 +866,27 @@ use of the Law of the Excluded Middle.
 For elegant examples of non-constructive proofs see Constructive Mathematics by Douglas Bridges in
 Stanford Encyclopedia of Philosophy.
 Note. A similar kind of non-constructive reasoning is represented by the so-called Double Negation Law:
-¬¬B→B, see Section 2.6.
+\neg \neg B\IMPLIES B, see Section 2.6.
 As a formal system, the intuitionistic logic was formulated by Arend Heyting in 1930:
 A. Heyting. Die formalen Regeln der intuitionistischen Mathematik. Sitzungsberichte der Preussischen Akademie der
 Wissenschaften, Physikalisch-mathematische Klasse, 1930, pp.42-56.
 The constructive concept of logic differs from the classical one mainly in its interpretation of disjunction
 and existence assertions:
-− To prove BvC constructively, you must prove B, or prove C. To prove BvC by using the classical logic,
-you are allowed to assume ¬(BvC) as a hypothesis to derive a contradiction. Then, by the Law of the
-Excluded Middle (BvC)v¬(BvC) you obtain BvC. Having only such a "negative" proof, you may be
-unable to determine, which part of the disjunction BvC is true − B, or C, or both. Knowing that BvC is
+--- To prove BvC constructively, you must prove B, or prove C. To prove BvC by using the classical logic,
+you are allowed to assume \neg (BvC) as a hypothesis to derive a contradiction. Then, by the Law of the
+Excluded Middle (BvC)v\neg (BvC) you obtain BvC. Having only such a "negative" proof, you may be
+unable to determine, which part of the disjunction BvC is true --- B, or C, or both. Knowing that BvC is
 "true" may inspire you to work on the problem, but it may appear useless, if you do not succeed...
-− To prove ∃xB(x) constructively, you must provide a particular value of x such that B(x) is true. To
-prove ∃xB(x) by using the classical logic, you are allowed to assume ∀x¬B(x) as a hypothesis to derive a
-contradiction. Then, by the Law of the Excluded Middle ∃xB(x) v ¬∃xB(x) you obtain ∃xB(x). Having
+--- To prove \exists xB(x) constructively, you must provide a particular value of x such that B(x) is true. To
+prove \exists xB(x) by using the classical logic, you are allowed to assume \forall x\neg B(x) as a hypothesis to derive a
+contradiction. Then, by the Law of the Excluded Middle \exists xB(x) v \neg \exists xB(x) you obtain \exists xB(x). Having
 only such a "negative" proof, you may be unable to find a particular x for which B(x) is true. Knowing
-that ∃xB(x) is "true" may inspire you to work on the problem, but it may appear useless, if you do not
+that \exists xB(x) is "true" may inspire you to work on the problem, but it may appear useless, if you do not
 succeed...
 Note. Informally, we may regard existence assertions as "huge disjunctions". For example, in the
-language of first order arithmetic, ∃xB(x) could be "thought" as B(0)vB(1)vB(2)v..., i.e. as an infinite
+language of first order arithmetic, \exists xB(x) could be "thought" as B(0)vB(1)vB(2)v..., i.e. as an infinite
 "formula". Thus, the above two theses are, in a sense, "equivalent".
-The constructive (intuitionist) logic is one of the great discoveries in mathematical logic − surprisingly, a
+The constructive (intuitionist) logic is one of the great discoveries in mathematical logic --- surprisingly, a
 complete system of constructive reasoning (as we will see later, in Section 4.4) can be obtained simply by
 dropping the Law of the Excluded Middle from the list of valid logical principles.
 See also Intuitionistic Logic by Joan Moschovakis in Stanford Encyclopedia of Philosophy.
@@ -894,19 +903,19 @@ Johansson in 1936:
 I.Johansson. Der Minimalkalkuel, ein reduzierter intuitionistischer Formalismus. Compositio Mathematica, 1936, Vol. 4, N1,
 pp.119-136.
 As a separate concept, the minimal logic is much less significant than the constructive logic. Indeed, since
-it allows proving of ¬B, B |- ¬C (in a sense, 50% of L10!), dropping of L10 is not a very big step.
+it allows proving of \neg B, B |- \neg C (in a sense, 50% of L10!), dropping of L10 is not a very big step.
 Consistency
 Sometimes, a seemingly plausible set of axioms allows deriving of contradictions (the most striking
-example − Russell's paradox in the "naive" set theory). A formula F is called a contradiction in the
-theory T, if and only if [T]: |- F and [T]: |- ¬F, i.e. if T proves and disproves F simultaneously. Theories
+example --- Russell's paradox in the "naive" set theory). A formula F is called a contradiction in the
+theory T, if and only if [T]: |- F and [T]: |- \neg F, i.e. if T proves and disproves F simultaneously. Theories
 containing contradictions are called inconsistent theories. Thus, T is called a consistent theory; if and
 only if T does not allow deriving of contradictions.
 Normally, for a first order theory, the set of all theorems is infinite, and, therefore, consistency cannot be
 verified empirically. We may only hope to establish this desirable property by means of some
 theoretical proof (click here for a more detailed discussion of this problem).
 For theories adopting the above logical axioms, inconsistency is, in a sense, "the worst possible property".
-Indeed, the axiom L10: ¬B→(B→C) says that if a theory allows deriving a contradiction, then, in this
-theory, anything is provable. In Section 2.4 we will − without L10 − prove 50% of it: ¬B→(B→¬C).
+Indeed, the axiom L10: \neg B\IMPLIES (B\IMPLIES C) says that if a theory allows deriving a contradiction, then, in this
+theory, anything is provable. In Section 2.4 we will --- without L10 --- prove 50% of it: \neg B\IMPLIES (B\IMPLIES \neg C).
 Thus, without L10: if a theory allows deriving a contradiction, then, in this theory, anything is
 disprovable.
 Is consistency enough for a theory to be "perfect"? In Section 4.3 we will prove the so-called Model
@@ -917,21 +926,21 @@ If a formula contains free variables, i.e. variables that are not bound by quant
 x=1), then the "truth value" of such formulas may depend on particular values assigned to free variables.
 For example, the latter formula is "true" for x=1, yet it is "false" for x=2. Formulas that do not contain
 free occurrences of variables, are called closed formulas, for example:
-∀w∃x( w<x & x is a prime number).
+\forall w\exists x( w<x \AND  x is a prime number).
 Closed formulas represent "definite assertions about the objects of our theory", they are expected to be
 either "true", or "false". Or, in a first order theory, they are expected to be either provable, or disprovable
-(refuted). The above closed formula (stating that "there are infinitely many prime numbers") is provable −
+(refuted). The above closed formula (stating that "there are infinitely many prime numbers") is provable ---
 in first order arithmetic.
 T is called a complete theory, if and only if for each closed formula F in the language of T: [T]: |- F or
-[T]: |- ¬F, i.e. if and only if T proves or disproves any closed formula of its language. In other words: a
+[T]: |- \neg F, i.e. if and only if T proves or disproves any closed formula of its language. In other words: a
 complete theory can solve any problem from the domain of its competence.
 In an incomplete theory, some closed formulas ("definite assertions about the objects of theory") can be
 neither proved, not disproved. Thus, an incomplete theory can't solve some of the problems from the
 domain of its competence.
 Formally, according to this definition, an inconsistent theory is complete. Indeed, the axiom L10:
-¬B→(B→C) says that if a theory allows deriving a contradiction, then, in this theory, anything is
-provable, i.e. it is a complete theory. In Section 2.4 we will − without L10 − prove 50% of it:
-¬B→(B→¬C). Thus, even without L10: if a theory allows deriving a contradiction, then, in this theory,
+\neg B\IMPLIES (B\IMPLIES C) says that if a theory allows deriving a contradiction, then, in this theory, anything is
+provable, i.e. it is a complete theory. In Section 2.4 we will --- without L10 --- prove 50% of it:
+\neg B\IMPLIES (B\IMPLIES \neg C). Thus, even without L10: if a theory allows deriving a contradiction, then, in this theory,
 anything is disprovable, i.e. it is a complete theory.
 Of course, if T would be both consistent and complete, then we could call it "absolutely perfect".
 Unfortunately, Goedel's incompleteness theorem says that fundamental mathematical theories are
@@ -940,77 +949,77 @@ perfect".
 Exercise 1.3.2. Re-formulate the above axiom system for a many-sorted predicate language (or, see
 Chapter 10. Many-Sorted First Order Logic, by Jean Gallier.)
 1.4. The Flavor of Proving Directly
-Theorem 1.4.1. [L1, L2, MP]: |- A→A for any formula A. What does it mean? It's the so-called
+Theorem 1.4.1. [L1, L2, MP]: |- A\IMPLIES A for any formula A. What does it mean? It's the so-called
 reflexivity property of implication.
-The following sequence of formulas represents a proof of the formula A→A.
-(1) (A→((C→A)→A))→((A→(C→A))→(A→A)) It's the axiom schema L2:
-                                                   (B→(C→D))→((B→C)→(B→D)),
-                                                              with B = A, C = C→A, D = A.
-(2) A→((C→A)→A) It's the axiom schema L1:
-                     B→(C→B), with B = A, C = C→A.
-(3) (A→(C→A))→(A→A) It follows from (1) and (2) by Modus
+The following sequence of formulas represents a proof of the formula A\IMPLIES A.
+(1) (A\IMPLIES ((C\IMPLIES A)\IMPLIES A))\IMPLIES ((A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A)) It's the axiom schema L2:
+                                                   (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)),
+                                                              with B = A, C = C\IMPLIES A, D = A.
+(2) A\IMPLIES ((C\IMPLIES A)\IMPLIES A) It's the axiom schema L1:
+                     B\IMPLIES (C\IMPLIES B), with B = A, C = C\IMPLIES A.
+(3) (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A) It follows from (1) and (2) by Modus
                            Ponens.
-(4) A→(C→A) It's the axiom schema L1:
-               B→(C→B), with B = A, C = C.
-(5) A→A It follows from (3) and (4) by Modus
+(4) A\IMPLIES (C\IMPLIES A) It's the axiom schema L1:
+               B\IMPLIES (C\IMPLIES B), with B = A, C = C.
+(5) A\IMPLIES A It follows from (3) and (4) by Modus
          Ponens.
 As you can see, the proof is easy to verify, but it could be hard to build it from scratch. "Why" should we
-take "the axiom L2 with B = A, C = C→A, D = A" for (1)?
+take "the axiom L2 with B = A, C = C\IMPLIES A, D = A" for (1)?
 How could one invent a proof like the above one? One of the versions could be as follows. First, let's try to find an axiom,
-from which we could get A→A as a consequence. By trying L1, i.e. B→(C→B), and setting B=C=A, we could obtain
-A→(A→A), a dead end, perhaps. So, let's try L2, i.e. (B→(C→D))→((B→C)→(B→D)). By setting B=D=A we obtain
-(A→(C→A))→((A→C)→(A→A)). It seems to be a good decision − because the first premise A→(C→A) is, in fact, L1.
-Hence, by applying the MP rule, we obtain (A→C)→(A→A). Now, how to make A→C "provable"? Since C is, in fact, an
-arbitrary formula, we can replace C by C→A, obtaining (A→(C→A))→(A→A). The premise is here, again, L1, hence, by
-applying the MP rule, we obtain A→A. Q.E.D. By performing all our replacements at the very beginning, we obtain the above
-proof of the formula A→A. [BTW, the above two smart "operations" − obtaining A→A within L2, and making L1 of A→C,
+from which we could get A\IMPLIES A as a consequence. By trying L1, i.e. B\IMPLIES (C\IMPLIES B), and setting B=C=A, we could obtain
+A\IMPLIES (A\IMPLIES A), a dead end, perhaps. So, let's try L2, i.e. (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)). By setting B=D=A we obtain
+(A\IMPLIES (C\IMPLIES A))\IMPLIES ((A\IMPLIES C)\IMPLIES (A\IMPLIES A)). It seems to be a good decision --- because the first premise A\IMPLIES (C\IMPLIES A) is, in fact, L1.
+Hence, by applying the MP rule, we obtain (A\IMPLIES C)\IMPLIES (A\IMPLIES A). Now, how to make A\IMPLIES C "provable"? Since C is, in fact, an
+arbitrary formula, we can replace C by C\IMPLIES A, obtaining (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A). The premise is here, again, L1, hence, by
+applying the MP rule, we obtain A\IMPLIES A. Q.E.D. By performing all our replacements at the very beginning, we obtain the above
+proof of the formula A\IMPLIES A. [BTW, the above two smart "operations" --- obtaining A\IMPLIES A within L2, and making L1 of A\IMPLIES C,
 are applications of the so-called unification, a very general and very important method used in intellectual computer programs,
 for details, see Section 5.7.]
-Theorem 1.4.2. [L1, L2, MP]: A→B, B→C |- A→C, for any formulas A, B, C. What does it mean? It's
+Theorem 1.4.2. [L1, L2, MP]: A\IMPLIES B, B\IMPLIES C |- A\IMPLIES C, for any formulas A, B, C. What does it mean? It's
 the so-called Law of Syllogism (by Aristotle), or the transitivity property of implication.
-The following sequence of formulas represents a proof of the formula A→C from the hypotheses A→B
-and B→C.
-(1) A→B
+The following sequence of formulas represents a proof of the formula A\IMPLIES C from the hypotheses A\IMPLIES B
+and B\IMPLIES C.
+(1) A\IMPLIES B
 Hypothesis.
-(2) B→C Hypothesis.
-(3) (A→(B→C))→((A→B)→(A→C)) It's the axiom schema L2:
-                                       (B→(C→D))→((B→C)→(B→D)), with B =
+(2) B\IMPLIES C Hypothesis.
+(3) (A\IMPLIES (B\IMPLIES C))\IMPLIES ((A\IMPLIES B)\IMPLIES (A\IMPLIES C)) It's the axiom schema L2:
+                                       (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)), with B =
                                                   A, C = B, D = C.
-(4) (B→C)→(A→(B→C)) It's the axiom schema L1: B→(C→B), with B
-                               = B→C, C = A.
-(5) A→(B→C) It follows from (2) and (4) by Modus Ponens.
-(6) (A→B)→(A→C) It follows from (3) and (5) by Modus Ponens.
-(7) A→C It follows from (1) and (6) by Modus Ponens.
+(4) (B\IMPLIES C)\IMPLIES (A\IMPLIES (B\IMPLIES C)) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B
+                               = B\IMPLIES C, C = A.
+(5) A\IMPLIES (B\IMPLIES C) It follows from (2) and (4) by Modus Ponens.
+(6) (A\IMPLIES B)\IMPLIES (A\IMPLIES C) It follows from (3) and (5) by Modus Ponens.
+(7) A\IMPLIES C It follows from (1) and (6) by Modus Ponens.
 Note. Only axiom schemas L1 and L2 , and inference rule Modus Ponens are used for proving the
 Theorems 1.4.1 and 1.4.2. Hence, these theorems will remain valid for any logical system containing
 L1, L2 and Modus Ponens.
 Exercise 1.4.1. Build sequences of formulas representing the following proofs (only the axiom schemas
 L1 and L2 and Modus Ponens are necessary):
-a) [L1, MP]: A |- B→A (a sequence of 3 formulas). What does it mean?
-b) [L2, MP]: A→B, A→(B→C) |- A→C (a sequence of 5 formulas). What does it mean?
-c) [L1, L2, MP]: A→(B→C) |- B→(A→C) (a sequence of 9 formulas − thanks to Pavel Andreyev for the
+a) [L1, MP]: A |- B\IMPLIES A (a sequence of 3 formulas). What does it mean?
+b) [L2, MP]: A\IMPLIES B, A\IMPLIES (B\IMPLIES C) |- A\IMPLIES C (a sequence of 5 formulas). What does it mean?
+c) [L1, L2, MP]: A\IMPLIES (B\IMPLIES C) |- B\IMPLIES (A\IMPLIES C) (a sequence of 9 formulas --- thanks to Pavel Andreyev for the
 idea). What does it mean? It's the so-called Premise Permutation Law.
-d) [L1, L2, MP]: A→(A→B) |- A→B (a sequence of 9 formulas). What does it mean?
+d) [L1, L2, MP]: A\IMPLIES (A\IMPLIES B) |- A\IMPLIES B (a sequence of 9 formulas). What does it mean?
 Theorem 1.4.3. [L14, MP, Gen] If F is any formula, and G is any formula that does not contain x as a free
 variable, then
-G→F(x) |- G→∀xF(x).
-The following sequence of formulas represents a proof of the formula G→∀xF(x) from the hypothesis
-G→F(x).
-(1) G→F(x) Hypothesis.
-(2) ∀x(G→F(x)) It follows from (1) by Generalization.
-(3) ∀x(G→F(x))→(G→∀xF(x)), It's the axiom schema L14 (G does not
+G\IMPLIES F(x) |- G\IMPLIES \forall xF(x).
+The following sequence of formulas represents a proof of the formula G\IMPLIES \forall xF(x) from the hypothesis
+G\IMPLIES F(x).
+(1) G\IMPLIES F(x) Hypothesis.
+(2) \forall x(G\IMPLIES F(x)) It follows from (1) by Generalization.
+(3) \forall x(G\IMPLIES F(x))\IMPLIES (G\IMPLIES \forall xF(x)), It's the axiom schema L14 (G does not
                                     contain x as a free variable).
-(4) G→∀xF(x) It follows from (2) and (3) by Modus Ponens.
+(4) G\IMPLIES \forall xF(x) It follows from (2) and (3) by Modus Ponens.
 Exercise 1.4.2. Build sequences of formulas representing the following proofs (F is any formula, and G is
 a formula that does not contain x as a free variable):
-a) [L15, MP, Gen]: F(x)→G |- ∃xF(x)→G (a sequence of 4 formulas). What does it mean?
-b) [L3-L5, MP]: A&B |- B&A (a sequence of 8 formulas). What does it mean?
-c) [L6-L8, MP]: |- AvB→BvA (a sequence of 5 formulas). What does it mean?
-d) [L1, L9, MP]: B, ¬B |- ¬C (a sequence of 9 formulas). What does it mean? It's 50% of the axiom L10!
-e) [L3, L4, L9, MP]: |- ¬(A&¬A) (a sequence of 5 formulas). What does it mean? It's the so-called Law of
+a) [L15, MP, Gen]: F(x)\IMPLIES G |- \exists xF(x)\IMPLIES G (a sequence of 4 formulas). What does it mean?
+b) [L3-L5, MP]: A\AND B |- B\AND A (a sequence of 8 formulas). What does it mean?
+c) [L6-L8, MP]: |- AvB\IMPLIES BvA (a sequence of 5 formulas). What does it mean?
+d) [L1, L9, MP]: B, \neg B |- \neg C (a sequence of 9 formulas). What does it mean? It's 50% of the axiom L10!
+e) [L3, L4, L9, MP]: |- \neg (A\AND \neg A) (a sequence of 5 formulas). What does it mean? It's the so-called Law of
 Non-Contradiction.
-f) [L1, L8, L10, MP]: |- ¬AvB→(A→B) (a sequence of 5 formulas). What does it mean?
-g) [L8, L11, MP]: A→B, ¬A→B |- B (a sequence of 7 formulas). What does it mean?
+f) [L1, L8, L10, MP]: |- \neg AvB\IMPLIES (A\IMPLIES B) (a sequence of 5 formulas). What does it mean?
+g) [L8, L11, MP]: A\IMPLIES B, \neg A\IMPLIES B |- B (a sequence of 7 formulas). What does it mean?
 Exercise 1.4.3 (for smart students). Could one build shorter sequences proving Exercise 1.4.1 c), d) and
 Exercise 1.4.2 b), d)? Evgeny Vihrov verified in 2011 that any proof of Exercise 1.4.1 d) will be longer
 than 5 formulas.
@@ -1023,123 +1032,123 @@ A. Tarski. Ueber einige fundamentale Begriffe der Metamathematik. "Comptes Rendu
 et des Lettres de Varsovie, Classe III", 1930, Vol.23, pp. 22-29.
 We will prove two such theorems.
 Theorem 1.5.1 (Deduction Theorem 1). If T is a first order theory, and there is a proof [T, MP]: A1,
-A2, ..., An, B |- C, then there is a proof [L1, L2, T, MP]: A1, A2, ..., An |- B→C. (I.e. having a Modus
-Ponens proof of C from the hypotheses A1, A2, ..., An, B, we can build a Modus Ponens proof of B→C
+A2, ..., An, B |- C, then there is a proof [L1, L2, T, MP]: A1, A2, ..., An |- B\IMPLIES C. (I.e. having a Modus
+Ponens proof of C from the hypotheses A1, A2, ..., An, B, we can build a Modus Ponens proof of B\IMPLIES C
 from the hypotheses A1, A2, ..., An.)
 It appears that, usually, proving of [T, MP]: ... B |- C is easier (technically simpler) than proving of [T,
-MP]: ... |- B→C.
+MP]: ... |- B\IMPLIES C.
 Exercise 1.5.1. (For smart students) Do not read the proof below. Try proving yourself.
 Proof (thanks to Sergey Kozlovich for the idea, see also Kleene [1967], Exercise 10C). We must define a
 procedure allowing to convert any proof [T, MP]: A1, A2, ..., An, B |- C into a proof [L1, L2, T, MP]: A1,
-A2, ..., An |- B→C.
+A2, ..., An |- B\IMPLIES C.
 The easy way to do this would be using an induction by the number of formulas in the proof [T, MP]: A1,
 A2, ..., An, B |- C. But we will use a more elegant idea. Any proof of [T, MP]: A1, A2, ..., An, B |- C is a
 sequence of formulas F1, F2, ...Fm. We will replace each formula Fi by 3 or 5 formulas, the last of these
-being the formula B→Fi, retaining our sequence as a valid proof.
+being the formula B\IMPLIES Fi, retaining our sequence as a valid proof.
 We must consider the following cases:
 1) F is an axiom (i.e. an instance of a logical axiom or a non-logical axiom of T). Replace F by 3
-formulas: F, F→(B→F), B→F. The second formula is an instance of L1, the third formula is obtained
+formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F. The second formula is an instance of L1, the third formula is obtained
 from the first two ones by using Modus Ponens.
-2) F is one of the hypotheses Ai. Replace F by 3 formulas: F, F→(B→F), B→F. The second formula is an
+2) F is one of the hypotheses Ai. Replace F by 3 formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F. The second formula is an
 instance of L1, the third formula is obtained from the first two ones by using Modus Ponens.
 3) F is B. Replace F by the 5 formulas from the proof of Theorem 1.4.1, where D is any formula:
-(B→((D→B)→B))→((B→(D→B))→(B→B)) (an instance of L2),
-B→((D→B)→B) (an instance of L1),
-B→(D→B))→(B→B) (by Modus Ponens),
-B→(D→B) (an instance of L1,),
-B→B (by Modus Ponens).
-The last formula is here, of course, B→F.
-4) F is derived from some previous formulas Fi and Fj by Modus Ponens, Fi having the form Fj→F (i.e.
-Fj→F and Fj yield F by Modus Ponens). Then, the formulas
-B→Fj,
-B→(Fj→F)
+(B\IMPLIES ((D\IMPLIES B)\IMPLIES B))\IMPLIES ((B\IMPLIES (D\IMPLIES B))\IMPLIES (B\IMPLIES B)) (an instance of L2),
+B\IMPLIES ((D\IMPLIES B)\IMPLIES B) (an instance of L1),
+B\IMPLIES (D\IMPLIES B))\IMPLIES (B\IMPLIES B) (by Modus Ponens),
+B\IMPLIES (D\IMPLIES B) (an instance of L1,),
+B\IMPLIES B (by Modus Ponens).
+The last formula is here, of course, B\IMPLIES F.
+4) F is derived from some previous formulas Fi and Fj by Modus Ponens, Fi having the form Fj\IMPLIES F (i.e.
+Fj\IMPLIES F and Fj yield F by Modus Ponens). Then, the formulas
+B\IMPLIES Fj,
+B\IMPLIES (Fj\IMPLIES F)
 are already present in the converted proof (they appeared during the replacement operations applied to the
-formulas Fj and Fj→F). So, replace F by 3 formulas:
-(B→(Fj→F))→((B→Fj)→(B→F)) (an instance of L2),
-(B→Fj)→(B→F) (by Modus Ponens),
-B→F (by Modus Ponens).
+formulas Fj and Fj\IMPLIES F). So, replace F by 3 formulas:
+(B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2),
+(B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
+B\IMPLIES F (by Modus Ponens).
 Thus, what we have now, is a correct proof in [L1, L2, MP] that is using the hypotheses A1, A2, ..., An, but
-not B! The last formula of this proof is B→C (because C is the last formula of our initial proof [L1, L2,
-MP]: A1, A2, ..., An, B |- C). Thus, we have a proof [L1, L2, MP]: A1, A2, ..., An |- B→C. Q.E.D.
+not B! The last formula of this proof is B\IMPLIES C (because C is the last formula of our initial proof [L1, L2,
+MP]: A1, A2, ..., An, B |- C). Thus, we have a proof [L1, L2, MP]: A1, A2, ..., An |- B\IMPLIES C. Q.E.D.
 The above proof of Deduction Theorem 1 includes, in fact, an algorithm allowing to obtain a proof of
-[L1, L2, MP]: A1, A2, ..., An |- B→C from a given proof of [L1, L2, MP]: A1, A2, ..., An, B |- C. The
+[L1, L2, MP]: A1, A2, ..., An |- B\IMPLIES C from a given proof of [L1, L2, MP]: A1, A2, ..., An, B |- C. The
 resulting proof is longer than the given one: if the given proof consists of m formulas, then the resulting
 proof consists of 3m+2 formulas).
 Corollaries 1.5.1. 1) If there is a proof [T, MP]: A1, A2, ..., An, B1, B2, ..., Bk |- C , then there is a proof
-[L1, L2, T, MP]: A1, A2, ..., An |- (B1→(B2→(...→(Bk→C)...))).
+[L1, L2, T, MP]: A1, A2, ..., An |- (B1\IMPLIES (B2\IMPLIES (...\IMPLIES (Bk\IMPLIES C)...))).
 2) If T includes (or proves) schemas L1, L2, then, if there is a proof [T, MP]: A1, A2, ..., An, B |- C then
-there is a proof [T, MP]: A1, A2, ..., An |- B→C .
-In particular, if [T, MP ]: B |- C, then [T, MP]: |- B→C.
-And, if [T, MP ]: B, C|- D, then [T, MP]: |- B→(C→D).
+there is a proof [T, MP]: A1, A2, ..., An |- B\IMPLIES C .
+In particular, if [T, MP ]: B |- C, then [T, MP]: |- B\IMPLIES C.
+And, if [T, MP ]: B, C|- D, then [T, MP]: |- B\IMPLIES (C\IMPLIES D).
 Proof. 1) By iterating the Deduction Theorem 1.
 2) If T is a theory which includes or proves the schemas L1, L2, then [L1, L2, T, MP] is equivalent to [T,
 MP]. Q.E.D.
 Exercise 1.5.2. In earlier versions of logical axioms, instead of the axiom L2, the following 3 axioms
 were in use:
-L21: (A→(A→B))→(A→B),
-L22: (A→(B→C))→(B→(A→C)) (i.e. the Premise Permutation Law),
-L23: (A→B)→((B→C)→(A→C)) (the Law of Syllogism, or the transitivity property of implication).
+L21: (A\IMPLIES (A\IMPLIES B))\IMPLIES (A\IMPLIES B),
+L22: (A\IMPLIES (B\IMPLIES C))\IMPLIES (B\IMPLIES (A\IMPLIES C)) (i.e. the Premise Permutation Law),
+L23: (A\IMPLIES B)\IMPLIES ((B\IMPLIES C)\IMPLIES (A\IMPLIES C)) (the Law of Syllogism, or the transitivity property of implication).
 Verify that both versions, i.e. [L1, L2, MP] and [L1, L21, L23, L23, MP] are equivalent. (Hint: a) See
 Section 2.1 to verify that [L1, L2, MP] proves L21, L23, L23. b) Verify that [L1, L21, L23, L23, MP] proves
 L2 either directly, or by proving the Deduction Theorem 1 for [L1, L21, L23, L23, MP].)
 Exercise 1.5.3 (thanks to Sergey Kozlovich for the idea).
 a) Prove the following "generalization" of the Modus Ponens rule:
-[L1, L2, MP]: (D1→(D2→...(Dk→B)...), (D1→(D2→...(Dk→(B→C))...) |- (D1→(D2→...(Dk→C)...).
+[L1, L2, MP]: (D1\IMPLIES (D2\IMPLIES ...(Dk\IMPLIES B)...), (D1\IMPLIES (D2\IMPLIES ...(Dk\IMPLIES (B\IMPLIES C))...) |- (D1\IMPLIES (D2\IMPLIES ...(Dk\IMPLIES C)...).
 b) Prove the following "generalization" of the axiom L14 (formulas D1, D2, ..., Dk do not contain x as a
 free variable):
-[L1, L2, L14, MP]: |- ∀x(D1→(D2→...(Dk→F(x))...) → (D1→(D2→...(Dk→∀xF(x))...).
+[L1, L2, L14, MP]: |- \forall x(D1\IMPLIES (D2\IMPLIES ...(Dk\IMPLIES F(x))...) \IMPLIES  (D1\IMPLIES (D2\IMPLIES ...(Dk\IMPLIES \forall xF(x))...).
 Exercise 1.5.4. (For smart students) Investigate the size (the number of formulas) of the proof [L1, L2,
-MP]: A1, A2, ..., An, |- B→C as a function f(m) of the size m of the proof [L1, L2, MP]: A1, A2, ..., An, B |-
+MP]: A1, A2, ..., An, |- B\IMPLIES C as a function f(m) of the size m of the proof [L1, L2, MP]: A1, A2, ..., An, B |-
 C. You may wish to report your result. We will publish your report on the web as an appendix to this
 book. The current record holder is Sergey Kozlovich, 2004: f(m) ≤ 3m+2. Improve this result, or prove
 that it is the best one possible.
 Exercise 1.5.5. (For smart students) Investigate the size (the number of instances of atomic formulas) of
-the proof [L1, L2, MP]: A1, A2, ..., An, |- B→C as a function g(m) of the size m of the proof [L1, L2, MP]:
+the proof [L1, L2, MP]: A1, A2, ..., An, |- B\IMPLIES C as a function g(m) of the size m of the proof [L1, L2, MP]:
 A1, A2, ..., An, B |- C. You may wish to report your result. We will publish your report on the web as an
-appendix to this book. The current record holder is Kirils Solovjovs, 2008: g(m, n) ≤ 7m+24n−2, where n
+appendix to this book. The current record holder is Kirils Solovjovs, 2008: g(m, n) ≤ 7m+24n---2, where n
 is the number of instances of atomic formulas in the formula B. Improve this result, or prove that it is the
 best one possible.
 Warning! Generalization involved...
 Now, what, if in the proof of A1, A2, ..., An, B |- C not only Modus Ponens, yet also Generalization is
 used?
 We must be careful, because, trying "simply" to apply Deduction Theorem 1, we can obtain crazy results.
-Indeed, having a formula F(x), by Generalization, we obtain the formula ∀xF(x). Thus, F(x) |- ∀xF(x). If
+Indeed, having a formula F(x), by Generalization, we obtain the formula \forall xF(x). Thus, F(x) |- \forall xF(x). If
 Deduction Theorem 1 could be extended to Gen without any restrictions, then we could conclude that |-
-F(x)→∀xF(x). If this is true for any x, it is true also for x=2, hence, |- F(2)→∀xF(x). Thus, if the number
+F(x)\IMPLIES \forall xF(x). If this is true for any x, it is true also for x=2, hence, |- F(2)\IMPLIES \forall xF(x). Thus, if the number
 2 is prime, then all numbers are prime?
-So, let us try deriving a restricted formulation of the Deduction Theorem − it seems, we should prohibit
-application of Gen to free variables of B − the hypothesis "to be moved".
+So, let us try deriving a restricted formulation of the Deduction Theorem --- it seems, we should prohibit
+application of Gen to free variables of B --- the hypothesis "to be moved".
 Theorem 1.5.2 (Deduction Theorem 2). If T is a first order theory, and there is a proof [T, MP, Gen]: A1,
 A2, ..., An, B |- C, where Generalization is not applied to free variables of B, then there is a proof [L1, L2,
-L14, T, MP, Gen]: A1, A2, ..., An |- B→C.
+L14, T, MP, Gen]: A1, A2, ..., An |- B\IMPLIES C.
 Proof. We must extend the above proof of the Deduction Theorem 1 that consisted of 4 cases. First, we
 must extend the first case:
 1') F is an axiom (i.e. an instance of a logical axiom or a non-logical axiom of T). Replace F by 3
-formulas: F, F→(B→F), B→F. The second formula is an instance of L1, the third formula is obtained
+formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F. The second formula is an instance of L1, the third formula is obtained
 from the first two ones by using Modus Ponens.
 And we must add the following case:
-5) F is derived from some previous formula Fi by Generalization, thus, F having the form ∀xFi, where x
+5) F is derived from some previous formula Fi by Generalization, thus, F having the form \forall xFi, where x
 is not free in the formula B. Replace F by the following 3 formulas:
-∀x(B→Fi)→(B→∀xFi),
-∀x(B→Fi),
-B→∀xFi.
+\forall x(B\IMPLIES Fi)\IMPLIES (B\IMPLIES \forall xFi),
+\forall x(B\IMPLIES Fi),
+B\IMPLIES \forall xFi.
 Since x is not free in B, the first formula is an instance of L14. The second formula is obtained by
-Generalization from the formula B→Fi that is already present in the converted proof (it appeared during
+Generalization from the formula B\IMPLIES Fi that is already present in the converted proof (it appeared during
 the replacement operation applied to the formula Fi). The third formula is obtained from the first two ones
 by using Modus Ponens.
 Thus, what we have now, is a correct proof in [L1, L2, L14, MP, Gen] that is using the hypotheses A1,
-A2, ..., An, but not B! The last formula of this proof is B→C (because C is the last formula our initial
+A2, ..., An, but not B! The last formula of this proof is B\IMPLIES C (because C is the last formula our initial
 proof [L1, L2, L14, MP, Gen]: A1, A2, ..., An, B |- C). Thus, we have a proof [L1, L2, L14, MP, Gen]: A1,
-A2, ..., An |- B→C. Q.E.D.
+A2, ..., An |- B\IMPLIES C. Q.E.D.
 Corollaries 1.5.2. 1) If there is a proof [T, MP, Gen]: A1, A2, ..., An, B1, B2, ..., Bk |- C, where
 Generalization is not applied to the free variables of the formulas B1, B2, ..., Bk, then there is a proof [L1,
-L2, L14, T, MP, Gen]: A1, A2, ..., An |- (B1→(B2→(...→(Bk→C)...))).
+L2, L14, T, MP, Gen]: A1, A2, ..., An |- (B1\IMPLIES (B2\IMPLIES (...\IMPLIES (Bk\IMPLIES C)...))).
 2) If B is a closed formula, and there is a proof of [T, MP, Gen]: A1, A2, ..., An, B |- C, then there is a
-proof of [L1, L2, L14, T, MP, Gen]: A1, A2, ..., An |- B→C.
+proof of [L1, L2, L14, T, MP, Gen]: A1, A2, ..., An |- B\IMPLIES C.
 3) If T is a theory whose axioms include the schemas L1, L2, L14, then, if there is a proof [T, MP, Gen]:
 A1, A2, ..., An, B |- C, where Generalization is not applied to the free variables of B, then there is a proof
-[T, MP, Gen]: A1, A2, ..., An |- B→C. In particular, if [T, MP, Gen]: B |- C, where Generalization is not
-applied to the free variables of B, then [T, MP, Gen]: |- B→C.
+[T, MP, Gen]: A1, A2, ..., An |- B\IMPLIES C. In particular, if [T, MP, Gen]: B |- C, where Generalization is not
+applied to the free variables of B, then [T, MP, Gen]: |- B\IMPLIES C.
 Proof. Similar to the proof of the above Corollaries of Deduction Theorem 1.
 Warning! Previously proved theorems involved...
 In the real mathematical practice, when proving [T, MP, Gen]: A1, A2, ..., An |- C we may wish to apply
@@ -1148,78 +1157,78 @@ then, formally, this would yield only that [T, MP, Gen]: A1, A2, ..., An, Q |- C
 proof [T, MP, Gen]: A1, A2, ..., An |- C, we must insert not only Q itself, but the entire proof of Q!
 Still, with the Deduction Theorem 2 this may be problematic. If we are proving [T, MP, Gen]: A1, A2, ...,
 An, B |- C with the intention to apply Deduction Theorem 2 (to obtain [T, MP, Gen]: A1, A2, ..., An |-
-B→C), then, before inserting the proof of Q, we must ensure that, in this proof, Generalization is not
+B\IMPLIES C), then, before inserting the proof of Q, we must ensure that, in this proof, Generalization is not
 applied to free variables of B. But, of course, the original proof of Q could contain such Generalizations!
 To solve this problem, we could try, in the proof of Q, before inserting, rename simultaneously all the
 variables to which Generalization is applied and which are free variables in B. But this simultaneous
-renaming may affect the bound variables of Q, and thus − destroy the intended use of Q...
+renaming may affect the bound variables of Q, and thus --- destroy the intended use of Q...
 The problem is solved completely by the following extension of the Deduction Theorem 2:
 Theorem 1.5.3 (Deduction Theorem 2A). If there is a proof [T, MP, Gen]: A1, A2, ..., An, B |- C, where,
 after B appears in the proof, Generalization is not applied to free variables of B, then there is a proof
-[L1, L2, L14, T, MP, Gen]: A1, A2, ..., An |- B→C.
+[L1, L2, L14, T, MP, Gen]: A1, A2, ..., An |- B\IMPLIES C.
 Indeed, having such a theorem, we obtain the necessary
 Corollary 1.5.3. If there is a proof [T, MP, Gen]: A1, A2, ..., An, B, Q |- C, where, after B appears in the
 proof, Generalization is not applied to free variables of B, and there is a proof [T, MP, Gen]: A1, A2, ...,
-An |- Q, then there is a proof [T, MP, Gen]: A1, A2, ..., An |- B→C.
+An |- Q, then there is a proof [T, MP, Gen]: A1, A2, ..., An |- B\IMPLIES C.
 Proof. In the proof [T, MP, Gen]: A1, A2, ..., An, B, Q |- C, first, move the hypotheses A1, A2, ..., An to the
 beginning. Then, immediately after them, insert the proof [T, MP, Gen]: A1, A2, ..., An |- Q. Now we have
 a proof [T, MP, Gen]: A1, A2, ..., An, B |- C, where, after B appears in the proof, Generalization is not
 applied to the free variables of B. By Deduction Theorem 2A, then there is a proof [T, MP, Gen]: A1,
-A2, ..., An |- B→C. Q.E.D.
+A2, ..., An |- B\IMPLIES C. Q.E.D.
 Proof of the Deduction Theorem 2A. Let us modify the above proof of the Deduction Theorem 2.
 We must define a procedure allowing to convert any allowed proof [T, MP, Gen]: A1, A2, ..., An, B |- C
-into a proof [L1, L2, T, MP, Gen]: A1, A2, ..., An |- B→C.
+into a proof [L1, L2, T, MP, Gen]: A1, A2, ..., An |- B\IMPLIES C.
 Unlike the above proof, let us leave unchanged all the formulas of the proof [T, MP]: A1, A2, ..., An, B |-
 C before B appears in the proof. After this, starting with B, we will replace each formula F by 3 or 5
-formulas, one of them being the formula B→F.
+formulas, one of them being the formula B\IMPLIES F.
 We must consider the following cases:
-1), 2), 3) − as in the proof of the Deduction Theorem 1.
-4) F is derived from some previous formulas Fi and Fj by Modus Ponens, Fi having the form Fj→F (i.e.
-Fj→F and Fj yield F by Modus Ponens). Then, 4 subcases are possible.
-4a) Fj and Fj→F both appear before B, i.e. they remain unchanged in the converted proof. Let us replace
-F by the following 3 formulas: F, F→(B→F), B→F. The second formula is an instance of L1, the third
+1), 2), 3) --- as in the proof of the Deduction Theorem 1.
+4) F is derived from some previous formulas Fi and Fj by Modus Ponens, Fi having the form Fj\IMPLIES F (i.e.
+Fj\IMPLIES F and Fj yield F by Modus Ponens). Then, 4 subcases are possible.
+4a) Fj and Fj\IMPLIES F both appear before B, i.e. they remain unchanged in the converted proof. Let us replace
+F by the following 3 formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F. The second formula is an instance of L1, the third
 formula is obtained by using Modus Ponens from the first two ones.
-4b) Fj appears before B, and Fj→F is B or appears after B. Then, the formulas Fj and B→(Fj→F) are
+4b) Fj appears before B, and Fj\IMPLIES F is B or appears after B. Then, the formulas Fj and B\IMPLIES (Fj\IMPLIES F) are
 already present in the converted proof. Let us replace F by the following 5 formulas:
-(B→(Fj→F))→((B→Fj)→(B→F)) (an instance of L2),
-(B→Fj)→(B→F) (by Modus Ponens),
-Fj→(B→Fj) (an instance of L1),
-B→Fj (by Modus Ponens),
-B→F (by Modus Ponens).
-4c) Fj is B or appears after B, and Fj→F appears before B. Then, the formulas B→Fj and Fj→F are
+(B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2),
+(B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
+Fj\IMPLIES (B\IMPLIES Fj) (an instance of L1),
+B\IMPLIES Fj (by Modus Ponens),
+B\IMPLIES F (by Modus Ponens).
+4c) Fj is B or appears after B, and Fj\IMPLIES F appears before B. Then, the formulas B\IMPLIES Fj and Fj\IMPLIES F are
 already present in the converted proof. Let us replace F by the following 5 formulas from the proof of
 Theorem 1.4.2:
-(B→(Fj→F))→((B→Fj)→(B→F)) (an instance of L2),
-(Fj→F)→(B→(Fj→F)) (an instance of L1),
-B→(Fj→F) (by Modus Ponens),
-(B→Fj)→(B→F) (by Modus Ponens),
-B→F (by Modus Ponens).
-4d) Fj and Fj→F both are B or appear after B. Then, the formulas B→Fj and B→(Fj→F) are already
+(B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2),
+(Fj\IMPLIES F)\IMPLIES (B\IMPLIES (Fj\IMPLIES F)) (an instance of L1),
+B\IMPLIES (Fj\IMPLIES F) (by Modus Ponens),
+(B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
+B\IMPLIES F (by Modus Ponens).
+4d) Fj and Fj\IMPLIES F both are B or appear after B. Then, the formulas B\IMPLIES Fj and B\IMPLIES (Fj\IMPLIES F) are already
 present in the converted proof (they appeared during the replacement operations applied to the formulas
-Fj and Fj→F). Let us replace F by the following 3 formulas:
-(B→(Fj→F))→((B→Fj)→(B→F)) (an instance of L2),
-(B→Fj)→(B→F) (by Modus Ponens),
-B→F (by Modus Ponens).
-5) F is derived from some previous formula Fi by Generalization, thus, F having the form ∀xFi. Then, 2
+Fj and Fj\IMPLIES F). Let us replace F by the following 3 formulas:
+(B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2),
+(B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
+B\IMPLIES F (by Modus Ponens).
+5) F is derived from some previous formula Fi by Generalization, thus, F having the form \forall xFi. Then, 2
 subcases are possible.
 5a) Fi appears before B. Then x is not free in B. Let us replace F by the following 3 formulas:
 F (by Generalization, x is not free in B),
-F→(B→F) (an instance of L1),
-B→F
-5b) Fi is B or appears after B. Then x is not free in B, and the formula B→Fi that is already present in the
+F\IMPLIES (B\IMPLIES F) (an instance of L1),
+B\IMPLIES F
+5b) Fi is B or appears after B. Then x is not free in B, and the formula B\IMPLIES Fi that is already present in the
 converted proof (it appeared during the replacement operation applied to the formula Fi). Let us replace F
 by the following 3 formulas:
-∀x(B→Fi) (by Generalization, x is not free in B),
-∀x(B→Fi)→(B→∀xFi) (an instance of L14, since x is not free in B),
-B→∀xFi (by Modus Ponens).
+\forall x(B\IMPLIES Fi) (by Generalization, x is not free in B),
+\forall x(B\IMPLIES Fi)\IMPLIES (B\IMPLIES \forall xFi) (an instance of L14, since x is not free in B),
+B\IMPLIES \forall xFi (by Modus Ponens).
 Thus, what we have now, is a correct proof in [L1, L2, L14, T, MP, Gen] that is using the hypotheses A1,
-A2, ..., An, but not B! The last formula of this proof is B→C (because C is the last formula our initial
+A2, ..., An, but not B! The last formula of this proof is B\IMPLIES C (because C is the last formula our initial
 proof [T, MP, Gen]: A1, A2, ..., An, B |- C). Thus, we have a proof [L1, L2, L14, T, MP, Gen]: A1, A2, ...,
-An |- B→C. Q.E.D.
+An |- B\IMPLIES C. Q.E.D.
 Exercise 1.5.6. In some other textbooks, a somewhat different system of logical axioms is used: instead
 of the axioms L14, L15 and the Generalization rule the following two rules of inference are used:
-G→F(x) |- G→∀xF(x) (∀-Introduction),
-F(x)→G |- ∃xF(x)→G (∃-Elimination).
+G\IMPLIES F(x) |- G\IMPLIES \forall xF(x) (\forall -Introduction),
+F(x)\IMPLIES G |- \exists xF(x)\IMPLIES G (\exists -Elimination).
 Of course, here, G is a formula that does not contain x as a free variable. Verify that both systems are
 equivalent in all of their versions (minimal, constructive, and classical).
 
