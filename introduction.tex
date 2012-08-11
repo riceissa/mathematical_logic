@@ -1027,144 +1027,109 @@ Immediately, by \cref{131}.
 \end{proof}
 
 Some of the logical axioms are ``wrong, but useful''!
-The axioms L1, L2 represent the (currently) most popular version of ``defining'' the implication
-connective. About other (equivalent) versions --- containing 3 or 4 axioms --- see Hilbert, Bernays [1934]
-(Chapter III) and Exercise 1.5.2.
+
+The axioms L1, L2 represent the (currently) most popular version of ``defining'' the implication connective. About other (equivalent) versions --- containing 3 or 4 axioms --- see Hilbert, Bernays [1934] (Chapter III) and Exercise 1.5.2.
+
 The axiom L9 represents the (currently) most popular version of ``defining'' the negation connective.
-About other (equivalent) versions --- see Hilbert, Bernays [1934] (Chapter III), Exercise 2.4.2, and Section
-7.1.
+About other (equivalent) versions --- see Hilbert, Bernays [1934] (Chapter III), Exercise 2.4.2, and Section 7.1.
+
 Three of the above axiom schemas seem to be (at least partly) problematic.
-For example, how do you find the funny axiom L10: \(\neg B\IMPLIES (B\IMPLIES C)? If \neg\) B and B were true simultaneously,
-then anything were true? Ex contradictione sequitur quodlibet? Is this a really ``true'' axiom? Of course, it
-is not. Still, this does not matter: we do not need to know, were C ``true'' or not, if \(\neg\) B and B were ``true''
-simultaneously. By assuming that ``if \(\neg\) B and B were true simultaneously, then anything were true'' we
-greatly simplify our logical apparatus. For example, we will prove in Section 2.6 that, in the classical
-logic, \(\neg \neg B\IMPLIES B\). This simple formula can't be proved without the ``crazy'' axiom L10 (see Section 2.8).
-In fact, the first axiom L1: B\IMPLIES (C\IMPLIES B) also is funny. If B is (unconditionally) true, then B follows from C,
-even if C has nothing in common with B? Moreover, in Exercise 1.4.2(d) we will see that the axioms L1,
-L9 allow proving that \(\neg B, B \vdash \neg C, i.e., if \neg B\) and B were true simultaneously, then anything were false
-(thus, in a sense, L1 contains already 50\% of L10!). After this, could we think of L1 as a really ``true''
-axiom? Of course, we can't. Still, this does not matter: if B is (unconditionally) true, then we do not need
-to know, follows B from C or not. By assuming that ``if B is true, then B follows from anything'' we
-greatly simplify our logical apparatus.
-The above two phenomena are called paradoxes of the material implication, see Paradoxes of Material
-Implication by Peter Suber, and Falsity Implies Anything by Alexander Bogomolny.
-May our decision to ``greatly simplify'' the logical apparatus have also some undesirable consequences?
-Let us consider the following formula F(x): \(\forall y(child(x, y)\IMPLIES Female(y))\).
-It seems, F(x) is intended to mean: ``All the children of x are female''. However, in our system of logic, F(x) is regarded as true also, if
-x does not have children at all! If you do not have children at all, then all your children are female! Or
-male? Or smart? Etc. Seems funny, but is, in fact, harmless\ldots 
-Constructive Logic
-Still, the most serious problem is caused by the axiom L11: \(Bv\neg B\)---the Law of the Excluded Middle.
-How can we think of L11 as a ``true'' axiom, if (according to G\"{o}del's Incompleteness Theorem) each sufficiently strong consistent theory contains undecidable propositions? i.e., we postulate that either B, or
-\(\neg B\) ``must be true'', yet for some B we cannot prove neither B, nor \(\neg\) B! Knowing that Bv\(\neg\) B is ``true'' may
-inspire us to work on the problem, but it may appear useless, if we do not succeed\ldots  Should we retain L11
-as an axiom after this?
+
+For example, how do you find the funny axiom L10: \(\neg B\IMPLIES (B\IMPLIES C)? If \neg\) B and B were true simultaneously, then anything were true? Ex contradictione sequitur quodlibet? Is this a really ``true'' axiom? Of course, it is not. Still, this does not matter: we do not need to know, were C ``true'' or not, if \(\neg\) B and B were ``true'' simultaneously. By assuming that ``if \(\neg\) B and B were true simultaneously, then anything were true'' we greatly simplify our logical apparatus. For example, we will prove in Section 2.6 that, in the classical logic, \(\neg \neg B\IMPLIES B\). This simple formula can't be proved without the ``crazy'' axiom L10 (see Section 2.8).
+
+In fact, the first axiom L1: B\IMPLIES (C\IMPLIES B) also is funny. If B is (unconditionally) true, then B follows from C, even if C has nothing in common with B? Moreover, in Exercise 1.4.2(d) we will see that the axioms L1, L9 allow proving that \(\neg B, B \vdash \neg C, i.e., if \neg B\) and B were true simultaneously, then anything were false (thus, in a sense, L1 contains already 50\% of L10!). After this, could we think of L1 as a really ``true'' axiom? Of course, we can't. Still, this does not matter: if B is (unconditionally) true, then we do not need to know, follows B from C or not. By assuming that ``if B is true, then B follows from anything'' we greatly simplify our logical apparatus.
+
+The above two phenomena are called paradoxes of the material implication, see Paradoxes of Material Implication by Peter Suber, and Falsity Implies Anything by Alexander Bogomolny.
+
+May our decision to ``greatly simplify'' the logical apparatus have also some undesirable consequences?  Let us consider the following formula F(x): \(\forall y(child(x, y)\IMPLIES Female(y))\).  It seems, F(x) is intended to mean: ``All the children of x are female''. However, in our system of logic, F(x) is regarded as true also, if x does not have children at all! If you do not have children at all, then all your children are female! Or male? Or smart? Etc. Seems funny, but is, in fact, harmless\ldots 
+
+\subsubsection{Constructive Logic}
+%\label{}
+
+Still, the most serious problem is caused by the axiom L11: \(Bv\neg B\)---the Law of the Excluded Middle.  How can we think of L11 as a ``true'' axiom, if (according to G\"{o}del's Incompleteness Theorem) each sufficiently strong consistent theory contains undecidable propositions? i.e., we postulate that either B, or \(\neg B\) ``must be true'', yet for some B we cannot prove neither B, nor \(\neg\) B! Knowing that Bv\(\neg\) B is ``true'' may inspire us to work on the problem, but it may appear useless, if we do not succeed\ldots  Should we retain L11 as an axiom after this?
+
 Some other strange consequences of L11 also should be mentioned (see Exercise 2.6.4):
-Bv(B\IMPLIES C),
-(B\IMPLIES C)v(C\IMPLIES B),
-((B\IMPLIES C)\IMPLIES B)\IMPLIES B (the so-called Peirce's Law).
+
+\begin{enumerate}
+    \item \(Bv(B\IMPLIES C)\),
+    \item \((B\IMPLIES C)v(C\IMPLIES B)\),
+    \item \(((B\IMPLIES C)\IMPLIES B)\IMPLIES B\) (the so-called Peirce's Law).
+\end{enumerate}
+
 For these (and some other) reasons some people reject L11 as a ``valid'' logical axiom.
-The above list of 15 axiom schemas as it stands is called the classical logic.
-By excluding L11 from the list the so-called constructive (historically, and in most textbooks ---
-intuitionistic) logic is obtained. As a concept, it was introduced by Luitzen Egbertus Jan Brouwer in
-1908:
-L. E. J. Brouwer. De onbetrouwbaarheid der logische principes (in Dutch - `` The unreliability of the logical principles'' ),
-Tijdschrift voor Wijsbegeerte, 2 (1908), pp.152-158.
-Brouwer's main objection was against non-constructive proofs which are enabled mainly by ``improper''
-use of the Law of the Excluded Middle.
-For elegant examples of non-constructive proofs see Constructive Mathematics by Douglas Bridges in
-Stanford Encyclopedia of Philosophy.
-Note. A similar kind of non-constructive reasoning is represented by the so-called Double Negation Law:
-\(\neg \neg B\IMPLIES B\), see Section 2.6.
-As a formal system, the intuitionistic logic was formulated by Arend Heyting in 1930:
-A. Heyting. Die formalen Regeln der intuitionistischen Mathematik. Sitzungsberichte der Preussischen Akademie der
-Wissenschaften, Physikalisch-mathematische Klasse, 1930, pp.42-56.
-The constructive concept of logic differs from the classical one mainly in its interpretation of disjunction
-and existence assertions:
---- To prove BvC constructively, you must prove B, or prove C. To prove BvC by using the classical logic,
-you are allowed to assume \(\neg\) (BvC) as a hypothesis to derive a contradiction. Then, by the Law of the
-Excluded Middle (BvC)v\(\neg\) (BvC) you obtain BvC. Having only such a ``negative'' proof, you may be
-unable to determine, which part of the disjunction BvC is true --- B, or C, or both. Knowing that BvC is
-``true'' may inspire you to work on the problem, but it may appear useless, if you do not succeed\ldots 
---- To prove \(\exists\) xB(x) constructively, you must provide a particular value of x such that B(x) is true. To
-prove \(\exists\) xB(x) by using the classical logic, you are allowed to assume \(\forall\) x\(\neg\) B(x) as a hypothesis to derive a
-contradiction. Then, by the Law of the Excluded Middle \(\exists\) xB(x) v \(\neg\) \(\exists\) xB(x) you obtain \(\exists\) xB(x). Having
-only such a ``negative'' proof, you may be unable to find a particular x for which B(x) is true. Knowing
-that \(\exists\) xB(x) is ``true'' may inspire you to work on the problem, but it may appear useless, if you do not
-succeed\ldots 
-Note. Informally, we may regard existence assertions as ``huge disjunctions''. For example, in the
-language of first-order arithmetic, \(\exists\) xB(x) could be ``thought'' as B(0)vB(1)vB(2)v\ldots , i.e., as an infinite
-``formula''. Thus, the above two theses are, in a sense, ``equivalent''.
-The constructive (intuitionist) logic is one of the great discoveries in mathematical logic --- surprisingly, a
-complete system of constructive reasoning (as we will see later, in Section 4.4) can be obtained simply by
-dropping the Law of the Excluded Middle from the list of valid logical principles.
+
+The above list of 15 axiom schemas as it stands is called the \term{classical logic}.
+
+By excluding L11 from the list the so-called constructive (historically, and in most textbooks --- intuitionistic) logic is obtained. As a concept, it was introduced by Luitzen Egbertus Jan Brouwer in 1908:
+
+L. E. J. Brouwer. De onbetrouwbaarheid der logische principes (in Dutch - `` The unreliability of the logical principles'' ), Tijdschrift voor Wijsbegeerte, 2 (1908), pp.152-158.
+
+Brouwer's main objection was against non-constructive proofs which are enabled mainly by ``improper'' use of the Law of the Excluded Middle.  For elegant examples of non-constructive proofs see Constructive Mathematics by Douglas Bridges in Stanford Encyclopedia of Philosophy.  Note. A similar kind of non-constructive reasoning is represented by the so-called Double Negation Law: \(\neg \neg B\IMPLIES B\), see Section 2.6.  As a formal system, the intuitionistic logic was formulated by Arend Heyting in 1930: A. Heyting. Die formalen Regeln der intuitionistischen Mathematik. Sitzungsberichte der Preussischen Akademie der Wissenschaften, Physikalisch-mathematische Klasse, 1930, pp.42-56.  The constructive concept of logic differs from the classical one mainly in its interpretation of disjunction and existence assertions:
+
+--- To prove BvC constructively, you must prove B, or prove C. To prove BvC by using the classical logic, you are allowed to assume \(\neg\) (BvC) as a hypothesis to derive a contradiction. Then, by the Law of the Excluded Middle (BvC)v\(\neg\) (BvC) you obtain BvC. Having only such a ``negative'' proof, you may be unable to determine, which part of the disjunction BvC is true --- B, or C, or both. Knowing that BvC is ``true'' may inspire you to work on the problem, but it may appear useless, if you do not succeed\ldots
+
+--- To prove \(\exists\) xB(x) constructively, you must provide a particular value of x such that B(x) is true. To prove \(\exists\) xB(x) by using the classical logic, you are allowed to assume \(\forall\) x\(\neg\) B(x) as a hypothesis to derive a contradiction. Then, by the Law of the Excluded Middle \(\exists\) xB(x) v \(\neg\) \(\exists\) xB(x) you obtain \(\exists\) xB(x). Having only such a ``negative'' proof, you may be unable to find a particular x for which B(x) is true. Knowing that \(\exists\) xB(x) is ``true'' may inspire you to work on the problem, but it may appear useless, if you do not succeed\ldots
+
+\begin{note}[]
+%\label{}
+Note. Informally, we may regard existence assertions as ``huge disjunctions''. For example, in the language of first-order arithmetic, \(\exists\) xB(x) could be ``thought'' as B(0)vB(1)vB(2)v\ldots , i.e., as an infinite ``formula''. Thus, the above two theses are, in a sense, ``equivalent''.
+\end{note}
+
+The constructive (intuitionist) logic is one of the great discoveries in mathematical logic --- surprisingly, a complete system of constructive reasoning (as we will see later, in Section 4.4) can be obtained simply by dropping the Law of the Excluded Middle from the list of valid logical principles.
+
 See also Intuitionistic Logic by Joan Moschovakis in Stanford Encyclopedia of Philosophy.
-Luitzen Egbertus Jan Brouwer (1881-1966): "He rejected in mathematical proofs the Principle of the Excluded Middle, which
-states that any mathematical statement is either true or false. In 1918 he published a set theory, in 1919 a measure theory and in
-1923 a theory of functions all developed without using the Principle of the Excluded Middle." (according to MacTutor History
-of Mathematics archive). "Como Heinrich Scholz solia decir en sus cursos: no son ni Heidegger ni Sartre los verdaderos
-renovadores de la filosofia, sino Brouwer porque sólo él ha atacado el bastión dos veces milenario del platonismo: la
-concepción de los entes matematicos como cosas en si." (quoted after Andrés R. Raggio, Escritos Completos, Prometeo Libros,
-2002).
-Minimal Logic
-By excluding both L10 and L11 the so-called minimal logic is obtained. It was introduced by Ingebrigt
-Johansson in 1936:
-I.Johansson. Der Minimalkalkuel, ein reduzierter intuitionistischer Formalismus. Compositio Mathematica, 1936, Vol. 4, N1,
-pp.119-136.
-As a separate concept, the minimal logic is much less significant than the constructive logic. Indeed, since
-it allows proving of \(\neg B, B \vdash \neg C\) (in a sense, 50\% of L10!), dropping of L10 is not a very big step.
 
-Consistency
+Luitzen Egbertus Jan Brouwer (1881-1966): "He rejected in mathematical proofs the Principle of the Excluded Middle, which states that any mathematical statement is either true or false. In 1918 he published a set theory, in 1919 a measure theory and in 1923 a theory of functions all developed without using the Principle of the Excluded Middle." (according to MacTutor History of Mathematics archive). "Como Heinrich Scholz solia decir en sus cursos: no son ni Heidegger ni Sartre los verdaderos renovadores de la filosofia, sino Brouwer porque sólo él ha atacado el bastión dos veces milenario del platonismo: la concepción de los entes matematicos como cosas en si." (quoted after Andrés R. Raggio, Escritos Completos, Prometeo Libros, 2002).
 
-Sometimes, a seemingly plausible set of axioms allows deriving of contradictions (the most striking
-example --- Russell's paradox in the ``naive'' set theory). A formula F is called a contradiction in the
-theory T, if and only if [T]: \(\vdash\) F and [T]: \(\vdash \neg F\), i.e., if T proves and disproves F simultaneously. Theories
-containing contradictions are called inconsistent theories. Thus, T is called a consistent theory; if and
-only if T does not allow deriving of contradictions.
-Normally, for a first-order theory, the set of all theorems is infinite, and, therefore, consistency cannot be
-verified empirically. We may only hope to establish this desirable property by means of some
-theoretical proof (click here for a more detailed discussion of this problem).
-For theories adopting the above logical axioms, inconsistency is, in a sense, ``the worst possible property''.
-Indeed, the axiom L10: \(\neg\) B\IMPLIES (B\IMPLIES C) says that if a theory allows deriving a contradiction, then, in this
-theory, anything is provable. In Section 2.4 we will --- without L10 --- prove 50\% of it: \(\neg B\IMPLIES (B\IMPLIES \neg C).\)
-Thus, without L10: if a theory allows deriving a contradiction, then, in this theory, anything is
-disprovable.
-Is consistency enough for a theory to be ``perfect''? In Section 4.3 we will prove the so-called Model
-Existence Theorem: if a first-order theory is consistent, then there is a ``model'' (a kind of "mathematical
-reality``) where all its axioms and theorems are ''true".
-Completeness
-If a formula contains free variables, i.e., variables that are not bound by quantifiers (for example: x=0 v
-x=1), then the ``truth value'' of such formulas may depend on particular values assigned to free variables.
-For example, the latter formula is ``true'' for x=1, yet it is ``false'' for x=2. Formulas that do not contain
-free occurrences of variables, are called closed formulas, for example:
-\(\forall w\exists x( w<x \AND  x is a prime number).\)
-Closed formulas represent ``definite assertions about the objects of our theory'', they are expected to be
-either ``true'', or ``false''. Or, in a first-order theory, they are expected to be either provable, or disprovable
-(refuted). The above closed formula (stating that ``there are infinitely many prime numbers'') is provable ---
-in first-order arithmetic.
-T is called a complete theory, if and only if for each closed formula F in the language of T: [T]: \(\vdash\) F or
-[T]: \(\vdash \neg F\), i.e., if and only if T proves or disproves any closed formula of its language. In other words: a
-complete theory can solve any problem from the domain of its competence.
-In an incomplete theory, some closed formulas (``definite assertions about the objects of theory'') can be
-neither proved, not disproved. Thus, an incomplete theory can't solve some of the problems from the
-domain of its competence.
-Formally, according to this definition, an inconsistent theory is complete. Indeed, the axiom L10:
-\(\neg B\IMPLIES (B\IMPLIES C)\) says that if a theory allows deriving a contradiction, then, in this theory, anything is
-provable, i.e., it is a complete theory. In Section 2.4 we will --- without L10 --- prove 50\% of it:
-\(\neg B\IMPLIES (B\IMPLIES \neg C)\). Thus, even without L10: if a theory allows deriving a contradiction, then, in this theory,
-anything is disprovable, i.e., it is a complete theory.
-Of course, if T would be both consistent and complete, then we could call it ``absolutely perfect''.
+\subsubsection{Minimal Logic}
+%\label{}
+
+By excluding both L10 and L11 the so-called minimal logic is obtained. It was introduced by Ingebrigt Johansson in 1936: I.Johansson. Der Minimalkalkuel, ein reduzierter intuitionistischer Formalismus. Compositio Mathematica, 1936, Vol. 4, N1, pp.119-136.  As a separate concept, the minimal logic is much less significant than the constructive logic. Indeed, since it allows proving of \(\neg B, B \vdash \neg C\) (in a sense, 50\% of L10!), dropping of L10 is not a very big step.
+
+\subsubsection{Consistency}
+%\label{}
+
+Sometimes, a seemingly plausible set of axioms allows deriving of contradictions (the most striking example --- Russell's paradox in the ``naive'' set theory). A formula F is called a contradiction in the theory T, if and only if [T]: \(\vdash\) F and [T]: \(\vdash \neg F\), i.e., if T proves and disproves F simultaneously. Theories containing contradictions are called inconsistent theories. Thus, T is called a consistent theory; if and only if T does not allow deriving of contradictions.
+
+Normally, for a first-order theory, the set of all theorems is infinite, and, therefore, consistency cannot be verified empirically. We may only hope to establish this desirable property by means of some theoretical proof (click here for a more detailed discussion of this problem).
+
+For theories adopting the above logical axioms, inconsistency is, in a sense, ``the worst possible property''.  Indeed, the axiom L10: \(\neg\) B\IMPLIES (B\IMPLIES C) says that if a theory allows deriving a contradiction, then, in this theory, anything is provable. In Section 2.4 we will --- without L10 --- prove 50\% of it: \(\neg B\IMPLIES (B\IMPLIES \neg C).\) Thus, without L10: if a theory allows deriving a contradiction, then, in this theory, anything is disprovable.
+
+Is consistency enough for a theory to be ``perfect''?
+In Section 4.3 we will prove the so-called Model Existence Theorem: if a first-order theory is consistent, then there is a ``model'' (a kind of ``mathematical reality'') where all its axioms and theorems are ``true''.
+
+\subsubsection{Completeness}
+%\label{}
+
+If a formula contains free variables, i.e., variables that are not bound by quantifiers (for example: x=0 v x=1), then the ``truth value'' of such formulas may depend on particular values assigned to free variables.  For example, the latter formula is ``true'' for x=1, yet it is ``false'' for x=2. Formulas that do not contain free occurrences of variables, are called \term{closed formulas}, for example:
+\[
+\forall w\exists x( w<x \AND  x\text{ is a prime number}).
+\]
+Closed formulas represent ``definite assertions about the objects of our theory'', they are expected to be either ``true'', or ``false''. Or, in a first-order theory, they are expected to be either provable, or disprovable (refuted). The above closed formula (stating that ``there are infinitely many prime numbers'') is provable---in first-order arithmetic.
+
+\(T\) is called a complete theory, if and only if for each closed formula F in the language of T: [T]: \(\vdash\) F or [T]: \(\vdash \neg F\), i.e., if and only if T proves or disproves any closed formula of its language. In other words: a complete theory can solve any problem from the domain of its competence.
+
+In an incomplete theory, some closed formulas (``definite assertions about the objects of theory'') can be neither proved, not disproved. Thus, an incomplete theory can't solve some of the problems from the domain of its competence.
+
+Formally, according to this definition, an inconsistent theory is complete. Indeed, the axiom L10: \(\neg B\IMPLIES (B\IMPLIES C)\) says that if a theory allows deriving a contradiction, then, in this theory, anything is provable, i.e., it is a complete theory. In Section 2.4 we will --- without L10 --- prove 50\% of it: \(\neg B\IMPLIES (B\IMPLIES \neg C)\). Thus, even without L10: if a theory allows deriving a contradiction, then, in this theory, anything is disprovable, i.e., it is a complete theory.  Of course, if T would be both consistent and complete, then we could call it ``absolutely perfect''.
+
 Unfortunately, G\"{o}del's incompleteness theorem says that fundamental mathematical theories are
 either inconsistent or incomplete (see Mendelson [1997] or click here), i.e., none of them is "absolutely
 perfect".
 
-Exercise 1.3.2. Re-formulate the above axiom system for a many-sorted predicate language (or, see Chapter 10. Many-Sorted first-order Logic, by Jean Gallier.)
+\begin{exer}[]
+%\label{}
+Re-formulate the above axiom system for a many-sorted predicate language (or, see Chapter 10. Many-Sorted first-order Logic, by Jean Gallier.)
+\end{exer}
 
 \subsection{The Flavor of Proving Directly}
 
-Theorem 1.4.1. \([L1, L2, MP]: \vdash A\IMPLIES A\) for any formula A. What does it mean? It's the so-called
-reflexivity property of implication.
+\begin{thm}[]
+%\label{}
+\([L1, L2, MP]: \vdash A\IMPLIES A\) for any formula A.
+\end{thm}
+What does it mean? It's the so-called reflexivity property of implication.
+
 The following sequence of formulas represents a proof of the formula A\IMPLIES A.
 (1) (A\IMPLIES ((C\IMPLIES A)\IMPLIES A))\IMPLIES ((A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A)) It's the axiom schema L2: (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)), with B = A, C = C\IMPLIES A, D = A.  (2) A\IMPLIES ((C\IMPLIES A)\IMPLIES A) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = A, C = C\IMPLIES A.  (3) (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A) It follows from (1) and (2) by Modus Ponens.  (4) A\IMPLIES (C\IMPLIES A) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = A, C = C.  (5) A\IMPLIES A It follows from (3) and (4) by Modus Ponens.
 As you can see, the proof is easy to verify, but it could be hard to build it from scratch. ``Why'' should we
