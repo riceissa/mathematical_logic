@@ -1,0 +1,921 @@
+2. Propositional Logic
+George Boole (1815-1864): "In 1854 he published An Investigation into the Laws of Thought, on Which are founded the
+Mathematical Theories of Logic and Probabilities. Boole approached logic in a new way reducing it to a simple algebra,
+incorporating logic into mathematics. He pointed out the analogy between algebraic symbols and those that represent logical
+forms. It began the algebra of logic called Boolean algebra which now finds application in computer construction, switching
+circuits etc." (according to MacTutor History of Mathematics archive).
+See also:
+G.Boole. The Calculus of Logic. The Cambridge and Dublin Mathematical Journal, vol. 3 (1848) (available online at
+http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/, published by David R. Wilkins).
+2.1. Proving Formulas Containing Implication only
+Let us return to the Exercise 1.4.1(d), where you produced a sequence of 9 formulas proving the
+following:
+d) [L1, L2, MP]: A→(A→B) |- A→B.
+Did you try the next step - proving of
+d') [L1, L2, MP]: |- (A→(A→B))→(A→B)?
+For proving directly – almost an impossible task!
+Now, having deduction theorems, we can simplify the task of proving d), and make the task of proving d')
+feasible. More precisely - the task of proving that d) and d') are provable. Indeed,
+(1) A→(A→B) Hypothesis.
+(2) A Hypothesis.
+(3) A→B By MP, from (1), (2).
+(4) B By MP, from (2), (3).
+Thus, we have established that A→(A→B), A |- B. Now, by Deduction Theorem 1,
+[L1, L2, MP]: A→(A→B) |- A→B.
+And let us apply this theorem once more,
+[L1, L2, MP]: |- (A→(A→B))→(A→B).
+Note. In fact, we proved here only A→(A→B), A |- B, but we did not prove d) and d'), i.e. we did not
+produce the corresponding sequences of formulas. We just proved that these sequences do exist! To
+produce them really, we must apply the algorithm described in the proof of Deduction Theorem 1.
+Exercise 2.1.1. Imagine applying the algorithm described in the proof of Deduction Theorem 1: a) to the
+above 4 formula sequence – producing a sequence of 44 formulas proving [L1, L2, MP]: |-
+(A→(A→B))→(A→B); b) to your 9 formula proof of (d) – producing a sequence of 29 formulas proving
+the same.
+Warning! Always be careful when selecting hypotheses. For example, to prove the strange
+formula (the so-called Peirce's Law) |- ((A→B)→A)→A (it is provable in the classical logic, not in the
+constructive logic!), you can try proving that (A→B)→A |- A, but not A→B, A |- A. Why? Because, by
+Deduction Theorem 1, from A→B, A |- A it follows that A→B |- A→A and |- (A→B)→(A→A), or A |-
+(A→B)→A and |- A→((A→B)→A). Where do you see |- ((A→B)→A)→A here?
+Exercise 2.1.2. Prove the following [L1, L2, MP]:
+a) |- ((A→B)→(A→C))→(A→(B→C)). What does this formula mean?
+b) |- (A→B)→((B→C)→(A→C)). What does this formula mean? It's another version of the so-called
+Law of Syllogism (by Aristotle), or the transitivity property of implication. Explain the difference
+between this formula and Theorem 1.4.2: A→B, B→C |- A→C.
+c) |- (A→(B→C))→(B→(A→C)). What does this formula mean? It's another version of the so-called
+Premise Permutation Law. Explain the difference between this formula and Exercise 1.4.1(c):
+A→(B→C) |- B→(A→C).
+2.2. Proving Formulas Containing Conjunction
+Theorem 2.2.1. a) [L5, MP] A, B |- A&B,
+b) [L3, L4, MP]: A&B |- A, A&B |- B.
+Let us prove (a).
+(1) A Hypothesis.
+(2) B Hypothesis.
+(3) |- A→(B→A&B) Axiom L5: B→(C→B&C) with B = A, C =
+                        B.
+(4) B→A&B By MP, from (1) and (3).
+(5) A&B By MP, from (2) and (4).
+Now, let us prove (b).
+(1) A&B Hypothesis.
+(2) |- A&B→A Axiom L3: B&C→B with B = A, C = B.
+(3) A By MP, from (1) and (2).
+Thus, A&B |- A.
+(1) A&B Hypothesis.
+(2) |- A&B→B Axiom L4: B&C→C with B = A, C = B.
+(3) B By MP, from (1) and (2).
+Thus, A&B |- B.
+Theorem 2.2.1 allows easy proving of equivalences. Let us recall that B↔C is defined as a shortcut for
+(B→C)&(C→B). Of course, we will call B and C equivalent formulas, if and only if |- B↔C. For
+example, by Theorem 1.4.1, [L1, L2, MP] |- A→A, hence, [L1, L2, L5, MP] |- (A→A)&(A→A), i.e.
+[L1, L2, L5, MP] |- A↔A.
+Of course, (a) of the Exercise 2.1.2 is the reverse formula of the axiom L2. Hence, by Theorem 2.2.1:
+[L1, L2, L5, MP] |- (A→(B→C)) ↔ ((A→B)→(A→C)).
+By (c) of the Exercise 2.1.2, and Theorem 2.2.1:
+[L1, L2, L5, MP] |- (A→(B→C))↔(B→(A→C))
+Now, let us prove another form of the Law of Syllogism, or Theorem 1.4.2 [L1, L2, MP]: A→B, B→C |-
+A→C:
+[L1-L4, MP] |- (A→B)&(B→C)→(A→C).
+(1) (A→B)&(B→C) Hypothesis.
+(2) |- (A→B)&(B→C)→(A→B) Axiom L3: B&C→B with B = A→B, C =
+                                    B→C.
+(3) |- (A→B)&(B→C)→(B→C) Axiom L4: B&C→C with B = A→B, C =
+                                    B→C.
+(4) A→B By MP, from (1) and (2).
+(5) B→C By MP, from (1) and (3).
+(6) A→C By by the transitivity property of implication
+         (Theorem 1.4.2).
+Thus, we have established that [L1-L4, MP]: (A→B)&(B→C) |- A→C. By Deduction Theorem 1, [L1-L4,
+MP] |- ((A→B)&(B→C))→(A→C).
+Exercise 2.2.1. Prove the following [L1- L5, MP]:
+a) A→B, A→C |- A→B&C. What does it mean?
+b) |- (A→B)&(A→C)→(A→B&C). What does it mean?
+c) A→B&C |- A→B. What does it mean?
+d) A→B&C |- A→C. What does it mean?
+e) |- (A→B&C)→(A→B)&(A→C). What does it mean?
+Hence,
+[L1- L5, MP]: |- (A→B&C)↔(A→B)&(A→C).
+Exercise 2.2.2. Prove the following, [L1- L5, MP]:
+a) |- A&B↔B&A.What does it mean? That conjunction is commutative.
+b) |- A&(B&C)↔(A&B)&C. What does it mean? That conjunction is associative.
+c) |- A&A↔A. What does it mean? That conjunction is idempotent.
+Exercise 2.2.3. Prove the following, [L1- L5, MP]:
+a) |- (A→(B→C))↔(A&B→C). What does it mean?
+b) |- (A→B)→(A&C→B&C). What does it mean? The converse formula (A&C→B&C)→(A→B) cannot
+be true. Explain, why.
+c) A |- B↔B&A. What does it mean?
+Exercise 2.2.4. Let us recall that the equivalence connective A↔B is defined as a shortcut for
+(A→B)&(B→A). Prove the following properties of this connective [L1- L5, MP]:
+(a) |- A↔A (reflexivity),
+(b) |- (A↔B)→(B↔A) (symmetricity),
+(c) |- (A↔B)&(B↔C)→(A↔C) (transitivity).
+2.3. Proving Formulas Containing Disjunction
+Exercise 2.3.1. Prove the following [L1, L2, L6-L8, MP]:
+a) [L8, MP]: A→C, B→C |- AvB→C. What does it mean?
+b) [ L5, L6-L8, MP]: |- AvB↔BvA. What does it mean? That disjunction is commutative.
+c) [L1, L2, L5, L6-L8, MP]: |- AvA↔A. What does it mean? That disjunction is idempotent.
+Theorem 2.3.0. [L1, L2, L8, MP]: If there is a proof of A1, A2, ..., An, B |- D, and a proof of A1, A2, ...,
+An, C |- D, then there is a proof of A1, A2, ..., An , BvC |- D.
+Exercise 2.3.2. Prove Theorem 2.3.0.
+Proving that disjunction is associative requires some sophistication (smart students: do not read the
+proof below, try proving yourself):
+[L1, L2, L5, L6-L8, MP]: |- Av(BvC)↔(AvB)vC.
+First, imagine, we are trying to obtain, for example, Av(BvC)→(AvB)vC, from the axiom L8:
+(A→(AvB)vC)→(((BvC)→(AvB)vC)→(Av(BvC)→(AvB)vC))).
+It seems, the second premise (BvC)→(AvB)vC) also could be obtained from L8:
+(B→(AvB)vC)→((C→(AvB)vC)→((BvC)→(AvB)vC))).
+Thus, the → part of the task will be solved, if we could prove that |- A→Av(BvC), |- B→Av(BvC), |-
+C→Av(BvC).
+(1) |- A→Av(BvC)
+Axiom L6: B→BvC with B = A, C = BvC.
+Now, let us prove that |- B→Av(BvC).
+(2) |- B→BvC Axiom L6.
+(3) |- BvC→Av(BvC) Axiom L7: C→BvC with B = A, C = BvC.
+(4) |- B→Av(BvC) From (2) and (3), by the transitivity property
+                  of implication (Theorem 1.4.2).
+Now, let us prove that |- C→Av(BvC).
+(5) |- C→BvC Axiom L7.
+(6) |- BvC→Av(BvC) Axiom L7: C→BvC with B = A, C = BvC.
+(7) |- C→Av(BvC) From (5) and (6), by the transitivity property
+                  of implication (Theorem 1.4.2).
+Exercise 2.3.3. a) Prove the converse: [L1, L2, L6-L8, MP]: |- (AvB)vC)→Av(BvC).
+b) Prove (use Deduction Theorem 1) that [L1, L2, L6-L8, MP]: |- (A→B)→(AvC→BvC). What does it
+mean? The converse formula (AvC→BvC)→(A→B) cannot be true. Explain, why.
+c) Prove that [L1, L2, L6-L8, MP]: |- A→B, C→D |- AvC→BvD. What does it mean?
+The following theorem corresponds to the well-known distributive property of (number) addition to
+multiplication: (a+b)c = ac+bc. Of course, the "dual" distributive property (i.e. - of multiplication to
+addition) does not hold for numbers: ab+c=(a+c)(b+c) would imply ab+c=ab+ac+bc+cc, c=ac+bc+cc,
+and, if c<>0, then 1=a+b+c. Still, surprisingly, in logic,
+Theorem 2.3.1. Conjunction is distributive to disjunction, and disjunction is distributive to
+conjunction:
+[L1-L8, MP]: |- (A&B)vC↔(AvC)&(BvC).
+[L1-L8, MP]: |- (AvB)&C↔(A&C)v(B&C).
+First, let us prove that |- (A&B)vC→(AvC)&(BvC).
+(1) Prove |- A&B→(AvC)&(BvC)
+(2) Prove |- C→(AvC)&(BvC)
+(3) |- (A&B)vC→(AvC)&(BvC)
+From (1) and (2), by Exercise 2.3.1(a).
+Exercise 2.3.4. a) Prove (1) and (2).
+b) Do not read the following proof. Try proving yourself.
+Now, let us prove the converse: |- (AvC)&(BvC)→(A&B)vC.
+Note. The proof below starts with C as a hypothesis. Why not with (AvC)&(BvC)? Because, we will use
+Deduction Theorem 1 to prove the intermediate formula (6) C→(BvC→(A&B)vC), not the final result!
+(1) C Hypothesis.
+(2) B→C From (1).
+(3) |- C→(A&B)vC Axiom L7.
+(4) B→(A&B)vC From (2) and (3).
+(5) BvC→(A&B)vC From (4) and (3).
+(6) |- C→(BvC→(A&B)vC) From (1)-(5), by Deduction Theorem 1.
+(7) |- (B→A&B)→(BvC→(A&B)vC) Exercise 2.3.3(b).
+(8) |- A→(B→A&B) Axiom L3.
+(9) |- A→(BvC→(A&B)vC) From (8) and (7).
+(10 From (9) and (6).
+|- AvC→(BvC→(A&B)vC) 
+    ) 
+(11 From (10), by Exercise 2.2.3(a).
+|- (AvC)&(BvC)→(A&B)vC 
+  ) 
+Now, we must prove that |- (AvB)&C→(A&C)v(B&C).
+(1) Prove |- A→(C→(A&C)v(B&C))
+(2) Prove |- B→(C→(A&C)v(B&C))
+(3) Prove |- (AvB)&C→(A&C)v(B&C)
+Exercise 2.3.5. Prove the above (1), (2) and (3).
+Finally, we must prove that |- (A&C)v(B&C)→(AvB)&C.
+Exercise 2.3.6. Prove that.
+2.4. Formulas Containing Negation - Minimal Logic
+Theorem 2.4.1. a) If [L1, L2, L9, MP]: A1, A2, ..., An, B |- C, and [L1, L2, L9, MP]: A1, A2, ..., An, B |-
+¬C, then [L1, L2, L9, MP]: A1, A2, ..., An |- ¬B. What does it mean?
+b) [L3, L4, L9, MP]: |- ¬(A&¬A). What does it mean? It's the so-called Law of Non-Contradiction.
+Proof. a) By Deduction Theorem 1, A1, A2, ..., An |- B→C, and A1, A2, ..., An |- B→¬C. Let us continue
+this proof by adding the axiom L9: (B→C)→((B→¬C)→¬B) as the next step. After this, by applying MP
+twice we obtain ¬B. Q.E.D.
+b) See Exercise 1.4.2 (e).
+Exercise 2.4.1. a) (For smart students) Investigate the size (the number of formulas) of the proof [L1, L2,
+L9, MP]: A1, A2, ..., An, |- ¬B as a function f(k, m) of the sizes k, m of the proofs [L1, L2, L9, MP]: A1,
+A2, ..., An, B |- C and 1, A2, ..., An, B |- ¬C. You may wish to report your result. We will publish your
+report on the web as an appendix to this book. The current record holder is Aiga Romane, 2008: f(k, m) ≤
+3(k+m)+7. Improve this result, or prove that it is the best possible one.
+b) [L1, L2, L9, MP]: A, ¬B |- ¬(A→B). Or, [L1-L4, L9, MP]: |- A&¬B → ¬(A→B). What does it mean?
+c) |- [L1, L2, L9, MP]: (A→¬A)→¬A. What does it mean?
+Attention: non-constructive reasoning! In Section 2.6, we will use the classical logic [L1-L11, MP] to
+prove the converse formula of (c): ¬(A→B)→A&¬B, i.e. the equivalence ¬(A→B)↔A&¬B. This
+formula cannot be proved in the constructive logic [L1-L10, MP] (see Section 2.8).
+Theorem 2.4.2. [L1, L2, L9, MP]: |- (A→B)→(¬B→¬A). What does it mean? It's the so-called
+Contraposition Law.
+Note. The following form of Theorem 2.4.2 is called Modus Tollens:
+[L1, L2, L9, MP]: |- A→B, ¬B |- ¬A.
+Attention: non-constructive reasoning! In Section 2.6, we will use the classical logic [L1-L11, MP] to
+prove the converse formula (¬B→¬A)→(A→B), i.e. the equivalence (A→B)↔(¬B→¬A). We will see
+also that these formulas cannot be proved in the constructive logic [L1-L10, MP] (see Section 2.8).
+Exercise 2.4.2. a) Prove Theorem 2.4.2.
+b)Verify that, in our axiom system, the Law of Non-Contradiction and the Contraposition Law could be
+used instead of the axiom L9. More precisely: prove L9 in the logic [L1-L5, Law of Non-Contradiction,
+Contraposition Law, MP]. Be careful: do not use theorems depending on the axiom L9.
+Theorem 2.4.3. [L1-L9, MP]: |- (A→¬B)↔(B→¬A). What does it mean?
+First we prove that |- (A→¬B)→(B→¬A).
+(1) A→¬B Hypothesis.
+(2) B Hypothesis.
+(3) (A→B)→((A→¬B)→¬A) Axiom L9: (B→C)→((B→¬C)→¬B) with B
+                                         = A, C = B.
+(4) A→B From (2) by Axiom L1 and MP.
+(5) (A→¬B)→¬A From (3) and (4).
+(6) ¬A
+From (1) and (5).
+Thus, by Deduction Theorem 1, |- (A→¬B)→(B→¬A). By swapping A and B we obtain the converse
+formula: |- (B→¬A)→(A→¬B). Q.E.D.
+Attention: non-constructive reasoning! Warning! The (very similar to Theorem 2.4.3) formula
+(¬A→B)↔(¬B→A) can be proved only in the classical logic!
+Theorem 2.4.4. [L1, L2, L9, MP]: |- A→¬¬A. What does it mean?
+(1) A Hypothesis.
+(2) (¬A→A)→((¬A→¬A)→¬¬A) Axiom L9.
+(3) A→(¬A→A) Axiom L1.
+(4) ¬A→A From (1) and (3) by MP.
+(5) (¬A→¬A)→¬¬A From (2) and (4) by MP.
+(6) ¬¬A From (5) and Theorem 1.4.1 by MP.
+Attention: non-constructive reasoning! In Section 2.6, we will use the classical logic [L1-L11, MP] to
+prove the converse formula |- ¬¬A→A, i.e. the equivalence |- ¬¬A↔A (the so-called Double Negation
+Law). We will see also (Section 2.8) that these formulas cannot be proved in the constructive logic [L1-
+L10, MP].
+Still, in the minimal logic we can prove (Brouwer, 1923?):
+Theorem 2.4.5. [L1, L2, L9, MP]: |- ¬¬¬A↔¬A. What does it mean?
+Indeed, by Theorem 2.4.4, |- ¬A→¬¬¬A. By the Contraposition Law (Theorem 2.4.2), |-
+(A→¬¬A)→(¬¬¬A→¬A). Hence, by Theorem 2.4.4, |- ¬¬¬A→¬A. Q.E.D.
+Theorem 2.4.5 (and some of the following formulas in this and in the next section containing double
+negations) may seem uninteresting to people believing unconditionally in the equivalence ¬¬A↔A. Still,
+it seems interesting (at least - for a mathematician) to obtain a general characterization of logical formulas
+that do not depend on the Law of the Excluded Middle. In Section 2.7 we will use these formulas to prove
+the elegant and non-trivial Glivenko's theorem: a) A is provable in the classical propositional logic (i.e. in
+[L1-L11, MP]), if and only if ¬¬A is provable in the constructive propositional logic (i.e. in [L1-L10,
+MP]), b) ¬A is provable in the classical propositional logic, if and only if ¬A is provable in the
+constructive propositional logic.
+Theorem 2.4.6. a) [L1, L2, L9, MP]: |- (¬A→A)→¬¬A. What does it mean?
+b) [L1, L2, L6, L7, L9, MP]: |- ¬¬(Av¬A). What does it mean? In this weak form, the Law of the Excluded
+Middle can be "proved constructively". The axiom L11 can't be used in this proof! Explain, why. (Hint:
+derive a contradiction from ¬(Av¬A).)
+Exercise 2.4.3. Prove (a) and (b) of Theorem 2.4.6.
+Theorem 2.4.7. [L1-L9, MP]: a) |- (A→B)→(¬¬A→¬¬B). What does it mean?
+b) |- ¬¬(A→B)→(¬¬A→¬¬B). What does it mean?
+c) |- (A→(B→C))→(¬¬A→(¬¬B→¬¬C)). What does it mean?
+d) ¬¬(A→B), ¬¬(B→C) |- ¬¬(A→C). What does it mean?
+e) ¬¬A, ¬¬(A→B) |- ¬¬B. What does it mean?
+The converse of (a): (¬¬A→¬¬B)→(A→B) cannot be proved in the constructive logic (see Section 2.8).
+To prove (a), we must simply apply twice the Contraposition Law: (A→B)→(¬B→¬A)→(¬¬A→¬¬B).
+And, of course, (e) is an easy consequence of (b).
+Now, let us prove (b).
+(1) ¬¬(A→B) Hypothesis.
+(2) ¬¬A Hypothesis.
+(3) |- ¬¬A→((A→B)→¬¬B) From (a), by transposing A→B and
+                                  ¬¬A, by the Premise Permutation Law.
+(4) (A→B)→¬¬B From (2) and (3).
+(5) |- ((A→B)→¬¬B)→(¬¬¬B→¬(A→B)) By the Contraposition Law.
+(6) ¬¬¬B→¬(A→B) From (4) and (5).
+(7) |- (¬¬¬B→¬(A→B))→(¬¬(A→B)→¬¬¬¬B) By the Contraposition Law.
+(8) ¬¬(A→B)→¬¬¬¬B From (6) and (7).
+(9) ¬¬¬¬B From (1) and (8).
+(10 By Theorem 2.4.5.
+¬¬¬¬B→¬¬B 
+        ) 
+(11 From (9) and (10).
+¬¬B 
+  ) 
+Thus, by Deduction Theorem 1, |- ¬¬(A→B)→(¬¬A→¬¬B).
+Let us prove (c).
+(1) A→(B→C) Hypothesis.
+(2) ¬¬A Hypothesis.
+(3) ¬¬B Hypothesis.
+(4) ¬¬A→¬¬(B→C) From (1), by (a).
+(5) ¬¬(B→C) From (2) and (4).
+(6) ¬¬B→¬¬C From (5), by (b).
+(7) ¬¬C From (3) and (6).
+Thus, by Deduction Theorem 1, |- (A→(B→C))→(¬¬A→(¬¬B→¬¬C)).
+Now we can prove (d). First, let us take (c) with A = A→B, B = B→C, C = A→C:
+(1) |- ((A→B)→((B→C)→(A→C)))→(¬¬(A→B)→(¬¬(B→C)→¬¬(A→C))).
+(2) |- (A→B)→((B→C)→(A→C) By transitivity of implication and Deduction
+                                   Theorem 1.
+(3) ¬¬(A→B) Hypothesis.
+(4) ¬¬(B→C) Hypothesis.
+(5) ¬¬(A→C) From (1), (3) and (4).
+Theorem 2.4.8. [L1-L9, MP]: a) |- ¬¬(A&B)↔(¬¬A & ¬¬B). What does it mean?
+b) |- ¬¬A v ¬¬B → ¬¬(AvB). What does it mean?
+Attention: non-constructive reasoning! The converse of (b): ¬¬(AvB) → ¬¬A v ¬¬B cannot be proved
+in the constructive logic (see Section 2.8). What does it mean? If we simply succeed in deriving a
+contradiction from ¬(AvB), then, perhaps, we do not have a method allowing to decide, which part of
+¬¬A v ¬¬B is true - ¬¬A, or ¬¬B?
+Exercise 2.4.4. Prove Theorem 2.4.8. (Hint: use the result of Exercise 2.2.3(a), if needed.)
+Theorem 2.4.9. [L1, L2, L9, MP] |- ¬A→(A→¬B) (compare with Exercise 1.4.2(d)). What does it mean?
+It's a weak form of the "crazy" axiom L10: ¬A→(A→B). This axiom says: "Contradiction implies
+anything". In the minimal logic we can prove 50% of L10: "Contradiction implies that all is wrong". Of
+course, this 50%-provability of L10 decreases the significance of the minimal logic accordingly.
+Proof. See Exercise 2.4.5.
+Theorem 2.4.10. [L1-L9, MP]:
+a) |- ¬Av¬B → ¬(A&B). It's a half of the so-called First de Morgan Law. What does it mean?
+b) |- ¬(AvB) ↔ ¬A&¬B. It's the so-called Second de Morgan Law. What does it mean?
+Attention: non-constructive reasoning! The second half of (a) – the converse implication, i.e. the
+equivalence ¬(A&B) ↔ ¬Av¬B can be proved in the classical logic, yet not in the constructive logic (see
+Section 2.8). Explain, why.
+Augustus de Morgan (1806-1871): "He recognised the purely symbolic nature of algebra and he was aware of the existence of
+algebras other than ordinary algebra. He introduced de Morgan's laws and his greatest contribution is as a reformer of
+mathematical logic." (according to MacTutor History of Mathematics archive).
+Use Contraposition Law to prove (a) and (b→) in Exercise 2.4.5.
+Let us prove (b←).
+(0) ¬A&¬B Hypothesis.
+(1) ¬A From (0), by Axiom L3.
+(2) ¬B From (0), by Axiom L4.
+(3) A→¬C From (1), by Theorem 2.4.9: ¬A→(A→¬C).
+                 C is any formula.
+(4) B→¬C From (2), by Theorem 2.4.9: ¬B→(B→¬C).
+                 C is any formula.
+(5) AvB→¬C From (3) and (4), by Axiom L8:
+             (A→¬C)→((B→¬C)→(AvB→¬C).
+(6) AvB→¬¬C Repeat (3)-(5) with ¬¬C instead of ¬C.
+(7) ¬(AvB) From (5) and (6), by Axiom L9:
+           (AvB→¬C)→((AvB→¬¬C)→¬(AvB)).
+Thus, by [L1, L2] Deduction Theorem 1, [L1-L9, MP] |- ¬A&¬B → ¬(AvB).
+Exercise 2.4.5. Prove:
+a) Theorem 2.4.9.
+b) (a) and (b→) of Theorem 2.4.10. (Hint: use Contraposition Law).
+c) [L1-L9, MP]: |- (A→B)→¬(A&¬B). What does it mean? Compare with Exercise 2.4.1.
+d) [L1-L8, MP]: |- AvB → ((A→B)→B). What does it mean?
+Attention: non-constructive reasoning! The converse implication of (a), ¬(A&¬B)→(A→B) cannot be
+proved in the constructive logic (see Section 2.8). Explain, why. Still, we will prove this formula in the
+classical logic.
+The converse of (b): ((A→B)→B) → AvB cannot be proved in the constructive logic (see Section 2.8).
+Explain, why. Still, we will prove this formula in the classical logic.
+Thus, the formula ¬¬(Bv¬B) can be proved in the constructive logic, but Bv¬B can't - as we will see in
+Section 2.8.
+2.5. Formulas Containing Negation - Constructive Logic
+In this book, constructive logic is used as a synonym of intuitionistic logic!
+Constructive logic includes the "crazy" axiom L10: ¬B→(B→C), but rejects the Law of the Excluded
+Middle L11: Bv¬B as a general logical principle.
+Theorem 2.5.1. a) [L10, MP]: A, ¬A |- B. What does it mean?
+b) [L1, L2, L8, L10, MP]: |- AvB→(¬A→B). What does it mean?
+c) [L1, L8, L10, MP]: |- ¬AvB→(A→B). What does it mean?
+Of course, (a) follows directly from L10, by MP.
+Exercise 2.5.1. Prove (b) and (c) of Theorem 2.5.1. Note: when proving (c), you cannot use Deduction
+Theorem 1 (because of the missing axiom L2). So, simply build a sequence of 5 formulas representing the
+proof of (c).
+Attention: non-constructive reasoning! The converse of (b), i.e. (¬A→B)→AvB cannot be proved in
+the constructive logic (see Section 2.8). Explain, why. The converse of (c), i.e. (A→B)→¬AvB cannot be
+proved in constructive logic (see Section 2.8). Explain, why.
+Surprisingly, (b), i.e. the rule AvB, ¬A |- B seems to be a quite a "natural" logical principle, yet it cannot
+be proved without the "crazy" axiom L10! Why not? Because it implies L10! Indeed,
+1 AvB→(¬A→B) Hypothesis.
+2 ¬A Hypothesis.
+3 A Hypothesis.
+4 A→AvB Axiom L6.
+5 AvB By MP, from (3) and (4).
+6 B By MP, from (1), (5) and (2).
+Hence, by Deduction Theorem 1, [L1, L2, L6, MP]: AvB→(¬A→B) |- ¬A→(A→B).
+In Section 2.8 we will prove that L10 cannot be derived from L1-L9, hence, (b) also cannot be derived
+from L1-L9 (i.e. without L10).
+Theorem 2.5.2. [L1-L10, MP]: a) |- (¬¬A→¬¬B)→¬¬(A→B). It's the converse of Theorem 2.4.7(b).
+Hence, [L1-L10, MP]: |- ¬¬(A→B)↔(¬¬A→¬¬B).
+b) |- ¬¬A→(¬A→A). It's the converse of Theorem 2.4.6(a). Hence, [L1-L10, MP]: |- ¬¬A↔(¬A→A).
+c) |- Av¬A→(¬¬A→A). What does it mean?
+d) |- ¬¬(¬¬A→A). What does it mean?
+Of course, (b) is an instance of the axiom L10.
+To prove (a), let us prove that [L1-L10, MP]: ¬¬A→¬¬B, ¬(A→B) |- ¬B, ¬¬B. Then, by Theorem 2.4.1,
+(a) |- (¬¬A→¬¬B)→¬¬(A→B).
+Exercise 2.5.2. a) Prove that [L1-L10, MP]: ¬¬A→¬¬B, ¬(A→B) |- ¬B, ¬¬B.
+b) Prove (c) and (d) of Theorem 2.5.2.
+Exercise 2.5.3. Prove that in [L1-L10, MP]:
+a) A |- B↔Bv¬A. What does it mean?
+b) |- Bv(A&¬A) ↔ B. What does it mean?
+c) |- ((A&¬A)&B)vC ↔ C. What does it mean?
+2.6. Formulas Containing Negation - Classical Logic
+If you agree to adopt the formula Bv¬B, i.e. the Law of the Excluded Middle (Axiom L11 in the list of
+Section 1.3), you can prove, first of all, the so called Double Negation Law:
+Theorem 2.6.1. [L1-L11, MP]: |- ¬¬A → A. Hence, [L1-L11, MP]: |- ¬¬A ↔ A.
+Indeed, by Theorem 2.5.2, [L1-L10, MP]: |- Av¬A→(¬¬A→A), hence, [L1-L11, MP]: |- ¬¬A→A. Q.E.D.
+In the minimal logic we proved Theorem 2.4.4: [L1, L2, L9, MP]: |- A→¬¬A. Hence, [L1-L11, MP]: |-
+¬¬A ↔ A.
+Attention: non-constructive reasoning! The formula ¬¬A→A cannot be proved in the constructive
+logic, see Section 2.8. Why? Because it represents a kind of non-constructive reasoning. Indeed, imagine,
+you wish to prove that ∃xB(x). Assume the contrary, ¬∃xB(x), and derive a contradiction. Thus you have
+proved... the negation of ¬∃xB(x), i.e. ¬ ¬∃xB(x). To conclude ∃xB(x) from ¬ ¬∃xB(x), you need the
+Double Negation Law. Hence, by adopting this law as a logical principle, you would allow non-
+constructive existence proofs – if you prove ∃xB(x) by assuming ¬∃xB(x), and deriving a contradiction,
+then you may not obtain a method allowing to find a particular x satisfying B(x).
+Exercise 2.6.1. Prove that [L8, L11, MP]: A→B, ¬A→B |- B. Or, by Deduction Theorem 1, [L1, L2, L8,
+L11, MP]: (A→B)→((¬A→B)→B). What does it mean? This formula cannot be proved in the
+constructive logic (see Section 2.8). Explain, why.
+In the classical logic, you can prove also the full form of the Contraposition Law:
+Theorem 2.6.2. [L1-L11, MP]: |- (A→B) ↔ (¬B→¬A).
+We proved a half of this Law in the minimal logic as Theorem 2.4.2: [L1, L2, L9, MP]: |-
+(A→B)→(¬B→¬A). Let us prove the remaining half: [L1-L11, MP] |- (¬B→¬A) → (A→B).
+(1) ¬B→¬A Hypothesis.
+(2) A Hypothesis.
+(3) ¬¬A→¬¬B From (1), by the first half.
+(4) |- A→¬¬A Double Negation Law.
+(5) |- ¬¬B→B Double Negation Law.
+(6) B From (4), (3) ans (5).
+By Deduction Theorem 1, [L1-L11, MP] |- (¬B→¬A) → (A→B).
+Attention: non-constructive reasoning! The formula (¬B→¬A) → (A→B) cannot be proved in the
+constructive logic, see Section 2.8. Explain, why.
+Exercise 2.6.1A. Prove that in [L1-L11, MP]:
+a) |- (¬A→B)↔(¬B→A) (compare with Theorem 2.4.3).
+b) |- (A→B)→((¬A→¬B)→(B↔A)).
+Attention: non-constructive reasoning! These two formulas cannot be proved in the constructive logic,
+see Section 2.8.
+Theorem 2.6.3. [L1-L11, MP]: |- ¬(A&B) ↔ ¬Av¬B. It's the so-called First de Morgan Law.
+A half of this Law we proved in the minimal logic as Theorem 2.4.10(a): [L1-L9, MP] |- ¬Av¬B →
+¬(A&B). Let us prove the remaining half: [L1-L11, MP] |- ¬(A&B) → ¬Av¬B.
+Attention: non-constructive reasoning! This formula cannot be proved in the constructive logic, see
+Section 2.8. Explain, why.
+Let us start by proving ¬( ¬Av¬B) → A&B.
+(1) ¬( ¬Av¬B) Hypothesis.
+(2) |- ¬( ¬Av¬B)→¬¬A&¬¬B By the Second de Morgan Law -Theorem
+                                 2.4.10(b).
+(3) |- ¬¬A&¬¬B → ¬¬(A&B) Theorem 2.4.8(a). [L1-L9, MP]!
+(4) ¬¬(A&B) From (1), (2) and (3).
+Thus, by Deduction Theorem 1, [L1-L9, MP] |- ¬( ¬Av¬B) → ¬¬(A&B). By applying the first half of the
+Contraposition Law (provable in the minimal logic): [L1-L9, MP] |- ¬¬¬(A&B) →¬ ¬(¬Av¬B). By
+Theorem 2.4.5: [L1-L9, MP] |- ¬(A&B)→¬¬¬(A&B), hence, [L1-L9, MP] |- ¬(A&B)→¬ ¬(¬Av¬B).
+Now, by the Double Negation Law, [L1-L11, MP] |- ¬¬(¬Av¬B)→¬Av¬B, hence, [L1-L11, MP] |-
+¬(A&B)→¬Av¬B. Q.E.D.
+In the classical logic, we can express implication by negation and disjunction. Indeed, we already know
+that [L1-L10, MP]: |- ¬AvB→(A→B) (Theorem 2.5.1(c)).
+Theorem 2.6.4. a) [L1-L8, MP]: AvC |- (A→B)→BvC. Hence, [L1-L8, MP]: Av¬A |- (A→B)→¬AvB.
+b) [L1-L11, MP]: |- (A→B)↔¬AvB.
+Of course, (b) follows from (a) and Theorem 2.5.1(c). Let us prove (a).
+(1) A, A→B |- B
+(2) A, A→B |- BvC By Axiom L6.
+(3) A |- (A→B)→BvC By Deduction Theorem 1.
+(4) C, A→B |- C
+(5) C, A→B |- BvC By Axiom L7.
+(6) C |- (A→B)→BvC By Deduction Theorem 1.
+(7) AvC |- (A→B)→BvC
+By Axiom L8.
+Exercise 2.6.2. Prove that in [L1-L11, MP]:
+a) |- B&(Av¬A) ↔ B. What does it mean?
+b) |-( (Av¬A)vB)&C ↔ C. What does it mean?
+c) |- ((A→B)→B) → AvB. What does it mean? Hence, by Exercise 2.4.5(d), [L1-L11, MP]: |-
+((A→B)→B) ↔ AvB.
+Exercise 2.6.3. Prove that in [L1-L11, MP]:
+a) |- (A→B) ↔ ¬(A&¬B). What does it mean?
+b) |- ¬(A→B) ↔ A&¬B. What does it mean?
+c) |- AvB ↔ (¬A→B). What does it mean?
+d) |- A&B ↔ ¬(A→¬B). What does it mean?
+e) (For smart students) Try detecting, which parts of these equivalences are provable: 1) in the minimal
+logic, 2) in the constructive logic.
+Strange formulas
+Exercise 2.6.4. Prove in [L1-L11, MP] the following strange formulas:
+a) |- Av(A→B). What does it mean? Does it mean anything at all?
+b) |- (A→B)v(B→A). What does it mean? Does it mean anything at all? The most crazy theorem of the
+classical propositional logic?
+c) |- ((A→B)→A)→A. What does it mean? Does it mean anything at all? It is the so-called Peirce's Law
+from:
+C. S. Peirce. On the algebra of logic: A contribution to the philosophy of notation. American Journal of Mathematics, 1885,
+vol.7, pp.180-202.
+2.7. Constructive Embedding. Glivenko's Theorem
+Let us recall some of the results of previous sections concerning double negations:
+Theorem 2.4.4. [L1, L2, L9, MP]: |- A→¬¬A.
+Theorem 2.4.5. [L1-L9, MP]: |- ¬¬¬A↔¬A.
+Theorem 2.4.6(b). [L1-L9, MP]: |- ¬¬(Av¬A). In this weak form, the Law of the Excluded Middle can be
+"proved constructively".
+Theorem 2.4.7. [L1-L9, MP]: a) |- (A→B)→(¬¬A→¬¬B).
+b) |- ¬¬(A→B)→(¬¬A→¬¬B).
+c) |- (A→(B→C))→(¬¬A→(¬¬B→¬¬C)).
+d) ¬¬(A→B), ¬¬(B→C) |- ¬¬(A→C).
+e) ¬¬A, ¬¬(A→B) |- ¬¬B.
+Theorem 2.4.8. [L1-L9, MP]: a) |- ¬¬(A&B)↔(¬¬A & ¬¬B).
+b) |- ¬¬A v ¬¬B → ¬¬(AvB).
+Theorem 2.5.2. [L1-L10, MP]: a) |- (¬¬A→¬¬B)→¬¬(A→B). It's the converse of Theorem 2.4.7(b).
+d) |- ¬¬(¬¬A→A).
+Theorem 2.6.1. [L1-L11, MP]: |- ¬¬A ↔ A.
+Does it mean that for any formula A: if [L1-L11, MP]: |- A, then [L1-L10, MP]: |- ¬¬A? (The converse is
+obvious: if [L1-L10, MP]: |- ¬¬A, then [L1-L11, MP]: |- A by Theorem 2.6.1.)
+Imagine, we have a proof of [L1-L11, MP]: |- A. It is a sequence of formulas R1, R2, ..., Rn, where Rn = A.
+If this sequence does not contain instances of the axiom L11, then it is a proof of [L1-L10, MP]: |- A as
+well. Hence, according to Theorem 2.4.4, [L1-L10, MP]: |- ¬¬A
+If the sequence R1, R2, ..., Rn contains some instances of L11, i.e. formulas having the form Bv¬B, then,
+according to Theorem 2.4.6(b), we could try replacing each such formula by a sequence proving that [L1-
+L9, MP]: |- ¬¬(Bv¬B). It appears that each of the formulas ¬¬R1, ¬¬R2, ..., ¬¬Rn is provable in [L1-L10,
+MP].
+a) If Rk is an instance of the axioms L1-L10, then [L1-L10, MP]: |- ¬¬Rk (Theorem 2.4.4).
+b) If Rk is an instance of the axiom L11, then [L1-L10, MP]: |- ¬¬Rk (Theorem 2.4.6(b)).
+c) Now, let us assume that i, j < k, and Ri, Rj |- Rk directly by MP, i.e. Rj is Ri→Rk. We know already that
+[L1-L10, MP]: |- ¬¬Ri and [L1-L10, MP]: |- ¬¬(Ri→Rk). By Theorem 2.4.7(b), [L1-L9, MP]: |-
+¬¬(Ri→Rk)→(¬¬Ri→¬¬Rk). Hence, [L1-L10, MP]: |- ¬¬Rk.
+Because A = Rn, we have proved the remarkable Glivenko's theorem from 1929:
+V.Glivenko. Sur quelques points de la logique de M. Brouwer. Academie Royale de Belgique, Bulletins de la classe des
+sciences, 1929, ser.5, vol.15, pp.183-188.
+Valery Ivanovich Glivenko (1896-1940, see http://www.math.ru/history/people/glivenko, in Russian) is best known by the so-
+called Glivenko-Cantelli theorem in probability theory.
+Glivenko's Theorem. [L1-L11, MP]: |- A, if and only if [L1-L10, MP]: |- ¬¬A. Or: a formula A is provable
+in the classical propositional logic, if and only if its double negation ¬¬A is provable in the constructive
+propositional logic.
+This theorem provides a kind of a "constructive embedding" for the classical propositional logic: any
+classically provable formula can be "proved" in the constructive logic, if you simply put two negations
+before it.
+Corollary. [L1-L11, MP]: |- ¬A, if and only if [L1-L10, MP]: |- ¬A. Or: a "negative" formula ¬A is
+provable in the classical propositional logic, if and only if it is provable in the constructive propositional
+logic.
+Indeed, if [L1-L11, MP]: |- ¬A, then by Glivenko's theorem, [L1-L10, MP]: |- ¬¬¬A, and by Theorem
+2.4.5, [L1-L10, MP]: |- ¬A. Q.E.D.
+Exercise 2.7.1. Prove the following version of Glivenko's theorem (see Kleene [1952]):
+a) If [L1-L11, MP]: A1, A2, ..., An |- C, then [L1-L10, MP]: ¬¬A1, ¬¬A2, ..., ¬¬An |- ¬¬C.
+b) If [L1-L11, MP]: ¬A1, ¬A2, ..., ¬An, B1, B2, ..., Bp |- ¬C, then [L1-L10, MP]: ¬A1, ¬A2, ..., ¬An , ¬¬B1,
+¬¬B2, ..., ¬¬Bp |- ¬C.
+2.8. Axiom Independence. Using Computers in Mathematical Proofs
+If one of our axioms Li could be proved by using the remaining n-1 axioms, then we could simplify our
+logical system by dropping Li as an axiom. A striking example:
+Theorem 2.8.1. The axiom L9: (A→B)→((A→¬B)→¬A) can be proved in [L1, L2, L8, L10, L11, MP].
+This fact was established by Augusts Kurmitis (on the web, also: A. A. Kurmit):
+A. A. Kurmitis. On independence of a certain axiom system of the propositional calculus. Proc. Latvian State University,
+1958, Vol. 20, N3, pp. 21-25 (in Russian).
+The following proof of L9 in [L1, L2, L8, L10, L11, MP] is due to Janis Sedols (1939-2011).
+First, let us establish that the formula (A→¬A)→¬A can be proved in [L1, L2, L8, L10, L11, MP] (in
+Exercise 2.4.1 we established that [L1, L2, L9, MP]: |- (A→¬A)→¬A):
+(1)
+|-
+Axiom L8.
+(A→¬A)→((¬A→¬A)→(Av¬A)→¬A))
+(2) A→¬A Hypothesis.
+(3) |- ¬A→¬A This is provable in [L1, L2, MP] (Theorem
+                1.4.1).
+(4) Av¬A Axiom L11.
+(4) ¬A From (1), (2), (3) and (4), by MP.
+(6) |- (A→¬A)→¬A By Deduction Theorem 1 (which is valid for
+                      any logical system containing [L1, L2, MP]).
+Now let us establish that in [L1, L2, L10, MP]: A→B, A→¬B |- A→¬A.
+(7) A→B Hypothesis.
+(8) A→¬B Hypothesis.
+(9) A Hypothesis.
+(9) B From (7), (9), by MP.
+(10 From (8), (9), by MP.
+¬B 
+ ) 
+(11 Axiom L10.
+|- ¬B→(B→¬A) 
+      ) 
+(12 From (9), (10) and (11) by MP.
+¬A 
+ ) 
+(13 By Deduction Theorem 1 (which is valid for
+A→B, A→¬B |- A→¬A any propositional system containing [L1, L2,
+        ) MP]).
+Finally, let us merge the proofs of (6) and (13), then by MP we obtain ¬A, i.e.
+[L1, L2, L8, L10, L11, MP]: A→B, A→¬B |- ¬A.
+Now, by Deduction Theorem 1 (which is valid for any propositional system containing [L1, L2, MP]) we
+obtain the axiom L9:
+[L1, L2, L8, L10, L11, MP]: (A→B)→((A→¬B)→¬A).
+Q.E.D.
+What should we do after establishing that one of our axioms is "dependent"?
+Do you think, we should drop L9 as an axiom of our logical system?
+First, let's note that we have proved L9 by using three problematic axioms: L1, L10, L11. But L9 itself is
+not problematic!
+Secondly, L9 cannot be proved in [L1-L8, L10, MP] (see Theorem 2.8.2 below). Hence, if we would drop
+L9, then, instead of a simple definition
+"classical logic = constructive logic + L11",
+we would have a more complicated one:
+"constructive logic = classical logic – L11 + L9".
+Now, the question of questions:
+Is Law of Excluded Middle an independent logical principle?
+I.e., could we prove the Law of the Excluded Middle (the axiom L11: Bv¬B) by using the other axioms
+(i.e. [L1-L10, MP]) as we proved L9 in [L1, L2, L8, L10, L11, MP]? If not, how could we demonstrate that
+this is impossible at all? How could we demonstrate that some logical principle is independent, i.e. that it
+cannot be derived from other principles?
+Let us assume, we have an algorithm q computing for each formula A some its "property" q(A) such that:
+a) q(L1) is true, q(L2) is true, ..., q(L10) is true (i.e. the axioms L1-L10 possess property q).
+b) If q(A) is true and q(A→B) is true, then q(B) is true (i.e. MP "preserves" property q). Hence, q(F) is
+true for all the formulas F that are provable in [L1-L10, MP].
+c) q(L11) is false (L11 does not possess property q).
+If we could obtain such a property q, then, of course, this would demonstrate that L11 cannot be proved in
+[L1-L10, MP], i.e. that the Law of the Excluded Middle is an independent logical principle.
+The most popular way of introducing such properties of formulas are the so-called "multi-valued logics"
+or "many-valued logics", introduced by Jan Lukasiewicz and Emil Post:
+J.Lukasiewicz. O logice trojwartosciowej. Ruch Filozoficzny (Lwow), 1920, vol. 5, pp. 169-171
+E.Post. Introduction to a general theory of elementary propositions. Amer. journ. math., 1921, vol. 21, pp.163-195
+Read more: Many-Valued Logic by Siegfried Gottwald in Stanford Encyclopedia of Philosophy.
+For example, let us consider a kind of "three-valued logic", where 0 means "false", 1 - "unknown" (or
+NULL - in terms of SQL), 2 - "true". Then it would be natural to define conjunction and disjunction as
+A&B = min(A,B)
+AvB = max(A,B).
+But how should we define implication and negation?
+A B A&B AvB A→B
+0 0 0 0 i1
+0 1 0 1 i2
+0 2 0 2 i3
+1 0 0 1 i4
+1 1 1 1 i5
+1 2 1 2 i6
+2 0 0 2 i7
+2 1 1 2 i8
+2 2 2 2 i9
+A ¬A
+0 i10
+1 i11
+2 i12
+Thus, theoretically, we have here to explore: 39 = 19683 variants of implication definitions and 33 = 27
+negation definitions.
+Do you think, it would be natural to set the values of ¬A as follows?
+A ¬A
+0 2
+1 1
+2 0
+Yes, if we would try building a "natural" three-valued logic, in which "1" would mean, indeed,
+"unknown". To fill in the “natural” table of three-valued implication, we could use, for example, the
+classical equivalence (A→B)↔¬AvB. In this way we could obtain the “natural” three-valued logic used,
+for example, for handling of NULL-values in SQL.
+However, our aim is here, in a sense, just the opposite of “natural”. We will consider
+"under the above truth tables, formula A always takes "true" values"
+as a kind of the above-mentioned "property" q(A). Hence, we will try to define the tables for implication
+and negation in such a way that:
+a) the axioms L1, L2, ..., L10 always take "true" values (i.e. 2),
+b) Modus Ponens "preserves" taking always "true" values (i.e. if the formulas A and A→B are always 2,
+then B also is always 2),
+c) the axiom L11 sometimes takes the values 0 or 1.
+Because of "violating" L11, the definitions of implication and negation, having these properties, cannot be
+100% natural. So, we must explore (at least some of) the "unnatural" versions as well.
+Exercise 2.8.1. Develop a simple (recursive) computer program receiving as input:
+a) Any such "truth tables".
+b) Any formula F consisting of letters A, B, C, and propositional connectives.
+and printing out "truth values" of the formula F, for example, if F = B→(A→B):
+A B B→(A→B)
+0 0 2
+0 1 2
+0 2 2
+1 0 2
+1 1 2
+1 2 2
+2 0 2
+2 1 2
+2 2 2
+In this example the axiom L1 always takes "true" values. Perhaps, we should be interested only in those
+variants of our "truth tables" that "satisfy" at least the axioms L1, L2, ..., L8 forcing them always to take
+"true" values.
+Note. See my version of the program in C++: header file, implementation, download the entire Borland C++ project (about
+200K zip).
+Thus, we consider
+"under the above truth tables, formula A always takes "true" values"
+as a kind of the "property" q(A).
+Will Modus Ponens preserve this property? If A is "true", and A→B is "true", how could B be not? Let us
+consider the relevant part of the above truth tables (i.e. the part where A is "true"):
+A B A→B
+2 0 i7
+2 1 i8
+2 2 i9
+If we would consider only those variants of our "truth tables" where i7 = 0 or 1, i8 = 0 or 1, and i9 = 2,
+then, if B would not be 2 for some values of its arguments, then A→B also would not be 2 for the same
+values of arguments.
+Hence, if we restrict ourselves to "truth tables" with i7 = 0 or 1, i8 = 0 or 1, and i9 = 2, then MP preserves
+the property of "being true". I.e., from "true" formulas MP can derive only "true" formulas.
+The next idea: if we wish the axiom L6: A→AvB always taking the value "true" (i.e. the value 2), then, if
+A≤B, then A→B must be 2.
+Thus, of all the 39 = 19683 possible implication definition variants only the following 3*2*2 = 12 variants
+are worth of exploring:
+A B A→B
+0 0 2
+0 1 2
+0 2 2
+1 0 i4=0,1,2
+1 1 2
+1 2 2
+2 0 i7=0,1
+2 1 i8=0,1
+2 2 2
+Exercise 2.8.2. a) Verify that under any of these 12 implication definitions the axioms L3, L4, L6, L7
+always take the value 2, i.e. you do not need testing these axioms any more.
+b) For each of the axioms, L1, L2, L5 and L8, determine all the possible combinations of the values of i4,
+i7, i8 forcing it to take always the value 2.
+Note. The "intersection" of b) consists of 5 combinations (see the results file #00).
+Exercise 2.8.3. Extend your previous computer program by adding 6 nested loops: for i4=0 to 2, for i7=0
+to 1, for i8=0 to1, for iaa=0 to 2, for ib=0 to 2, for ic=0 to 2. Let the program print out only those variants
+of "truth tables" that make "true" all the axioms L1-L8. (My program yields 135 such variants, see the
+results file #00).
+Thus, now we have 135 variants of "truth tables" that make "true" all the axioms L1-L8. Let us search
+among them for the variants that allow proving of axiom independency results we are interested in.
+Axiom L9
+In Theorem 2.8.1 we established that the axiom L9: (A→B)→((A→¬B)→¬A) can be proved in [L1-L8,
+L10, L11, MP]. Still,
+Theorem 2.8.2. The axiom L9 cannot be proved in [L1-L8, L10, MP].
+Proof. Let your program print out only those variants of "truth tables" that make "true" all the axioms L1-
+L8, and make: L9 - not "true", and L10 - "true". My program yields 66 such variants, see the results file
+#01. I like especially the (most natural?) variant #33:
+Implication variant #3:
+2 2 2 2 2 2 0 1 2 L1-L8 true.
+Variant #33. Negation: 2 1 0 L9 not true. L10 true. L11 not true.
+A B A→B
+0 0 2
+0 1 2
+0 2 2
+1 0 2
+1 1 2
+1 2 2
+2 0 0
+2 1 1
+2 2 2
+A ¬A
+0 2
+1 1
+2 0
+See the extended results file #1 for this variant.
+Under this variant the axioms L1-L8 and L10 are "true". As we know, under this variant, by MP, from
+"true" formulas only "true" formulas can be derived. The axiom L9 is not "true" under this variant:
+A B (A→B)→((A→¬B)→¬A)
+0 0 2
+0 1 2
+0 2 2
+1 0 1
+1 1 1
+1 2 1
+2 0 2
+2 1 2
+2 2 2
+Hence, L9 cannot be proved in [L1-L8, L10, MP]. Q.E.D.
+In a similar way, we can obtain other independence results.
+Axiom L10
+Theorem 2.8.3. The "crazy" axiom L10: ¬B→(B→C) cannot be proved in the minimal logic [L1-L9,
+MP], and even not in [L1-L9, L11, MP].
+Proof. Let your program print out only those variants of "truth tables" that make "true" all the axioms L1-
+L8, and make: L9 - "true", L10 - not "true", and L11 - "true". My program yields 6 such variants, see the
+results file #02. I like especially the (somewhat natural?) variant #1:
+Implication variant #1:
+2 2 2 0 2 2 0 1 2 L1-L8 true.
+Variant #1. Negation: 2 2 1 L9 true. L10 not true. L11 true.
+See the extended results file #2 for this variant.
+Under this variant the axioms L1-L9 and L11 are "true". As we know, under this variant, by MP, from
+"true" formulas only "true" formulas can be derived. The axiom L10 is not "true" under this variant:
+A B ¬A→(A→B)
+0 0 2
+0 1 2
+0 2 2
+1 0 2
+1 1 2
+1 2 2
+2 0 0
+2 1 1
+2 2 2
+Hence, L10 cannot be proved in [L1-L9, L11, MP]. Q.E.D.
+Axiom L11
+Now, let us prove the main result of this section:
+Theorem 2.8.4. The Law of the Excluded Middle L11: Bv¬B cannot be proved in the constructive
+propositional logic [L1-L10, MP]. I.e. the Law of the Excluded Middle is an independent logical
+principle.
+Proof. Let your program print out only those variants of "truth tables" that make "true" all the axioms L1-
+L8, and make: L9 - "true", L10 - "true", L11 - not "true". My program yields only one such variant, see the
+results file #03:
+Implication variant #1:
+2 2 2 0 2 2 0 1 2 L1-L8 true.
+Variant #1. Negation: 2 0 0 L9 true. L10 true. L11 not true.
+See the extended results file #3 for this variant.
+Under this variant the axioms L1-L10 are "true". As we know, under this variant, by MP, from "true"
+formulas only "true" formulas can be derived. The axiom L11 is not "true" under this variant:
+B ¬B Bv¬B
+0 2 2
+1 0 1
+2 0 2
+Hence, L11 cannot be proved in [L1-L10, MP]. Q.E.D.
+The results file #03 proves also the following
+Theorem 2.8.5 (thanks to Pavels Mihailovs for the correction). The following (classically provable)
+formulas cannot be proved in the constructive propositional logic [L1-L10, MP]:
+¬¬A → A
+(¬B → ¬A) → (A→B)
+(¬A→B)→(¬B→A)
+(¬¬A → ¬¬B) → (A→B)
+(A→B) → ¬AvB
+((A→B)→B)→ AvB
+((A→B)→A)→A
+¬(A&¬B)→(A→B)
+¬(A→B)→A&¬B
+Av(A→B)
+(A→B)→((¬A→¬B)→(B→A))
+Indeed, all these formulas take non-"true" values under the "truth tables" from the proof of Theorem
+2.8.4.
+The following three formulas also cannot be proved in the constructive propositional logic, yet,
+unfortunately, the "truth tables" from our proof of Theorem 2.8.4 do not allow proving this:
+¬(A&B) → ¬A v ¬B
+¬¬(AvB) → ¬¬A v ¬¬B
+(A→B)v(B→A)
+Indeed, under the above "truth tables", these formulas always take "true" values (see results file #03).
+Another interesting conclusion: add these three formulas as additional axioms to [L1-L10, MP] – and
+L11 will remain still unprovable!
+Thus, we did not succeed in building a three-valued logic that would allow showing that the latter three
+formulas cannot be proved in the constructive propositional logic. Is it possible at all to build a multi-
+valued logic that would separate constructively provable propositional formulas from unprovable ones?
+Kurt Gödel showed in 1932 that this is impossible: none of the finitely-valued logics "matches" exactly
+the constructive propositional logic:
+K. Gödel. Zum intuitionistischen Aussagenkalkül, Anzeiger Akademie der Wissenschaften Wien, Math.-naturwiss. Klasse,
+1932, Vol. 69, pp.65-66.
+Exercise 2.8.4. a) (For smart students) Verify that the latter three formulas cannot be proved in the
+constructive propositional logic [L1-L10, MP]. Or, see Section 4.4.
+b) Verify that any of the following formulas could be used - instead of Bv¬B – as the axiom L11 of the
+classical propositional logic: i) (A→B) → ¬AvB, ii) ¬¬B→B, iii) ¬(A→B)→A (Hint: since all these
+formulas are provable in [L1-L11, MP], it remains to prove L11 in [L1-L10, MP] + (i), in [L1-L10, MP] +
+(ii), and in [L1-L10, MP] + (iii)).
+c) Verify that with ¬¬B→B instead of L11 the "crazy" axiom L10 becomes 100% derivable from the other
+axioms. Perhaps, this is why many textbooks prefer the combination L1-L9 + ¬¬B→B as the axiom list
+for the classical propositional logic. But, then, we are forced to define the constructive propositional logic
+not as a subset of the classical one, but as the classical logic with the axiom ¬¬B→B replaced by the
+"crazy" axiom L10: ¬B→(B→C)!
+Axiom L10 again...
+Finally, let us check which of the main results of Sections 2.5 (constructive logic) and 2.6 (classical logic)
+depend on the "crazy" axiom L10: ¬A→(A→B). Let your program print out only those variants of "truth
+tables" that make "true" all the axioms L1-L8, and make: L9 - "true", L10 - not "true". My program yields
+6 such variants, see the results file #04. Surprisingly, in all these variants L11 also is "true" (thus, the
+results file #04 equals the results file #02). As the most productive appears
+Implication variant #1:
+2 2 2 0 2 2 0 1 2 L1-L8 true.
+Variant #1. Negation: 2 2 1 L9 true. L10 not true. L11 true.
+Constructively provable formulas
+Not true: (AvB)→((¬A)→B)
+Not true: ((¬A)vB)→(A→B)
+Not true: ((¬¬A)→(¬¬B))→(¬¬(A→B))
+Not true: (¬¬A)→((¬A)→A)
+Not true: (Av(¬A))→((¬¬A)→A)
+Not true: ¬¬((¬¬A)→A)
+Classically provable formulas
+True: (¬¬(AvB))→((¬¬A)v(¬¬B))
+True: (¬(A&B))→((¬A)v(¬B))
+Not true: (¬¬A)→A
+Not true: ((¬B)→(¬A))→(A→B)
+Not true: ((¬A)→B)→((¬B)→A)
+Not true: ((¬¬A)→(¬¬B))→(A→B)
+True: (A→B)→((¬A)vB)
+Not true: ((A→B)→B)→(AvB)
+Not true: ((A→B)→A)→A
+Not true: (¬(A&(¬B)))→(A→B)
+True: (A→B)→(((¬A)→B)→B)
+Not true: (¬(A→B))→(A&(¬B))
+Not true: Av(A→B)
+True: (A→B)v(B→A)
+Not true: (A→B)→(((¬A)→(¬B))→(B→A))
+Thus, the following constructively provable formulas cannot be proved in the minimal logic [L1-L9, MP]
+(and even in [L1-L9, L11, MP]), i.e. they cannot be proved without the "crazy" axiom L10:
+(AvB)→(¬A→B)
+¬AvB → (A→B)
+(¬¬A→¬¬B) → ¬¬(A→B)
+¬¬A → (¬A→A)
+Av¬A → (¬¬A→A)
+¬¬(¬¬A→A)
+And the following classically provable formulas cannot be proved without the "crazy" axiom L10 (thanks
+to Pavels Mihailovs for the correction):
+¬¬A→A
+(¬B→¬A)→(A→B)
+(¬A→B)→(¬B→A)
+(¬¬A→¬¬B)→(A→B)
+((A→B)→B) → AvB
+((A→B)→A)→A
+¬(A&¬B)→(A→B)
+¬(A→B)→A&¬B
+Av(A→B)
+(A→B)→((¬A→¬B)→(B→A))
+Exercise 2.8.5 (thanks to Stanislav Golubcov for the idea). But how about the remaining four (classically
+provable) formulas:
+a) (A→B) → ¬AvB
+b) ¬(A&B) → ¬Av¬B,
+c) ¬¬(AvB) → ¬¬Av¬¬B
+c1) (A→B)→((¬A→B)→B)
+d) (A→B)v(B→A)?
+Show that the formulas (a, b, c) can be proved without the "crazy" axiom L10, i.e prove them in [L1-L9,
+L11, MP]. (Hint: use Theorem 2.6.4 (a) [L1-L8, MP]: Av¬A |- (A→B)→¬AvB.). For smart students: how
+about the remaining formulas (c1, d)?
+Using computers in mathematical proofs
+Do you trust the above proofs? Personally, I trust much more my ability to write (relatively) error-free computer programs
+than my ability to carry out error-free mathematical proofs. But how about you? Of course, you do not need trusting my (or
+your own) program generating the results files #00, #01, #02, #03 and #04. We used these files only to select the "truth table"
+variants allowing to prove our independence results. The critical points to be trusted are (see my implementation file) : a) the
+recursive program
+int MyFormula::ValueAt(int A, int B, int C)
+and b) the character string analyzer
+int MyFormula::Analyze(int *pOperation, AnsiString *pSubFormula1, AnsiString *pSubFormula2)
+You may wish to remove your worries by verifying directly that under all the 3 truth table variants used above: a) the axioms
+L1-L8 are true, and b) the axioms L9, L10, L11 and other formulas are true or not true according to the goal of each particular
+proof. Before you have performed this 100%, you can feel the flavor of using computers in mathematical proofs (I trust this
+proof, I do not trust it, I trust this proof, I do not trust it, I trust this proof, I do not trust it, I trust this proof, I do not trust it, I
+trust this proof, I do not trust it, I trust this proof, I do not trust it, I trust this proof, I do not trust it, I trust this proof, I do not
+trust it, I trust this proof, I do not trust it, I trust this proof, I do not trust it, I trust this proof, I do not trust it, I trust this proof, I
+do not trust it,...)
+Unfortunately, in more complicated cases the situation does not allow the above simple exit (i.e. manual verification of the
+solution found by a computer):
+"The Four Colour Theorem was the first major theorem to be proved using a computer, having a proof that could not be
+verified directly by other mathematicians. Despite some worries about this initially, independent verification soon convinced
+everyone that the Four Colour Theorem had finally been proved. Details of the proof appeared in two articles in 1977. Recent
+work has led to improvements in the algorithm." (According to the article: The Four Colour Theorem in MacTutor History of
+Mathematics archive).
+The proof of the Four Colour Theorem was completed in 1976 by Kenneth Appel and Wolfgang Haken, see their photographs
+published in European Mathematical Society, Newsletter No. 46, December 2002, pp. 15-19.
+"The best-known, and most debated, instance is the use of computer analysis by Kenneth Appel and Wolfgang Haken of the
+University of Illinois in their 1976 proof of the four-colour conjecture (that four colours suffice to colour in any map drawn
+upon a plane in such a way that countries which share a border are given different colours). First put forward in 1852, the
+conjecture had become perhaps the most famous unsolved problem in mathematics, resisting a multitude of efforts at proof for
+over a century. Appel and Haken's demonstration rested upon computerized analysis, occupying 1,200 hours of computer time,
+of over 1,400 graphs. The analysis of even one of those graphs typically went beyond what an unaided human being could
+plausibly do: the ensemble of their demonstration certainly could not be checked in detail by human beings. In consequence,
+whether that demonstration constituted "proof" was deeply controversial..." (according to
+Donald MacKenzie. Computers and the Sociology of Mathematical Proof. In: Trends in the History and Philosophy of
+Mathematics, Odense: University of Southern Denmark, 2004, pp.67-86).
+See also
+Ken Appel on the 4CT proof, December 1998
+Robin Wilson. Four Colours Suffice. European Mathematical Society, Newsletter No. 46, December 2002, pp. 15-19 (online
+copy).
+The Four Color Theorem, November 13, 1995, by Robin Thomas.
+A computer-checked proof of the Four Colour Theorem, 2004, by Georges Gonthier.
+Doron Zeilberger. Opinion 54: It is Important to Keep Looking for Non-Computer Proofs of the Four-Color Theorem, But Not
+For the "Usual" Reasons (available online at http://www.math.rutgers.edu/¬zeilberg/Opinion54.html).
+Two other famous computer assisted mathematical proofs:
+- In 1989, by using Cray super-computers, Clement W. H. Lam finished his proof that finite projective plane of order 10 is
+impossible (for details see Projective plane in Wikipedia, the free encyclopedia).
+- In 1998, Thomas C. Hales finished his proof of Kepler conjecture about the densest arrangement of spheres in space
+(Johannes Kepler proposed it in 1611, for details see Kepler conjecture in Wikipedia, the free encyclopedia).
+See logical software links selected by Peter Suber.
+Visit the Mizar Project.
