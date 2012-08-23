@@ -587,52 +587,52 @@ Of course, \emph{having a predicate language is not enough} for expressing all o
 Computers do not know in advance, for example, how to handle sexes.
 We must tell them how to handle these notions by introducing axioms. Thus, the above-mentioned formulas like as (\(\forall x(Male(x) v Female(x))\)), or (\(\forall x(\forall y((Father(x, y))\IMPLIES (Male(x)))\)) will be absolutely necessary as axioms.
 As we will see later, language and axioms together make up a theory, i.e., in fact, to formulate all of our knowledge formally, we must create theories.
-
+\begin{exercise}
+%\label{}
 Exercise 1.2.2. ``Translate'' the following assertions into our ``language for people'':
 ``x is child of y'';
 ``x is grand-father of y'';
 ``x is cousin of y''.
+\end{exercise}
+
+\begin{exercise}
+%\label{}
 Exercise 1.2.3. ``Translate'' the following assertions into the language of first-order arithmetic:
 ``x and y do not have common divisors'' (note: 1 is not a divisor!),
 ``sqrt(2) is not a rational number''
 (Warning! \(\neg \exists p\exists q(sqrt(2)=p/q, and \exists x(x\cdot x=2)\) are not correct solutions. Why?)
+\end{exercise}
+
 Warning! Some typical errors!
-1) Trying to say ``for all \(x>2,\) F(x)'', do not write \(\forall x(x>2\AND F(x))\)---this would imply that \(\forall x(x>2)\)! But,
-how about x=1? The correct version: \(\forall x(x>2\IMPLIES F(x))\)
-2) Some computer programmers do not like using the implication connective \IMPLIES , trying to write formulas
-as conditions of IF- or WHILE-statements, i.e., by using conjunction, disjunction and negation only. This
-``approach'' makes most logical tasks much harder than they really are! More than that --- some people try
-saying, for example, ``Persons are not Departments'', as follows:
-\(\forall x(Person(x)\AND \neg Department(x))\) --- instead of the correct version: \(\forall x(Person(x)\IMPLIES \neg Department(x))\).
-3) Do not use abbreviations at this early stage of your studies. For example, do not write (\(\forall x>2)\exists yF(x,y)\)
-to say that ``for all x that are >2, there is y such that F(x,y)''. Instead, you should write
-\(\forall x(x>2\IMPLIES \exists yF(x,y))\). Similarly, instead of (\(\exists a>2)\exists bG(a,b)\), you should write \(\exists a(a>2\AND \exists bG(a,b))\), where
-\AND  is a conjunction (here, correctly!).
-To say ``there is one and only one x such that F(x)'', you shouldn't write \(\exists !x F(x)\) (at this stage of your
-studies), you should write, instead, ((\(\exists xF(x))\AND (\forall x1(\forall x2((F(x1)\AND F(x2))\IMPLIES (x1=x2)))\)).
-4) Predicates cannot be substituted for object variables. For example, having 3 predicate constants
-working(x, y), Person(x), Department(y), do not try writing working(Person(x), Department(y)) to say
-that ``only persons are working, and only in departments''. The correct verssion: \(\forall x\forall y(working(x, y)\IMPLIES Person(x)\AND Department(y))\).
-5) Trying to say ``each person is working in some department'', do not write
-\(\forall x\exists y(Person(x)\AND Department(y)\IMPLIES working(x,y)\)). The correct verssion:
-\(\forall x(Person(x)\IMPLIES \exists y(Department(y)\AND working(x,y)\)). What is the difference?
 
+\begin{enumerate}
+    \item 1) Trying to say ``for all \(x>2,\) F(x)'', do not write \(\forall x(x>2\AND F(x))\)---this would imply that \(\forall x(x>2)\)! But, how about x=1? The correct version: \(\forall x(x>2\IMPLIES F(x))\)
+    \item 2) Some computer programmers do not like using the implication connective \IMPLIES , trying to write formulas as conditions of IF- or WHILE-statements, i.e., by using conjunction, disjunction and negation only. This ``approach'' makes most logical tasks much harder than they really are! More than that --- some people try saying, for example, ``Persons are not Departments'', as follows: \(\forall x(Person(x)\AND \neg Department(x))\) --- instead of the correct version: \(\forall x(Person(x)\IMPLIES \neg Department(x))\).
+    \item 3) Do not use abbreviations at this early stage of your studies. For example, do not write (\(\forall x>2)\exists yF(x,y)\) to say that ``for all x that are >2, there is y such that F(x,y)''. Instead, you should write \(\forall x(x>2\IMPLIES \exists yF(x,y))\). Similarly, instead of (\(\exists a>2)\exists bG(a,b)\), you should write \(\exists a(a>2\AND \exists bG(a,b))\), where \AND  is a conjunction (here, correctly!).
+
+    To say ``there is one and only one x such that F(x)'', you shouldn't write \(\exists !x F(x)\) (at this stage of your studies), you should write, instead, ((\(\exists xF(x))\AND (\forall x1(\forall x2((F(x1)\AND F(x2))\IMPLIES (x1=x2)))\)).
+
+    \item 4) Predicates cannot be substituted for object variables. For example, having 3 predicate constants working(x, y), Person(x), Department(y), do not try writing working(Person(x), Department(y)) to say that ``only persons are working, and only in departments''. The correct verssion: \(\forall x\forall y(working(x, y)\IMPLIES Person(x)\AND Department(y))\).
+
+    \item 5) Trying to say ``each person is working in some department'', do not write \(\forall x\exists y(Person(x)\AND Department(y)\IMPLIES working(x,y)\)). The correct verssion: \(\forall x(Person(x)\IMPLIES \exists y(Department(y)\AND working(x,y)\)). What is the difference?
+\end{enumerate}
+
+\begin{exercise}
+%\label{}
 Exercise 1.2.4. Try inventing your own predicate language. Prepare and do your own Exercise 1.2.2 for it.
+\end{exercise}
 
-Exercise 1.2.5. In computer science, currently, one the most popular means of knowledge representation are the so-called UML class diagrams and OCL (UML --- Unified Modeling Language, OCL --- Object Constraint Language). The above diagram representing our ``domain of people'' is an example. In our
-``language of people'', put down as many axioms of the domain you can notice in the diagram. For example, ``every person is either male, or female'', ``all fathers are males'', ``every person has exactly one mother'', ``a person can marry no more than one person'' etc.  Many-sorted Languages
-Maybe, you have to describe two or more kinds of ``objects'' that you do not wish to reduce to ``sub-kinds'' of one kind of ``objects'' (for example, integer numbers and character strings). Then you may need introducing for each of your ``domains'' a separate kind (``sort'') of object variables. In this way you arrive to the so-called many-sorted predicate languages. In such
-languages: a) each object constant must be assigned to some sort; b) for each function constant, each argument must be
-assigned to some some sort, and function values must be assigned to a (single) sort; c) for each predicate constant, each
-argument must be assigned to some sort. In many-sorted predicate languages, the term and atomic formula definitons are
-somewhat more complicated: building of the term f(t1, \ldots , tk) or the formula p(t1, \ldots , tk) is allowed only, if the sort of the term ti
-values coincides with the sort of the i-th argument of f or p respectively. And the ``meaning'' of quantifiers depends on the sort
-of the variable used with them. For example, \(\forall x\) means ``for all values of x from the domain of the sort of x''.
-Theoretically, many-sorted languages can be reduced to one-sorted languages by introduding the corresponding predicates
-Sorti(x) (``the value of x belongs to the sort i''). Still, in applications of logic (for example, in computer science) the many-
-sorted approach is usually more natural and more convenient. (See Chapter 10. Many-Sorted first-order Logic, by Jean
-Gallier.)
+\begin{exercise}
+%\label{}
+Exercise 1.2.5. In computer science, currently, one the most popular means of knowledge representation are the so-called UML class diagrams and OCL (UML --- Unified Modeling Language, OCL --- Object Constraint Language). The above diagram representing our ``domain of people'' is an example. In our ``language of people'', put down as many axioms of the domain you can notice in the diagram. For example, ``every person is either male, or female'', ``all fathers are males'', ``every person has exactly one mother'', ``a person can marry no more than one person'' etc. 
+\end{exercise}
+
+Many-sorted Languages
+
+Maybe, you have to describe two or more kinds of ``objects'' that you do not wish to reduce to ``sub-kinds'' of one kind of ``objects'' (for example, integer numbers and character strings). Then you may need introducing for each of your ``domains'' a separate kind (``sort'') of object variables. In this way you arrive to the so-called many-sorted predicate languages. In such languages: a) each object constant must be assigned to some sort; b) for each function constant, each argument must be assigned to some some sort, and function values must be assigned to a (single) sort; c) for each predicate constant, each argument must be assigned to some sort. In many-sorted predicate languages, the term and atomic formula definitons are somewhat more complicated: building of the term f(t1, \ldots , tk) or the formula p(t1, \ldots , tk) is allowed only, if the sort of the term ti values coincides with the sort of the i-th argument of f or p respectively. And the ``meaning'' of quantifiers depends on the sort of the variable used with them. For example, \(\forall x\) means ``for all values of x from the domain of the sort of x''.  Theoretically, many-sorted languages can be reduced to one-sorted languages by introduding the corresponding predicates Sorti(x) (``the value of x belongs to the sort i''). Still, in applications of logic (for example, in computer science) the many- sorted approach is usually more natural and more convenient. (See Chapter 10. Many-Sorted first-order Logic, by Jean Gallier.)
+
 Warning about second order languages!
+
 In our definition of predicate languages only the following kinds of primitives were used: object variables, object constants,
 function constants and predicate constants. You may ask: how about function variables and predicate variables? For, you
 may wish to denote by r ``an arbitrary property'' of your ``objects''. Then, r(x) would mean ``x possess the property r'', and you
@@ -1128,40 +1128,64 @@ Re-formulate the above axiom system for a many-sorted predicate language (or, se
 %\label{}
 \([L1, L2, MP]: \vdash A\IMPLIES A\) for any formula A.
 \end{theorem}
-What does it mean? It's the so-called reflexivity property of implication.
 
-The following sequence of formulas represents a proof of the formula A\IMPLIES A.
-(1) (A\IMPLIES ((C\IMPLIES A)\IMPLIES A))\IMPLIES ((A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A)) It's the axiom schema L2: (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)), with B = A, C = C\IMPLIES A, D = A.  (2) A\IMPLIES ((C\IMPLIES A)\IMPLIES A) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = A, C = C\IMPLIES A.  (3) (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A) It follows from (1) and (2) by Modus Ponens.  (4) A\IMPLIES (C\IMPLIES A) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = A, C = C.  (5) A\IMPLIES A It follows from (3) and (4) by Modus Ponens.
-As you can see, the proof is easy to verify, but it could be hard to build it from scratch. ``Why'' should we
-take ``the axiom L2 with B = A, C = C\IMPLIES A, D = A'' for (1)?
-How could one invent a proof like the above one? One of the versions could be as follows. First, let's try to find an axiom,
-from which we could get A\IMPLIES A as a consequence. By trying L1, i.e., B\IMPLIES (C\IMPLIES B), and setting B=C=A, we could obtain
-A\IMPLIES (A\IMPLIES A), a dead end, perhaps. So, let's try L2, i.e., (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)). By setting B=D=A we obtain
-(A\IMPLIES (C\IMPLIES A))\IMPLIES ((A\IMPLIES C)\IMPLIES (A\IMPLIES A)). It seems to be a good decision --- because the first premise A\IMPLIES (C\IMPLIES A) is, in fact, L1.
-Hence, by applying the MP rule, we obtain (A\IMPLIES C)\IMPLIES (A\IMPLIES A). Now, how to make A\IMPLIES C ``provable''? Since C is, in fact, an
-arbitrary formula, we can replace C by C\IMPLIES A, obtaining (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A). The premise is here, again, L1, hence, by
-applying the MP rule, we obtain A\IMPLIES A. Q.E.D. By performing all our replacements at the very beginning, we obtain the above
-proof of the formula A\IMPLIES A. [BTW, the above two smart ``operations'' --- obtaining A\IMPLIES A within L2, and making L1 of A\IMPLIES C,
-are applications of the so-called unification, a very general and very important method used in intellectual computer programs,
-for details, see Section 5.7.]
+What does it mean? It's the so-called \term{reflexivity property of implication}.
+
+The following sequence of formulas represents a proof of the formula \(A\IMPLIES A\).
+
+(1) (A\IMPLIES ((C\IMPLIES A)\IMPLIES A))\IMPLIES ((A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A)) It's the axiom schema L2: (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)), with B = A, C = C\IMPLIES A, D = A.
+
+(2) A\IMPLIES ((C\IMPLIES A)\IMPLIES A) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = A, C = C\IMPLIES A.
+
+(3) (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A) It follows from (1) and (2) by Modus Ponens.
+
+(4) A\IMPLIES (C\IMPLIES A) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = A, C = C.
+
+(5) A\IMPLIES A It follows from (3) and (4) by Modus Ponens.
+
+As you can see, the proof is easy to verify, but it could be hard to build it from scratch.
+``Why'' should we take ``the axiom L2 with B = A, C = C\IMPLIES A, D = A'' for (1)?
+How could one invent a proof like the above one? One of the versions could be as follows.
+First, let's try to find an axiom, from which we could get A\IMPLIES A as a consequence.
+By trying L1, i.e., B\IMPLIES (C\IMPLIES B), and setting B=C=A, we could obtain A\IMPLIES (A\IMPLIES A), a dead end, perhaps.
+So, let's try L2, i.e., (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)).
+By setting B=D=A we obtain (A\IMPLIES (C\IMPLIES A))\IMPLIES ((A\IMPLIES C)\IMPLIES (A\IMPLIES A)).
+It seems to be a good decision --- because the first premise A\IMPLIES (C\IMPLIES A) is, in fact, L1.
+Hence, by applying the MP rule, we obtain (A\IMPLIES C)\IMPLIES (A\IMPLIES A).
+Now, how to make A\IMPLIES C ``provable''? Since C is, in fact, an arbitrary formula, we can replace C by C\IMPLIES A, obtaining (A\IMPLIES (C\IMPLIES A))\IMPLIES (A\IMPLIES A).
+The premise is here, again, L1, hence, by applying the MP rule, we obtain A\IMPLIES A. Q.E.D.
+By performing all our replacements at the very beginning, we obtain the above proof of the formula A\IMPLIES A.
+[BTW, the above two smart ``operations'' --- obtaining A\IMPLIES A within L2, and making L1 of A\IMPLIES C, are applications of the so-called unification, a very general and very important method used in intellectual computer programs, for details, see Section 5.7.]
+
+\begin{theorem}
+%\label{}
 Theorem 1.4.2. [L1, L2, MP]: \(A\IMPLIES B, B\IMPLIES C \vdash A\IMPLIES C\), for any formulas A, B, C. What does it mean? It's
 the so-called Law of Syllogism (by Aristotle), or the transitivity property of implication.
-The following sequence of formulas represents a proof of the formula A\IMPLIES C from the hypotheses A\IMPLIES B
-and B\IMPLIES C.
-(1) A\IMPLIES B
-Hypothesis.
+\end{theorem}
+
+The following sequence of formulas represents a proof of the formula A\IMPLIES C from the hypotheses A\IMPLIES B and B\IMPLIES C.
+
+(1) A\IMPLIES B Hypothesis.
+
 (2) B\IMPLIES C Hypothesis.
-(3) (A\IMPLIES (B\IMPLIES C))\IMPLIES ((A\IMPLIES B)\IMPLIES (A\IMPLIES C)) It's the axiom schema L2:
-                                       (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)), with B =
-                                                  A, C = B, D = C.
-(4) (B\IMPLIES C)\IMPLIES (A\IMPLIES (B\IMPLIES C)) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B
-                               = B\IMPLIES C, C = A.
+
+(3) (A\IMPLIES (B\IMPLIES C))\IMPLIES ((A\IMPLIES B)\IMPLIES (A\IMPLIES C)) It's the axiom schema L2: (B\IMPLIES (C\IMPLIES D))\IMPLIES ((B\IMPLIES C)\IMPLIES (B\IMPLIES D)), with B = A, C = B, D = C.
+
+(4) (B\IMPLIES C)\IMPLIES (A\IMPLIES (B\IMPLIES C)) It's the axiom schema L1: B\IMPLIES (C\IMPLIES B), with B = B\IMPLIES C, C = A.
+
 (5) A\IMPLIES (B\IMPLIES C) It follows from (2) and (4) by Modus Ponens.
+
 (6) (A\IMPLIES B)\IMPLIES (A\IMPLIES C) It follows from (3) and (5) by Modus Ponens.
+
 (7) A\IMPLIES C It follows from (1) and (6) by Modus Ponens.
-Note. Only axiom schemas L1 and L2 , and inference rule Modus Ponens are used for proving the
-Theorems 1.4.1 and 1.4.2. Hence, these theorems will remain valid for any logical system containing
-L1, L2 and Modus Ponens.
+
+\begin{note}
+%\label{}
+Only axiom schemas L1 and L2 , and inference rule Modus Ponens are used for proving the Theorems 1.4.1 and 1.4.2. Hence, these theorems will remain valid for any logical system containing L1, L2 and Modus Ponens.
+\end{note}
+
+\begin{exercise}
+%\label{}
 Exercise 1.4.1. Build sequences of formulas representing the following proofs (only the axiom schemas
 L1 and L2 and Modus Ponens are necessary):
 a) [L1, MP]: A \(\vdash\) B\IMPLIES A (a sequence of 3 formulas). What does it mean?
@@ -1169,90 +1193,136 @@ b) [L2, MP]: A\IMPLIES B, A\IMPLIES (B\IMPLIES C) \(\vdash\) A\IMPLIES C (a sequ
 c) [L1, L2, MP]: A\IMPLIES (B\IMPLIES C) \(\vdash\) B\IMPLIES (A\IMPLIES C) (a sequence of 9 formulas --- thanks to Pavel Andreyev for the
 idea). What does it mean? It's the so-called Premise Permutation Law.
 d) [L1, L2, MP]: A\IMPLIES (A\IMPLIES B) \(\vdash\) A\IMPLIES B (a sequence of 9 formulas). What does it mean?
-Theorem 1.4.3. [L14, MP, Gen] If F is any formula, and G is any formula that does not contain x as a free
+\end{exercise}
+
+\begin{theorem}
+%\label{}
+[L14, MP, Gen] If F is any formula, and G is any formula that does not contain x as a free
 variable, then
-\(G\IMPLIES F(x) \vdash G\IMPLIES \forall xF(x).\)
+\[G\IMPLIES F(x) \vdash G\IMPLIES \forall xF(x).\]
+\end{theorem}
+
 The following sequence of formulas represents a proof of the formula G\IMPLIES \(\forall\) xF(x) from the hypothesis
 G\IMPLIES F(x).
+
 (1) G\IMPLIES F(x) Hypothesis.
+
 (2) \(\forall\) x(G\IMPLIES F(x)) It follows from (1) by Generalization.
+
 (3) \(\forall\) x(G\IMPLIES F(x))\IMPLIES (G\IMPLIES \(\forall\) xF(x)), It's the axiom schema L14 (G does not contain x as a free variable).
+
 (4) G\IMPLIES \(\forall\) xF(x) It follows from (2) and (3) by Modus Ponens.
-Exercise 1.4.2. Build sequences of formulas representing the following proofs (F is any formula, and G is
-a formula that does not contain x as a free variable):
+
+\begin{exercise}
+%\label{}
+Exercise 1.4.2. Build sequences of formulas representing the following proofs (F is any formula, and G is a formula that does not contain x as a free variable):
+
 a) [L15, MP, Gen]: F(x)\IMPLIES G \(\vdash\) \(\exists\) xF(x)\IMPLIES G (a sequence of 4 formulas). What does it mean?
+
 b) [L3-L5, MP]: A\AND B \(\vdash\) B\AND A (a sequence of 8 formulas). What does it mean?
+
 c) [L6-L8, MP]: \(\vdash\) AvB\IMPLIES BvA (a sequence of 5 formulas). What does it mean?
+
 d) [L1, L9, MP]: B, \(\neg B \vdash \neg C\) (a sequence of 9 formulas). What does it mean? It's 50\% of the axiom L10!
-e) [L3, L4, L9, MP]: \(\vdash \neg (A\AND \neg A)\) (a sequence of 5 formulas). What does it mean? It's the so-called Law of
-Non-Contradiction.
+
+e) [L3, L4, L9, MP]: \(\vdash \neg (A\AND \neg A)\) (a sequence of 5 formulas). What does it mean? It's the so-called Law of Non-Contradiction.
+
 f) [L1, L8, L10, MP]: \(\vdash \neg AvB\IMPLIES (A\IMPLIES B)\) (a sequence of 5 formulas). What does it mean?
+
 g) [L8, L11, MP]: \(A\IMPLIES B, \neg A\IMPLIES B \vdash B\) (a sequence of 7 formulas). What does it mean?
+\end{exercise}
+
+\begin{exercise}
+%\label{}
 Exercise 1.4.3 (for smart students). Could one build shorter sequences proving Exercise 1.4.1 c), d) and
-Exercise 1.4.2 b), d)? Evgeny Vihrov verified in 2011 that any proof of Exercise 1.4.1 d) will be longer
-than 5 formulas.
+\end{exercise}
+
+\begin{exercise}
+%\label{}
+Exercise 1.4.2 b), d)? Evgeny Vihrov verified in 2011 that any proof of Exercise 1.4.1 d) will be longer than 5 formulas.
+\end{exercise}
 
 \subsection{Deduction Theorems}
 
-If, by assuming B as a hypothesis, we have proved C, then we have proved that B implies C. This trivial
-way of reasoning is formalized in the so-called deduction theorems (introduced by Jacques Herbrand
-and Alfred Tarski):
-J. Herbrand. Recherches sur la théorie de la démonstration. PhD Thesis, University of Paris, 1930 (approved in April 1929).
-A. Tarski. Ueber einige fundamentale Begriffe der Metamathematik. "Comptes Rendus de Séances de la Société des Sciences
-et des Lettres de Varsovie, Classe III", 1930, Vol.23, pp. 22-29.
+If, by assuming B as a hypothesis, we have proved C, then we have proved that B implies C. This trivial way of reasoning is formalized in the so-called deduction theorems (introduced by Jacques Herbrand and Alfred Tarski):
+
+J. Herbrand. Recherches sur la th\'{e}orie de la d\'{e}monstration. PhD Thesis, University of Paris, 1930 (approved in April 1929).
+
+A. Tarski. Ueber einige fundamentale Begriffe der Metamathematik. "Comptes Rendus de Séances de la Société des Sciences et des Lettres de Varsovie, Classe III", 1930, Vol.23, pp. 22-29.
+
 We will prove two such theorems.
-Theorem 1.5.1 (Deduction Theorem 1). If T is a first-order theory, and there is a proof [T, MP]: A1,
-A2, \ldots , An, B \(\vdash\) C, then there is a proof [L1, L2, T, MP]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C. (i.e., having a Modus
-Ponens proof of C from the hypotheses A1, A2, \ldots , An, B, we can build a Modus Ponens proof of B\IMPLIES C
-from the hypotheses A1, A2, \ldots , An.)
-It appears that, usually, proving of [T, MP]: \ldots  B \(\vdash\) C is easier (technically simpler) than proving of [T,
-MP]: \ldots  \(\vdash\) B\IMPLIES C.
+
+\begin{theorem}[Deduction Theorem 1]
+%\label{}
+If \(T\) is a first-order theory, and there is a proof \([T, MP]: \derive{A_1,A_2,\ldots,A_n,B}{C}\), then there is a proof \([L1, L2, T, MP]: \derive{A_1,A_2,\ldots,A_n}{B\IMPLIES C}\).
+(In other words, having a Modus Ponens proof of \(C\) from the hypotheses \(A_1,A_2,\ldots,A_n,B\), we can build a Modus Ponens proof of \(B\IMPLIES C\) from the hypotheses \(A_1,A_2,\ldots,A_n\).)
+\end{theorem}
+
+It appears that, usually, proving of [T, MP]: \ldots  B \(\vdash\) C is easier (technically simpler) than proving of [T, MP]: \ldots  \(\vdash\) B\IMPLIES C.
+
+\begin{exercise}[\(*\)]
+%\label{}
 Exercise 1.5.1. (For smart students) Do not read the proof below. Try proving yourself.
-Proof (thanks to Sergey Kozlovich for the idea, see also Kleene [1967], Exercise 10C). We must define a
-procedure allowing to convert any proof [T, MP]: A1, A2, \ldots , An, B \(\vdash\) C into a proof [L1, L2, T, MP]: A1,
-A2, \ldots , An \(\vdash\) B\IMPLIES C.
-The easy way to do this would be using an induction by the number of formulas in the proof [T, MP]: A1,
-A2, \ldots , An, B \(\vdash\) C. But we will use a more elegant idea. Any proof of [T, MP]: A1, A2, \ldots , An, B \(\vdash\) C is a
-sequence of formulas F1, F2, \ldots Fm. We will replace each formula Fi by 3 or 5 formulas, the last of these
-being the formula B\IMPLIES Fi, retaining our sequence as a valid proof.
+\end{exercise}
+
+\begin{proof}
+Proof (thanks to Sergey Kozlovich for the idea, see also Kleene [1967], Exercise 10C).
+We must define a procedure allowing to convert any proof [T, MP]: A1, A2, \ldots , An, B \(\vdash\) C into a proof [L1, L2, T, MP]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
+The easy way to do this would be using an induction by the number of formulas in the proof [T, MP]: A1, A2, \ldots , An, B \(\vdash\) C.
+But we will use a more elegant idea.
+Any proof of [T, MP]: A1, A2, \ldots , An, B \(\vdash\) C is a sequence of formulas F1, F2, \ldots Fm.
+We will replace each formula Fi by 3 or 5 formulas, the last of these being the formula B\IMPLIES Fi, retaining our sequence as a valid proof.
 We must consider the following cases:
-1) F is an axiom (i.e., an instance of a logical axiom or a non-logical axiom of T). Replace F by 3
-formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F. The second formula is an instance of L1, the third formula is obtained
-from the first two ones by using Modus Ponens.
-2) F is one of the hypotheses Ai. Replace F by 3 formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F. The second formula is an
-instance of L1, the third formula is obtained from the first two ones by using Modus Ponens.
-3) F is B. Replace F by the 5 formulas from the proof of Theorem 1.4.1, where D is any formula:
-(B\IMPLIES ((D\IMPLIES B)\IMPLIES B))\IMPLIES ((B\IMPLIES (D\IMPLIES B))\IMPLIES (B\IMPLIES B)) (an instance of L2),
-B\IMPLIES ((D\IMPLIES B)\IMPLIES B) (an instance of L1),
-B\IMPLIES (D\IMPLIES B))\IMPLIES (B\IMPLIES B) (by Modus Ponens),
-B\IMPLIES (D\IMPLIES B) (an instance of L1,),
-B\IMPLIES B (by Modus Ponens).
+
+1) F is an axiom (i.e., an instance of a logical axiom or a non-logical axiom of T).
+Replace F by 3 formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F.
+The second formula is an instance of L1, the third formula is obtained from the first two ones by using Modus Ponens.
+
+2) F is one of the hypotheses Ai.
+Replace F by 3 formulas: F, F\IMPLIES (B\IMPLIES F), B\IMPLIES F.
+The second formula is an instance of L1, the third formula is obtained from the first two ones by using Modus Ponens.
+
+3) F is B.
+Replace F by the 5 formulas from the proof of Theorem 1.4.1, where D is any formula: (B\IMPLIES ((D\IMPLIES B)\IMPLIES B))\IMPLIES ((B\IMPLIES (D\IMPLIES B))\IMPLIES (B\IMPLIES B)) (an instance of L2), B\IMPLIES ((D\IMPLIES B)\IMPLIES B) (an instance of L1), B\IMPLIES (D\IMPLIES B))\IMPLIES (B\IMPLIES B) (by Modus Ponens), B\IMPLIES (D\IMPLIES B) (an instance of L1,), B\IMPLIES B (by Modus Ponens).
 The last formula is here, of course, B\IMPLIES F.
-4) F is derived from some previous formulas Fi and Fj by Modus Ponens, Fi having the form Fj\IMPLIES F (i.e.,
-Fj\IMPLIES F and Fj yield F by Modus Ponens). Then, the formulas
-B\IMPLIES Fj,
-B\IMPLIES (Fj\IMPLIES F)
-are already present in the converted proof (they appeared during the replacement operations applied to the
-formulas Fj and Fj\IMPLIES F). So, replace F by 3 formulas:
-(B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2),
-(B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
-B\IMPLIES F (by Modus Ponens).
-Thus, what we have now, is a correct proof in [L1, L2, MP] that is using the hypotheses A1, A2, \ldots , An, but
-not B! The last formula of this proof is B\IMPLIES C (because C is the last formula of our initial proof [L1, L2,
-MP]: A1, A2, \ldots , An, B \(\vdash\) C). Thus, we have a proof [L1, L2, MP]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C. Q.E.D.
+
+4) F is derived from some previous formulas Fi and Fj by Modus Ponens, Fi having the form Fj\IMPLIES F (i.e., Fj\IMPLIES F and Fj yield F by Modus Ponens).
+Then, the formulas B\IMPLIES Fj, B\IMPLIES (Fj\IMPLIES F) are already present in the converted proof (they appeared during the replacement operations applied to the formulas Fj and Fj\IMPLIES F).
+So, replace F by 3 formulas: (B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2), (B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens), B\IMPLIES F (by Modus Ponens).
+
+Thus, what we have now, is a correct proof in [L1, L2, MP] that is using the hypotheses A1, A2, \ldots , An, but not B! The last formula of this proof is B\IMPLIES C (because C is the last formula of our initial proof [L1, L2, MP]: A1, A2, \ldots , An, B \(\vdash\) C).
+Thus, we have a proof [L1, L2, MP]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C. Q.E.D.
+\end{proof}
+
 The above proof of Deduction Theorem 1 includes, in fact, an algorithm allowing to obtain a proof of
 [L1, L2, MP]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C from a given proof of [L1, L2, MP]: A1, A2, \ldots , An, B \(\vdash\) C. The
 resulting proof is longer than the given one: if the given proof consists of m formulas, then the resulting
 proof consists of 3m+2 formulas).
-Corollaries 1.5.1. 1) If there is a proof [T, MP]: A1, A2, \ldots , An, B1, B2, \ldots , Bk \(\vdash\) C , then there is a proof
-[L1, L2, T, MP]: A1, A2, \ldots , An \(\vdash\) (B1\IMPLIES (B2\IMPLIES (\ldots \IMPLIES (Bk\IMPLIES C)\ldots ))).
+
+\begin{corollary}
+%\label{}
+
+Corollaries 1.5.1. 1) If there is a proof [T, MP]: A1, A2, \ldots , An, B1, B2, \ldots , Bk \(\vdash\) C , then there is a proof [L1, L2, T, MP]: A1, A2, \ldots , An \(\vdash\) (B1\IMPLIES (B2\IMPLIES (\ldots \IMPLIES (Bk\IMPLIES C)\ldots ))).
+\end{corollary}
+
+\begin{proof}
+Proof. 1) By iterating the Deduction Theorem 1.
+\end{proof}
+
+\begin{corollary}
+%\label{}
 2) If T includes (or proves) schemas L1, L2, then, if there is a proof [T, MP]: A1, A2, \ldots , An, B \(\vdash\) C then
 there is a proof [T, MP]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C .
 In particular, if [T, MP ]: B \(\vdash\) C, then [T, MP]: \(\vdash\) B\IMPLIES C.
 And, if [T, MP ]: B, C\(\vdash\) D, then [T, MP]: \(\vdash\) B\IMPLIES (C\IMPLIES D).
-Proof. 1) By iterating the Deduction Theorem 1.
-2) If T is a theory which includes or proves the schemas L1, L2, then [L1, L2, T, MP] is equivalent to [T,
-MP]. Q.E.D.
+\end{corollary}
+
+\begin{proof}
+2) If T is a theory which includes or proves the schemas L1, L2, then [L1, L2, T, MP] is equivalent to [T, MP]. Q.E.D.
+\end{proof}
+
+\begin{exercise}
+%\label{}
 Exercise 1.5.2. In earlier versions of logical axioms, instead of the axiom L2, the following 3 axioms
 were in use:
 L21: (A\IMPLIES (A\IMPLIES B))\IMPLIES (A\IMPLIES B),
@@ -1261,13 +1331,20 @@ L23: (A\IMPLIES B)\IMPLIES ((B\IMPLIES C)\IMPLIES (A\IMPLIES C)) (the Law of Syl
 Verify that both versions, i.e., [L1, L2, MP] and [L1, L21, L23, L23, MP] are equivalent. (Hint: a) See
 Section 2.1 to verify that [L1, L2, MP] proves L21, L23, L23. b) Verify that [L1, L21, L23, L23, MP] proves
 L2 either directly, or by proving the Deduction Theorem 1 for [L1, L21, L23, L23, MP].)
+\end{exercise}
+
+\begin{exercise}
+%\label{}
 Exercise 1.5.3 (thanks to Sergey Kozlovich for the idea).
 a) Prove the following ``generalization'' of the Modus Ponens rule:
 [L1, L2, MP]: (D1\IMPLIES (D2\IMPLIES \ldots (Dk\IMPLIES B)\ldots ), (D1\IMPLIES (D2\IMPLIES \ldots (Dk\IMPLIES (B\IMPLIES C))\ldots ) \(\vdash\) (D1\IMPLIES (D2\IMPLIES \ldots (Dk\IMPLIES C)\ldots ).
 b) Prove the following ``generalization'' of the axiom L14 (formulas D1, D2, \ldots , Dk do not contain x as a
 free variable):
 [L1, L2, L14, MP]: \(\vdash \forall x(D1\IMPLIES (D2\IMPLIES \ldots (Dk\IMPLIES F(x))\ldots ) \IMPLIES  (D1\IMPLIES (D2\IMPLIES \ldots (Dk\IMPLIES \forall xF(x))\ldots ).\)
+\end{exercise}
 
+\begin{exercise}
+%\label{}
 Exercise 1.5.4. (For smart students) Investigate the size (the number of formulas) of the proof [L1, L2,
 MP]: A1, A2, \ldots , An, \(\vdash B\IMPLIES C as a function f(m) of the size m of the proof [L1, L2, MP]: A1, A2, \ldots , An, B \vdash\)
 C. You may wish to report your result. We will publish your report on the web as an appendix to this
@@ -1279,19 +1356,21 @@ A1, A2, \ldots , An, B \(\vdash\) C. You may wish to report your result. We will
 appendix to this book. The current record holder is Kirils Solovjovs, 2008: \(g(m, n) \leq 7m+24n\)---2, where n
 is the number of instances of atomic formulas in the formula B. Improve this result, or prove that it is the
 best one possible.
+\end{exercise}
+
 Warning! Generalization involved\ldots 
-Now, what, if in the proof of A1, A2, \ldots , An, B \(\vdash\) C not only Modus Ponens, yet also Generalization is
-used?
-We must be careful, because, trying ``simply'' to apply Deduction Theorem 1, we can obtain crazy results.
-Indeed, having a formula F(x), by Generalization, we obtain the formula \(\forall xF(x). Thus, F(x) \vdash \forall xF(x)\). If
-Deduction Theorem 1 could be extended to Gen without any restrictions, then we could conclude that \(\vdash\)
-F(x)\IMPLIES \(\forall\) xF(x). If this is true for any x, it is true also for x=2, hence, \(\vdash\) F(2)\IMPLIES \(\forall\) xF(x). Thus, if the number
-2 is prime, then all numbers are prime?
+
+Now, what, if in the proof of A1, A2, \ldots , An, B \(\vdash\) C not only Modus Ponens, yet also Generalization is used?  We must be careful, because, trying ``simply'' to apply Deduction Theorem 1, we can obtain crazy results.  Indeed, having a formula F(x), by Generalization, we obtain the formula \(\forall xF(x). Thus, F(x) \vdash \forall xF(x)\). If Deduction Theorem 1 could be extended to Gen without any restrictions, then we could conclude that \(\vdash\) F(x)\IMPLIES \(\forall\) xF(x). If this is true for any \(x\), it is true also for \(x=2\), hence, \(\vdash\) F(2)\IMPLIES \(\forall\) xF(x). Thus, if the number 2 is prime, then all numbers are prime?
+
 So, let us try deriving a restricted formulation of the Deduction Theorem --- it seems, we should prohibit
 application of Gen to free variables of B --- the hypothesis ``to be moved''.
-Theorem 1.5.2 (Deduction Theorem 2). If T is a first-order theory, and there is a proof [T, MP, Gen]: A1,
-A2, \ldots , An, B \(\vdash\) C, where Generalization is not applied to free variables of B, then there is a proof [L1, L2,
-L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
+
+\begin{theorem}
+%\label{}
+Theorem 1.5.2 (Deduction Theorem 2). If T is a first-order theory, and there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C, where Generalization is not applied to free variables of B, then there is a proof [L1, L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
+\end{theorem}
+
+\begin{proof}
 Proof. We must extend the above proof of the Deduction Theorem 1 that consisted of 4 cases. First, we
 must extend the first case:
 1') F is an axiom (i.e., an instance of a logical axiom or a non-logical axiom of T). Replace F by 3
@@ -1311,21 +1390,39 @@ Thus, what we have now, is a correct proof in [L1, L2, L14, MP, Gen] that is usi
 A2, \ldots , An, but not B! The last formula of this proof is B\IMPLIES C (because C is the last formula our initial
 proof [L1, L2, L14, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C). Thus, we have a proof [L1, L2, L14, MP, Gen]: A1,
 A2, \ldots , An \(\vdash\) B\IMPLIES C. Q.E.D.
+\end{proof}
+
+\begin{corollary}
+%\label{}
+
 Corollaries 1.5.2. 1) If there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B1, B2, \ldots , Bk \(\vdash\) C, where
 Generalization is not applied to the free variables of the formulas B1, B2, \ldots , Bk, then there is a proof [L1,
 L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) (B1\IMPLIES (B2\IMPLIES (\ldots \IMPLIES (Bk\IMPLIES C)\ldots ))).
+\end{corollary}
+
+\begin{corollary}
+%\label{}
+
 2) If B is a closed formula, and there is a proof of [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C, then there is a
 proof of [L1, L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
+\end{corollary}
+
+\begin{corollary}
+%\label{}
 3) If T is a theory whose axioms include the schemas L1, L2, L14, then, if there is a proof [T, MP, Gen]:
 A1, A2, \ldots , An, B \(\vdash\) C, where Generalization is not applied to the free variables of B, then there is a proof
 [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C. In particular, if [T, MP, Gen]: B \(\vdash\) C, where Generalization is not
 applied to the free variables of B, then [T, MP, Gen]: \(\vdash\) B\IMPLIES C.
+\end{corollary}
+
+\begin{proof}
 Proof. Similar to the proof of the above Corollaries of Deduction Theorem 1.
+\end{proof}
+
 Warning! Previously proved theorems involved\ldots 
-In the real mathematical practice, when proving [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) C we may wish to apply
-some theorem Q that we have already proved earlier. If we would simply insert Q into our formal proof,
-then, formally, this would yield only that [T, MP, Gen]: A1, A2, \ldots , An, Q \(\vdash\) C. To obtain the desired formal
-proof [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) C, we must insert not only Q itself, but the entire proof of Q!
+
+In the real mathematical practice, when proving [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) C we may wish to apply some theorem Q that we have already proved earlier. If we would simply insert Q into our formal proof, then, formally, this would yield only that [T, MP, Gen]: A1, A2, \ldots , An, Q \(\vdash\) C. To obtain the desired formal proof [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) C, we must insert not only Q itself, but the entire proof of Q!
+
 Still, with the Deduction Theorem 2 this may be problematic. If we are proving [T, MP, Gen]: A1, A2, \ldots ,
 An, B \(\vdash\) C with the intention to apply Deduction Theorem 2 (to obtain [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\)
 B\IMPLIES C), then, before inserting the proof of Q, we must ensure that, in this proof, Generalization is not
@@ -1338,14 +1435,20 @@ Theorem 1.5.3 (Deduction Theorem 2A). If there is a proof [T, MP, Gen]: A1, A2, 
 after B appears in the proof, Generalization is not applied to free variables of B, then there is a proof
 [L1, L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
 Indeed, having such a theorem, we obtain the necessary
+
 Corollary 1.5.3. If there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B, Q \(\vdash\) C, where, after B appears in the
 proof, Generalization is not applied to free variables of B, and there is a proof [T, MP, Gen]: A1, A2, \ldots ,
 An \(\vdash\) Q, then there is a proof [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
-Proof. In the proof [T, MP, Gen]: A1, A2, \ldots , An, B, Q \(\vdash\) C, first, move the hypotheses A1, A2, \ldots , An to the
+
+\begin{proof}
+In the proof [T, MP, Gen]: A1, A2, \ldots , An, B, Q \(\vdash\) C, first, move the hypotheses A1, A2, \ldots , An to the
 beginning. Then, immediately after them, insert the proof [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) Q. Now we have
 a proof [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C, where, after B appears in the proof, Generalization is not
 applied to the free variables of B. By Deduction Theorem 2A, then there is a proof [T, MP, Gen]: A1,
 A2, \ldots , An \(\vdash\) B\IMPLIES C. Q.E.D.
+\end{proof}
+
+\begin{proof}
 Proof of the Deduction Theorem 2A. Let us modify the above proof of the Deduction Theorem 2.
 We must define a procedure allowing to convert any allowed proof [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C
 into a proof [L1, L2, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
@@ -1397,6 +1500,7 @@ Thus, what we have now, is a correct proof in [L1, L2, L14, T, MP, Gen] that is 
 A2, \ldots , An, but not B! The last formula of this proof is B\IMPLIES C (because C is the last formula our initial
 proof [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C). Thus, we have a proof [L1, L2, L14, T, MP, Gen]: A1, A2, \ldots ,
 An \(\vdash\) B\IMPLIES C. Q.E.D.
+\end{proof}
 
 \begin{exercise}
 In some other textbooks, a somewhat different system of logical axioms is used: instead of the axioms \(L_{14}\), \(L_{15}\) and the Generalization rule the following two rules of inference are used:
