@@ -15,7 +15,6 @@
 \usepackage{thmtools}
 %\usepackage{mathrsfs} % Example: \mathscr{A}
 %\usepackage{siunitx}
-%\usepackage[mathscr]{euscript} % For scripted letters in maths
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
 \usepackage{booktabs}
@@ -27,8 +26,8 @@
 \usepackage{graphicx}
 \usepackage{textcomp} % To obtain straight single (') and double (") quotes (instead of curly ones); use \textquotesingle and \textquotedbl
 % Note however that \textquotedbl comes from the fontenc package
-\usepackage{listings} % For displaying source code; for example use \begin{lstlisting}[language=tex]code here\end{lstlisting} to show LaTeX code
-\lstset{upquote=true} % Don't make quotes curly when displaying code using the listings package
+%\usepackage{listings} % For displaying source code; for example use \begin{lstlisting}[language=tex]code here\end{lstlisting} to show LaTeX code
+%\lstset{upquote=true} % Don't make quotes curly when displaying code using the listings package
 %\usepackage[tone]{tipa} % For the International Phonetic Alphabet. Type \textipa{text} to typeset
 %\usepackage{tikz}
 %\usetikzlibrary{decorations.markings}
@@ -44,7 +43,7 @@
 %\usepackage[charter]{mathdesign}
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
-\usepackage{hyperref} % Must be last package, except for ellipsis.
+%\usepackage[hidelinks]{hyperref} % Must be last package, except for ellipsis.
 \usepackage{cleveref} % Must be after hyperref
 \usepackage{ellipsis}
 %%%%%%%%%%%%%%%%%%%% Document information
@@ -52,6 +51,7 @@
 %\author{AuthorOfDocument}
 %\date{\today{}} % Uncomment and leave this empty to have no date
 %%%%%%%%%%%%%%%%%%%% Custom commands
+\newcommand{\url}[1]{\texttt{#1}}
 \newcommand{\strong}[1]{\textbf{#1}} % See the Wikipedia article on ``Separation of concerns'' and ``Separation of presentation and content''
 \newcommand{\term}[1]{\textbf{#1}}
 \newcommand{\IFF}{\ensuremath{\leftrightarrow}}
@@ -61,17 +61,17 @@
 \newcommand{\CHESS}{\emph{CHESS}}
 \newcommand{\derive}[2]{\ensuremath{#1\vdash #2}}
 %%%%%%%%%%%%%%%%%%%% For maths
-\declaretheorem[style=definition,qed=\(\blacksquare\),parent=subsection]{axiom}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{corollary}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{definition}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{discussion}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{example}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{exercise}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{lemma}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{note}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{proposition}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{remark}
-\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=axiom]{theorem}
+\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]{axiom}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{corollary}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{definition}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{discussion}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{example}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{exercise}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{lemma}
+\declaretheorem[style=definition,qed=\(\lrcorner\),numbered=no]{note}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{proposition}
+\declaretheorem[style=definition,qed=\(\lrcorner\),numbered=no]{remark}
+\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{theorem}
 \crefname{axiom}{axiom}{axioms}
 \crefname{corollary}{corollary}{corollaries}
 \crefname{definition}{definition}{definitions}

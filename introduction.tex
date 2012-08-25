@@ -1,45 +1,44 @@
-\begin{remark}
+\begin{note}
 %\label{remark:}
 In this book, \term{predicate language} is used as a synonym of \term{first-order language}, and \term{constructive logic} is used as a synonym of \term{intuitionistic logic}.
-\end{remark}
+\end{note}
 
 \section{Introduction. What Is Logic, Really?}
 
 What is logic?
-See also Factasia Logic\footnote{\url{http://www.rbjones.com/rbjpub/logic/}} by Roger Bishop Jones\footnote{\url{http://www.rbjones.com/}}.
-
+[See also Factasia Logic\footnote{\url{http://www.rbjones.com/rbjpub/logic/}} by Roger Bishop Jones\footnote{\url{http://www.rbjones.com/}}.]
 In a sense, logic represents the most general \emph{means of reasoning} used by people and computers.
 
 Why are means of reasoning important?
 Because any body of data may contain not only facts visible directly.
 For example, assume the following data: the date of birth of some person \(X\) is January 1, 2000,
 and yesterday, September 14, 2010 some person \(Y\) killed some person \(Z\).
-Then, most likely, \(X\) did not kill Z.
+Then, most likely, \(X\) did not kill \(Z\).
 This conclusion is not represented in our data directly, but can be derived from it by using some means of reasoning---\term{axioms} (``background knowledge'') and \term{rules of inference}.
 For example, one may use the following statement as an axiom: ``Most likely, a person of age 10 can't kill anybody''.
 
-There may be means of reasoning of different levels of generality, i.e.,, of different ranges of applicability.
+There may be means of reasoning of different levels of generality, i.e., of different ranges of applicability.
 The above ``killer axiom'' represents the lowest level---it is a very specific statement.
-But one can use laws of physics to derive conclusions from his/her data.
+But one can use laws of physics to derive conclusions from one's data.
 Theories of physics, chemistry, biology, etc., represent a more general level of means of reasoning.
 But can there be means of reasoning applicable in almost every situation?
 This---the most general---level of means of reasoning is usually regarded as \term{logic}.
 
-But is logic absolute (i.e.,, unique, predestined) or relative (i.e.,, there is more than one kind of logic)?
+But is logic absolute (i.e., unique, predestined) or relative (i.e., there is more than one kind of logic)?
 In modern times, an absolutist position is somewhat inconvenient---you must defend your ``absolute'' concept of logic against heretics and dissidents, but very little can be done to exterminate these people.
-They may freely publish their concepts on the Internet \ldots~.
+They may freely publish their concepts on the internet~\ldots~.
 
-So let us better adopt the relativist position, and define logic(s) as \emph{any common framework for building theories}.
+So let us better adopt the relativist position, and define logic as \emph{any common framework for building theories}.
 For example, the so-called absolute geometry can be viewed as a common logic for both the Euclidean and non-Euclidean geometry.
 Group theory\footnote{\url{http://www-history.mcs.st-andrews.ac.uk/HistTopics/Development\_group\_theory.html}} serves as a common logic for theories investigating mathematical structures that are subtypes of groups.
 And, if you decide to rebuild all mathematical theories on your favorite set theory, then you can view set theory as your logic.
 
 Can there be a common logic for the entire mathematics?
-To avoid the absolutist approach let us appreciate all the existing concepts of mathematics---classical (traditional), constructivist (intuitionist), New Foundations etc.
-Of course, enthusiasts of
-each of these concepts must propose some specific common framework for building mathematical theories, i.e.,, some specific kind of logic.
+To avoid the absolutist approach, let us appreciate all the existing concepts of mathematics---classical (traditional), constructivist (intuitionist), New Foundations\footnote{\url{http://math.boisestate.edu/~holmes/holmes/nf.html}} etc.
+Of course, enthusiasts of each of these concepts must propose some specific common framework for building mathematical theories, i.e., some specific kind of logic.
 And they do.
-Can set theory (for example, the most popular version of it---Zermelo--Fraenkel's set theory) be viewed as a common logic for the classical (traditional) mathematics?
+
+Can set theory (for example, the most popular version of it---Zermelo--Fraenkel's set theory\footnote{\url{http://www.ltn.lv/~podnieks/gt2.html\#s23}}) be viewed as a common logic for the classical (traditional) mathematics?
 You may think so, if you do not wish to distinguish between the first-order notion of natural numbers (i.e., discrete mathematics) and the second order notion (i.e., ``continuous'' mathematics based on set theory or a subset of it).
 Or, if you do not wish to investigate in parallel the classical and the constructivist (intuitionist) versions of some theories.
 
@@ -52,10 +51,10 @@ Or, if you do not wish to investigate in parallel the classical and the construc
 \end{itemize}
 
 How far can we proceed with the mathematical rigor---with the axiomatization of some theory?
-Complete elimination of intuition, i.e.,, full reduction of all proofs to a list of axioms and rules of inference, is this really possible?
+Complete elimination of intuition, i.e., full reduction of all proofs to a list of axioms and rules of inference, is this really possible?
 The work by Gottlob Frege, Charles S.\ Peirce, Bertrand Russell, David Hilbert, and their colleagues showed how this can be achieved even with the most complicated mathematical theories.
 All mathematical theories were indeed reduced to systems of axioms and rules of inference without any admixture of sophisticated human skills, intuitions etc.
-Today, the logical techniques developed by these brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent system of principles (i.e.,, of any mathematical theory).
+Today, the logical techniques developed by these brilliant people allow ultimate axiomatization of any theory that is based on a stable, self-consistent system of principles (i.e., of any mathematical theory).
 
 What do they look like---such ``100\% rigorous'' theories?
 They are called \term{formal theories} (formal systems, or deductive systems) emphasizing that no step of reasoning can be done without a reference to an exactly formulated list of axioms and rules of inference.
@@ -63,7 +62,7 @@ Even the most ``self-evident'' logical principles (like, ``if \(A\) implies \(B\
 
 What is, in fact, a (mathematical) theory?
 It is an \term{``engine'' generating theorems}.
-Then, a formal theory must be an ``engine'' generating theorems without involving of human skills, intuitions etc., i.e.,, by means of a computer program.
+Then, a formal theory must be an ``engine'' generating theorems without involving of human skills, intuitions etc., i.e., by means of a computer program.
 
 The first distinctive feature of a formal theory is a \term{precisely defined (``formal'') language} used to express its \term{propositions}.
 ``Precisely defined'' means here that there is an algorithm allowing to determine, is a given character string a correct proposition, or not.
@@ -78,7 +77,7 @@ Strictly speaking, ``self-evident'' is synonymous to ``accepted without argument
 Hence, axioms and/or rules of inference may be ``good, or bad'', ``true, or false'', and so may be the theorems obtained by means of them.
 The only definitely verifiable thing is here the fact that some theorem has been, indeed, \term{proved} from a fixed set of axioms by means of a fixed set of inference rules.
 
-Thus, the second distinctive feature of ``formality'' is the possibility to \emph{verify the correctness of proofs} mechanically, i.e.,, without involving of human skills, intuitions etc.
+Thus, the second distinctive feature of ``formality'' is the possibility to \emph{verify the correctness of proofs} mechanically, i.e., without involving of human skills, intuitions etc.
 This can be best formulated by using the (since 1936---precisely defined) notion of algorithm (a ``mechanically applicable computation procedure'', a computer program).
 
 \emph{A theory \(T\) is called a formal theory, if and only if there is an algorithm allowing to verify, is a given text a correct proof via principles of \(T\), or not.}
@@ -89,12 +88,12 @@ Thus, in a formal theory, the standards of reasoning should be defined precisely
 Axioms and inference rules represent only one (the most popular!) of the possible techniques of formalization.
 
 As an unpractical example of a formal theory let us consider the \emph{game of chess}, let us call this ``theory'' \CHESS.
-Let's define as propositions of \CHESS\ all the possible positions---i.e.,, allocations of some of the pieces (kings included) on a chessboard---plus the flag: ``white to move'' or ``black to move''.
+Let's define as propositions of \CHESS\ all the possible positions---i.e., allocations of some of the pieces (kings included) on a chessboard---plus the flag: ``white to move'' or ``black to move''.
 Thus, the set of all possible positions is the language of \CHESS.
 The only axiom of \CHESS\ is the initial position, and the rules of inference---the rules of the game.
 The rules allow passing from some propositions of \CHESS\ to some other ones.
 Starting with the axiom and iterating moves allowed by the rules we obtain theorems of \CHESS.
-Thus, theorems of \CHESS\ are defined as all the possible positions (i.e.,, propositions of \CHESS) that can be obtained from the initial position (the axiom of \CHESS) by moving pieces according to the rules of the game (i.e.,, by ``proving'' via the inference rules of \CHESS).
+Thus, theorems of \CHESS\ are defined as all the possible positions (i.e., propositions of \CHESS) that can be obtained from the initial position (the axiom of \CHESS) by moving pieces according to the rules of the game (i.e., by ``proving'' via the inference rules of \CHESS).
 
 \begin{exercise}
 Could you provide an unprovable proposition of \CHESS?
@@ -126,14 +125,16 @@ This fact is expressed usually as \derive{L}{aababb} ( ``\(L\) proves \(aababb\)
 (b) (P.~Lorenzen) Verify the following property of theorems in \(L\): for any \(X\), if \derive{L}{X}, then \derive{L}{aaX}.
 \end{exercise}
 
-One of the most important properties of formal theories is given in the following
+One of the most important properties of formal theories is given in the following:
 
 \begin{exercise}
-Show that the set of all theorems of a formal theory is effectively enumerable, i.e.,, show that, for any formal theory \(T\), a computer program \(P_T\) can be written that prints out on an (endless) paper tape all theorems of this theory (and nothing else).
-(Hint: we will call \(T\) a formal theory, if and only if we can present an algorithm for checking texts as correct proofs via principles of reasoning of \(T\).
-Thus, assume, you have 4 functions: GenerateFirstText()---returns Text, GenerateNextText()---returns Text, IsCorrectProof(Text)---returns true or false, ExtractTheorem(Text)---returns Text, you must implement the functions GenerateFirstTheorem()---returns Text, GenerateNextTheorem()---returns Text).
+Show that the set of all theorems of a formal theory is effectively enumerable, i.e., show that, for any formal theory \(T\), a computer program \(P_T\) can be written that prints out on an (endless) paper tape all theorems of this theory (and nothing else).
+(Hint: we will call \(T\) a formal theory if and only if we can present an algorithm for checking texts as correct proofs via principles of reasoning of \(T\).
+Thus, assume you have four functions: \texttt{GenerateFirstText()}---returns \texttt{\textit{Text}}, \texttt{GenerateNextText()}---returns \texttt{\textit{Text}}, \texttt{IsCorrectProof(Text)}---returns \texttt{true} or \texttt{false}, \texttt{ExtractTheorem(\textit{Text})}---returns \texttt{Text}, you must implement the functions \texttt{GenerateFirstTheorem()}---returns \texttt{\textit{Text}}, \texttt{GenerateNextTheorem()}---returns \texttt{\textit{Text}}).
+Text.)
 
-Unfortunately, such programs cannot solve the problem that the mathematicians are mainly interested in: is a given proposition \(A\) provable in T or not? When, running the program \(P_T\) on a computer, we see our proposition \(A\) printed out, this means that \(A\) is provable in \(T\).
+Unfortunately, \emph{such programs cannot solve the problem that the mathematicians are mainly interested in: is a given proposition \(A\) provable in \(T\) or not?}
+When, running the program \(P_T\) on a computer, we see our proposition \(A\) printed out, this means that \(A\) is provable in \(T\).
 Still, in general, until that moment we cannot know in advance whether \(A\) will be printed out some time later or it will not be printed at all.
 \end{exercise}
 
@@ -150,12 +151,11 @@ According to the official terminology, effectively enumerable sets are called ``
     \end{inparaenum}
 \end{exercise}
 
-\(T\) is called a \term{solvable theory} (more precisely---\term{effectively solvable}), if and only if there is an algorithm allowing to check whether some proposition is provable by using the principles of \(T\) or not.
+\(T\) is called a \term{solvable theory} (more precisely---\term{effectively solvable}) if and only if there is an algorithm allowing to check whether some proposition is provable by using the principles of \(T\) or not.
 In \cref{Lsolvable}a you proved that \(L\) is a solvable theory.
 Still, in \cref{Lsolvable}b you established that it is hard to state whether \CHESS\ is a ``feasibly solvable'' theory or not.
 Determining the provability of propositions is a much more complicated task than checking the correctness of ready proofs.
-It can be proved that most mathematical theories are unsolvable, the elementary (first-order) arithmetic of natural numbers and set theory included (see, for example, Mendelson [1997], or click here).
-% README: in the line above, ``Mendelson [1997]'' and ``click here'' are hyperlinked to a local destination so they couldn't be accessed
+It can be proved that most mathematical theories are unsolvable, the elementary (first-order) arithmetic of natural numbers and set theory included (see, for example, Mendelson [1997]\footnote{\url{http://www.ltn.lv/~podnieks/mlog/ml.htm\#Mendelson1997}}, or click here\footnote{\url{http://www.ltn.lv/~podnieks/gt6.html\#BM6\_3}}).
 In other words, there is no algorithm allowing to determine, is some arithmetical proposition provable from the axioms of arithmetic, or not.
 
 \begin{note}
@@ -200,7 +200,7 @@ See also:
 \item Charles Sanders Peirce (1839--1914): ``\ldots  He was also interested in the Four Colour Problem and problems of knots and linkages\ldots  He then extended his father's work on associative algebras and worked on mathematical logic and set theory. Except for courses on logic he gave at Johns Hopkins University, between 1879 and 1884, he never held an academic post.'' (according to MacTutor History of Mathematics archive).
 \item Hilary Putnam. Peirce the Logician. Historia Mathematica, Vol. 9, 1982, pp. 290-301 (an online excerpt\footnote{\url{http://www.jfsowa.com/peirce/putnam.htm}} is available, published by John F. Sowa).
 \item Richard Beatty. Peirce's development of quantifiers and of predicate logic. Notre Dame J. Formal Logic, Vol. 10, N 1 (1969), pp. 64-76.
-\item Geraldine Brady. From Peirce to Skolem. A Neglected Chapter in the History of Logic. Elsevier Science: North-Holland, 2000, 2000, 625 pp. (online overview at \url{http://www.elsevier.com/wps/find/bookdescription.cws\_home/621535/description#description)}.
+\item Geraldine Brady. From Peirce to Skolem. A Neglected Chapter in the History of Logic. Elsevier Science: North-Holland, 2000, 2000, 625 pp. (online overview at \url{http://www.elsevier.com/wps/find/bookdescription.cws\_home/621535/description\#description)}.
 \end{itemize}
 
 When trying to formalize some piece of our (until now---informal) knowledge, how should we proceed?
@@ -1395,7 +1395,7 @@ A2, \ldots , An \(\vdash\) B\IMPLIES C. Q.E.D.
 \begin{corollary}
 %\label{}
 
-Corollaries 1.5.2. 1) If there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B1, B2, \ldots , Bk \(\vdash\) C, where
+(1) If there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B1, B2, \ldots , Bk \(\vdash\) C, where
 Generalization is not applied to the free variables of the formulas B1, B2, \ldots , Bk, then there is a proof [L1,
 L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) (B1\IMPLIES (B2\IMPLIES (\ldots \IMPLIES (Bk\IMPLIES C)\ldots ))).
 \end{corollary}
@@ -1403,13 +1403,13 @@ L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) (B1\IMPLIES (B2\IMPLIES (\l
 \begin{corollary}
 %\label{}
 
-2) If B is a closed formula, and there is a proof of [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C, then there is a
+(2) If B is a closed formula, and there is a proof of [T, MP, Gen]: A1, A2, \ldots , An, B \(\vdash\) C, then there is a
 proof of [L1, L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
 \end{corollary}
 
 \begin{corollary}
 %\label{}
-3) If T is a theory whose axioms include the schemas L1, L2, L14, then, if there is a proof [T, MP, Gen]:
+(3) If T is a theory whose axioms include the schemas L1, L2, L14, then, if there is a proof [T, MP, Gen]:
 A1, A2, \ldots , An, B \(\vdash\) C, where Generalization is not applied to the free variables of B, then there is a proof
 [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C. In particular, if [T, MP, Gen]: B \(\vdash\) C, where Generalization is not
 applied to the free variables of B, then [T, MP, Gen]: \(\vdash\) B\IMPLIES C.
@@ -1436,9 +1436,12 @@ after B appears in the proof, Generalization is not applied to free variables of
 [L1, L2, L14, T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
 Indeed, having such a theorem, we obtain the necessary
 
-Corollary 1.5.3. If there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B, Q \(\vdash\) C, where, after B appears in the
+\begin{corollary}
+%\label{}
+If there is a proof [T, MP, Gen]: A1, A2, \ldots , An, B, Q \(\vdash\) C, where, after B appears in the
 proof, Generalization is not applied to free variables of B, and there is a proof [T, MP, Gen]: A1, A2, \ldots ,
 An \(\vdash\) Q, then there is a proof [T, MP, Gen]: A1, A2, \ldots , An \(\vdash\) B\IMPLIES C.
+\end{corollary}
 
 \begin{proof}
 In the proof [T, MP, Gen]: A1, A2, \ldots , An, B, Q \(\vdash\) C, first, move the hypotheses A1, A2, \ldots , An to the
@@ -1477,19 +1480,19 @@ Theorem 1.4.2:
 B\IMPLIES (Fj\IMPLIES F) (by Modus Ponens),
 (B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
 B\IMPLIES F (by Modus Ponens).
-4d) Fj and Fj\IMPLIES F both are B or appear after B. Then, the formulas B\IMPLIES Fj and B\IMPLIES (Fj\IMPLIES F) are already
+(4d) Fj and Fj\IMPLIES F both are B or appear after B. Then, the formulas B\IMPLIES Fj and B\IMPLIES (Fj\IMPLIES F) are already
 present in the converted proof (they appeared during the replacement operations applied to the formulas
 Fj and Fj\IMPLIES F). Let us replace F by the following 3 formulas:
 (B\IMPLIES (Fj\IMPLIES F))\IMPLIES ((B\IMPLIES Fj)\IMPLIES (B\IMPLIES F)) (an instance of L2),
 (B\IMPLIES Fj)\IMPLIES (B\IMPLIES F) (by Modus Ponens),
 B\IMPLIES F (by Modus Ponens).
-5) F is derived from some previous formula Fi by Generalization, thus, F having the form \(\forall\) xFi. Then, 2
+(5) F is derived from some previous formula Fi by Generalization, thus, F having the form \(\forall\) xFi. Then, 2
 subcases are possible.
-5a) Fi appears before B. Then x is not free in B. Let us replace F by the following 3 formulas:
+(5a) Fi appears before B. Then x is not free in B. Let us replace F by the following 3 formulas:
 F (by Generalization, x is not free in B),
 F\IMPLIES (B\IMPLIES F) (an instance of L1),
 B\IMPLIES F
-5b) Fi is B or appears after B. Then x is not free in B, and the formula B\IMPLIES Fi that is already present in the
+(5b) Fi is B or appears after B. Then x is not free in B, and the formula B\IMPLIES Fi that is already present in the
 converted proof (it appeared during the replacement operation applied to the formula Fi). Let us replace F
 by the following 3 formulas:
 \(\forall x(B\IMPLIES Fi)\) (by Generalization, x is not free in B),
