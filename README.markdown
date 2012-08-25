@@ -22,3 +22,15 @@ So to compile, just use the following:
 
 (More than one compile may be necessary to get the references right.
 An alternative is to use `latexmk make.tex`.)
+
+# Changes from the original
+What has been changed:
+
+- Spelling errors.
+- "For smart students" has been replaced by a star (\*) to indicate a challenging exercise.
+
+# How to customize
+
+If you don't like some typographical aspect of the current version, here are some ideas for customization.
+
+- If you don't want the markers at the end of definitions, theorems, exercises, etc., then just edit `make.tex` and remove all instances of `qed=...`.
